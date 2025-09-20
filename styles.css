@@ -9,46 +9,22 @@ body {
     background-color: #1a1f2e;
     color: #ffffff;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    line-height: 1.6;
 }
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    padding: 30px 0;
-}
-
-nav {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav-buttons {
-    display: flex;
-    gap: 15px;
+    padding: 60px 20px;
 }
 
 main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 60px 0;
 }
 
 .main-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 600;
     background: linear-gradient(135deg, #4a9eff 0%, #00d4ff 100%);
     -webkit-background-clip: text;
@@ -58,94 +34,89 @@ main {
 }
 
 .subtitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
     color: #e0e0e0;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
 }
 
-.description {
+.about {
+    margin-bottom: 60px;
+}
+
+.about p {
     font-size: 1.1rem;
     color: #a0a0a0;
     max-width: 600px;
-    margin-bottom: 50px;
-    line-height: 1.6;
+    margin: 0 auto;
+    line-height: 1.8;
 }
 
-.cta-section {
-    display: flex;
+.projects {
+    margin-top: 60px;
+}
+
+.projects h3 {
+    font-size: 1.8rem;
+    color: #4a9eff;
+    margin-bottom: 30px;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-top: 30px;
 }
 
-.btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
+.project-item {
+    background-color: #232937;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.btn-primary {
-    background-color: #4a9eff;
-    color: white;
+.project-item:hover {
+    transform: translateY(-5px);
+    border-color: #4a9eff;
 }
 
-.btn-primary:hover {
-    background-color: #3a8eef;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.3);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: #a0a0a0;
-    border: 1px solid #3a4356;
-}
-
-.btn-secondary:hover {
-    background-color: #2a3446;
+.project-item h4 {
+    font-size: 1.2rem;
     color: #ffffff;
+    margin-bottom: 10px;
 }
 
-.btn-large {
-    padding: 16px 32px;
-    font-size: 1.1rem;
-}
-
-footer {
-    padding: 30px 0;
-    text-align: center;
+.project-item p {
+    font-size: 0.95rem;
     color: #6a7185;
-    font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     .subtitle {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     
-    .description {
+    .about p {
         font-size: 1rem;
     }
     
-    .cta-section {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
+    .projects h3 {
+        font-size: 1.5rem;
     }
     
-    .btn-large {
-        width: 100%;
+    .project-list {
+        grid-template-columns: 1fr;
     }
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
 }
