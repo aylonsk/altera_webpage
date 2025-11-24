@@ -8,6 +8,10 @@
     
     <meta name="description" content="Altera Labs Cognitive Partner">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Canvas LMS Integration Meta Tags -->
+    <meta name="lti-version" content="1.3">
+    <meta name="lti-advantage" content="true">
 </head>
 <body>
     <div class="container">
@@ -25,20 +29,122 @@
             </section>
             
             <section class="projects">
-                <h3>Projects</h3>
                 <div class="project-list">
-                        <div class="project-item">
-                            <h4>AI Cognitive Partner</h4>
-                            <p>Personalized Learning Dashboard (Available October 2025)</p>
-                        </div>
-                    <a href="https://humorhealer.onrender.com/" class="project-link" target="_blank" rel="noopener noreferrer">
-                        <div class="project-item">
-                            <h4>HumorHealer</h4>
-                            <p>Your 24/7 Online Therapist </p>
-                        </div>
-                    </a>
+                    <div class="project-item">
+                        <h4>AI Cognitive Partner</h4>
+                        <p>Personalized Learning Platform (Available December 2025)</p>
+                    </div>
                 </div>
             </section>
+
+            <section class="features">
+                <h3 class="section-title">Platform Features</h3>
+                <div class="feature-list">
+            
+                    <!-- Feature 1: Learning Dashboard -->
+                    <div class="feature-item">
+                        <img src="images/dashboard.png" alt="Altera Labs personalized learning dashboard" />
+                        <h4>Personalized Learning Dashboard</h4>
+                        <p>
+                            Track your progress across every concept in your course with a clean,
+                            intuitive dashboard. Our adaptive system maps your strengths and 
+                            weaknesses in real time, so you always know exactly what to study next.
+                        </p>
+                    </div>
+            
+                    <!-- Feature 2: Adaptive Knowledge Map -->
+                    <div class="feature-item">
+                        <img src="images/BKT.png" alt="Adaptive knowledge map visualization" />
+                        <h4>Adaptive Knowledge Map</h4>
+                        <p>
+                            Behind the scenes, our Bayesian Knowledge Tracing engine continuously 
+                            updates your mastery level for every concept. The interactive knowledge 
+                            map gives both students and instructors a transparent view of learning 
+                            progression, not just right or wrong answers.
+                        </p>
+                    </div>
+            
+                    <!-- Feature 3: AI Tutoring Interface -->
+                    <div class="feature-item">
+                        <img src="images/chat.png" alt="AI tutoring conversation interface" />
+                        <h4>Guided Problem-Solving Tutor</h4>
+                        <p>
+                            Our state-aware AI tutor goes beyond answer-giving. It guides you through
+                            step-by-step reasoning, asks targeted questions, and uses verified 
+                            explanations to help you build understanding—not shortcuts.
+                        </p>
+                    </div>
+            
+                </div>
+            </section>
+            
+
+
+            
+            <section id="canvas-integration" class="canvas-integration">
+                <h3>Canvas LMS Integration</h3>
+                
+                <div class="integration-details">
+                    <div class="integration-feature">
+                        <h4>Current Features</h4>
+                        <ul>
+                            <li>LTI 1.3 authentication and launch</li>
+                            <li>Single Sign-On (SSO) through Canvas</li>
+                            <li>Assignment & Grade Services (AGS) - Grade passback</li>
+                            <li>Instructor dashboard for viewing student progress</li>
+                            <li>Student knowledge graph visualization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="integration-feature">
+                        <h4>Technical Specifications</h4>
+                        <ul>
+                            <li>LTI 1.3 / LTI Advantage compliant</li>
+                            <li>OAuth 2.0 authentication</li>
+                            <li>RESTful API</li>
+                            <li>JWKS endpoint for signature verification</li>
+                            <li>Supports modern browsers (Chrome, Firefox, Safari, Edge) with HTTPS required.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="developer-resources">
+                <h3>Developer Resources</h3>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <h4>LTI Endpoints</h4>
+                        <p>LTI 1.3 endpoints for login, launch, and JWKS</p>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>• <code>/lti/login</code> - OIDC login initiation</li>
+                            <li>• <code>/lti/launch</code> - LTI message launch</li>
+                            <li>• <code>/lti/jwks</code> - Public keys for signature verification</li>
+                        </ul>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Instructor API</h4>
+                        <p>Endpoints for instructor dashboard functionality</p>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>• <code>/api/instructor/students</code> - Get course students</li>
+                            <li>• <code>/api/instructor/student-graph</code> - Get student knowledge graph</li>
+                        </ul>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Support</h4>
+                        <p>Technical support for integration questions and setup assistance</p>
+                        <a href="mailto:akira@altera-labs.com" class="resource-link">Contact Support →</a>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="site-footer">
+                <div class="footer-links">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="/terms-of-service">Terms of Service</a>
+                </div>
+                <p class="footer-note">HTTPS Required | LTI 1.3 Compliant</p>
+            </footer>
         </main>
     </div>
 </body>

@@ -120,3 +120,365 @@ main {
     text-decoration: none;
     color: inherit;
 }
+
+/* Canvas Integration Section */
+.canvas-integration {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.integration-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.badge {
+    background: linear-gradient(135deg, #4a9eff 0%, #00d4ff 100%);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.integration-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+    text-align: left;
+}
+
+.integration-feature {
+    background-color: #232937;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+}
+
+.integration-feature h4 {
+    color: #4a9eff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.integration-feature ul {
+    list-style: none;
+    padding: 0;
+}
+
+.integration-feature ul li {
+    color: #a0a0a0;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.integration-feature ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4a9eff;
+    font-weight: bold;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4a9eff 0%, #00d4ff 100%);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.3);
+}
+
+.btn-secondary {
+    background-color: #232937;
+    color: #4a9eff;
+    border: 1px solid #4a9eff;
+}
+
+.btn-secondary:hover {
+    background-color: #2a3446;
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+
+/* Technical Requirements Section */
+.technical-requirements {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.requirement-item {
+    background-color: #232937;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    text-align: left;
+}
+
+.requirement-item h4 {
+    color: #4a9eff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.requirement-item p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Developer Resources Section */
+.developer-resources {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.resources-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.resource-item {
+    background-color: #232937;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.resource-item:hover {
+    transform: translateY(-5px);
+    border-color: #4a9eff;
+}
+
+.resource-item h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.resource-item p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.resource-link {
+    color: #4a9eff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+    color: #00d4ff;
+}
+
+/* Canvas Features Section */
+.canvas-features {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    background-color: #232937;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    border-color: #4a9eff;
+}
+
+.feature-item h4 {
+    color: #4a9eff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* -------------------------------------------------- */
+/* Features Section (NEW)                             */
+/* -------------------------------------------------- */
+
+.features {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.features .section-title {
+    font-size: 1.8rem;
+    color: #4a9eff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background-color: #232937;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    border-color: #4a9eff;
+}
+
+.feature-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.feature-item h4 {
+    color: #4a9eff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Feature section responsiveness */
+@media (max-width: 768px) {
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Footer */
+.site-footer {
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 1px solid #2a3446;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #4a9eff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00d4ff;
+}
+
+.separator {
+    color: #6a7185;
+    margin: 0 10px;
+}
+
+.footer-note {
+    color: #6a7185;
+    font-size: 0.85rem;
+    margin-top: 15px;
+}
+
+/* Responsive Design Updates */
+@media (max-width: 768px) {
+    .integration-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .requirements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .resources-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .separator {
+        display: none;
+    }
+}
