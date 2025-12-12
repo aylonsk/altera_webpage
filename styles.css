@@ -14,7 +14,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
 }
@@ -50,6 +50,227 @@ main {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.8;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #4a9eff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Problem-Solution Section */
+.problem-solution {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.problem-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.problem-solution-item {
+    background-color: #232937;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    text-align: left;
+}
+
+.problem-solution-item h4 {
+    color: #4a9eff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.problem-solution-item p {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Target Audience Section */
+.target-audience {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.audience-item {
+    background-color: #232937;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.audience-item:hover {
+    transform: translateY(-5px);
+    border-color: #4a9eff;
+}
+
+.audience-item h4 {
+    color: #4a9eff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.audience-item p {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Team Section */
+.team {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.team-member {
+    background-color: #232937;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    border-color: #4a9eff;
+}
+
+.team-member h4 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.team-role {
+    color: #4a9eff;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.team-credentials {
+    color: #00d4ff;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.team-degree {
+    color: #6a7185;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.team-bio {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.team-note {
+    color: #6a7185;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Product Section */
+.product {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.product-description {
+    background-color: #232937;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #2a3446;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.product-description h4 {
+    color: #4a9eff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.product-description > p {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.product-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.product-features-list li {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: 15px 0;
+    padding-left: 30px;
+    position: relative;
+    border-bottom: 1px solid #2a3446;
+}
+
+.product-features-list li:last-child {
+    border-bottom: none;
+}
+
+.product-features-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #4a9eff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.product-features-list li strong {
+    color: #ffffff;
+}
+
+.product-note {
+    color: #6a7185;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #2a3446;
 }
 
 .projects {
@@ -445,6 +666,22 @@ main {
 
 /* Responsive Design Updates */
 @media (max-width: 768px) {
+    .problem-solution-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-description {
+        padding: 25px;
+    }
+    
     .integration-details {
         grid-template-columns: 1fr;
     }
