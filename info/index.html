@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Altera Labs — Terms of Service & Privacy Policy</title>
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#111827;
+      --muted:#9aa4b2;
+      --accent:#4a9eff;
+      --glass: rgba(255,255,255,0.03);
+      --radius:10px;
+      --maxw:1000px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#071026 0%, #0f1724 100%);
+      color:#e6eef8;
+      padding:40px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      border-radius:12px;
+      padding:28px;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    header h1{
+      font-size:1.25rem;
+      margin:0;
+      color:var(--accent);
+    }
+    header p{margin:0;color:var(--muted);font-size:0.95rem}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:20px;
+    }
+    @media (max-width:880px){
+      .grid{grid-template-columns: 1fr; padding-bottom:12px}
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    nav.card{
+      position:sticky;
+      top:20px;
+      height:fit-content;
+    }
+    nav a{
+      display:block;
+      padding:10px 12px;
+      margin-bottom:8px;
+      color:var(--muted);
+      text-decoration:none;
+      border-radius:8px;
+      transition:all .15s ease;
+      font-size:0.98rem;
+    }
+    nav a:hover{ background:var(--glass); color:#fff; transform:translateX(4px) }
+    nav a.active{ background:linear-gradient(90deg,var(--accent),#00d4ff); color:#041027; font-weight:600 }
+    h2{ margin-top:0; color:#fff; font-size:1.05rem }
+    h3{ margin:10px 0 6px 0; color:var(--accent); font-size:0.98rem }
+    p, ul, ol, li {
+      color: #cbd8e6;
+      line-height:1.6;
+      font-size:0.95rem;
+    }
+    .muted { color:var(--muted); font-size:0.9rem }
+    ul{ padding-left:1.1rem; }
+    .small { font-size:0.88rem; color:var(--muted) }
+    .meta-link { color:var(--accent); text-decoration: none; border-bottom:1px dotted rgba(74,158,255,0.25); }
+    .download { display:inline-block; margin-top:12px; padding:8px 12px; background:var(--accent); color:#041027; border-radius:8px; text-decoration:none; font-weight:600 }
+    footer{ margin-top:18px; font-size:0.85rem; color:var(--muted) }
+    code{ background: rgba(255,255,255,0.02); padding:2px 6px; border-radius:6px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Altera Labs — Legal</h1>
+        <p class="muted">Terms of Service & Privacy Policy for the Altera Labs platform</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Main content -->
+      <main class="card" id="main-docs">
+        <!-- Terms of Service -->
+        <section id="tos">
+          <h2>Terms of Service</h2>
+          <p class="muted">Effective date: <strong>November 24, 2025</strong></p>
+
+          <p>Welcome to Altera Labs. These Terms of Service ("Terms") govern your access to and use of the Altera Labs services, including the web application, LTI Canvas integration, instructor dashboards, and associated APIs (collectively, the "Service"). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.</p>
+
+          <h3>1. Who may use the Service</h3>
+          <p>The Service is intended for use by educational institutions, instructors, students, and administrators. You represent and warrant that you have the authority to accept these Terms on behalf of yourself or the organization you represent.</p>
+
+          <h3>2. Account registration & access</h3>
+          <p>Certain features require an account or integration via your institution's LMS (for example, Canvas via LTI 1.3). You are responsible for maintaining the security of login credentials. For LMS integrations we rely on standards such as LTI 1.3 (OIDC/OAuth2) and Assignment & Grade Services (AGS); your institution's IT policies may apply.</p>
+
+          <h3>3. License & acceptable use</h3>
+          <p>Subject to your compliance with these Terms, Altera Labs grants you a limited, non-exclusive, non-transferable license to access and use the Service for educational purposes. You agree not to:</p>
+          <ul>
+            <li>circumvent security or attempt unauthorized access;</li>
+            <li>reverse-engineer proprietary components;</li>
+            <li>use the Service to distribute malware or infringing content;</li>
+            <li>misrepresent academic work or facilitate academic dishonesty.</li>
+          </ul>
+
+          <h3>4. Content and user submissions</h3>
+          <p>The Service permits submission of course materials, student responses, assignments, and user-generated content ("Submissions"). Students retain ownership of their original work. By submitting content, you grant Altera Labs a non-exclusive license to process, analyze, store, and display that content as necessary to provide the Service (for example: to generate quizzes, update the Bayesian Knowledge Tracing model, or display analytics on instructor dashboards).</p>
+
+          <h3>5. Use of verification & third-party services</h3>
+          <p>Altera Labs uses internal verification modules (the "Mathematical Judge") and may use third-party providers for AI services and hosting (for example, Google Vertex AI for vector embeddings or other retrieval services). We will only use such services as described in our Privacy Policy and where permitted by institutional agreements. You consent to such third-party processing as described in the Privacy Policy.</p>
+
+          <h3>6. Fees & billing</h3>
+          <p>Some features of the Service may be offered on a paid basis. Any paid features will be subject to separate pricing terms and an order or subscription agreement.</p>
+
+          <h3>7. Disclaimers & limitation of liability</h3>
+          <p><strong>Disclaimer:</strong> THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE." ALTERA LABS DOES NOT GUARANTEE THAT THE SERVICE WILL BE ERROR-FREE OR UNINTERRUPTED. THE SERVICE OFFERS PEDAGOGICAL SUPPORT AND ANALYTICS BUT DOES NOT REPLACE INSTRUCTOR JUDGMENT.</p>
+          <p><strong>Limitation of liability:</strong> TO THE MAXIMUM EXTENT PERMITTED BY LAW, ALTERA LABS' TOTAL LIABILITY ARISING FROM OR RELATING TO THESE TERMS OR THE SERVICE SHALL NOT EXCEED DIRECT DAMAGES OF $100 (OR THE AMOUNT PAID BY YOU IN THE PRIOR 12 MONTHS, IF GREATER) — EXCEPT WHERE SUCH LIMITS ARE PROHIBITED BY APPLICABLE LAW.</p>
+
+          <h3>8. Termination</h3>
+          <p>Either party may terminate access for breach of these Terms. On termination we may disable your access and delete your data in accordance with our retention policy; instructors and institutions should export any required records prior to termination as described in our Privacy Policy.</p>
+
+          <h3>9. Governing law</h3>
+          <p>These Terms are governed by the laws of the State of Maryland, USA, without regard to conflict-of-law principles.</p>
+
+          <h3>10. Changes to these Terms</h3>
+          <p>We may update these Terms from time to time. We will post the updated Terms and indicate the effective date. Continued use after changes constitutes acceptance.</p>
+
+          <h3>11. Contact</h3>
+          <p>For questions about these Terms or to report abuse, contact: <a class="meta-link" href="mailto:akira@altera-labs.com">akira@altera-labs.com</a></p>
+        </section>
+
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:18px 0" />
+
+        <!-- Privacy Policy -->
+        <section id="privacy">
+          <h2>Privacy Policy</h2>
+          <p class="muted">Effective date: <strong>November 24, 2025</strong></p>
+
+          <p>Altera Labs ("we", "us", "our") values privacy. This Privacy Policy explains what personal data we collect, how we use it, who we share it with, and your rights regarding that data. This policy applies to data collected through the Altera Labs website, API, and LMS integrations (including Canvas LTI connections).</p>
+
+          <h3>1. Data we collect</h3>
+          <p>We collect the following categories of information as necessary to provide the Service:</p>
+          <ul>
+            <li><strong>Account & identity data:</strong> name, institutional email, role (student, instructor, admin), institution identifier when provided by LMS.</li>
+            <li><strong>Course & academic data:</strong> course identifiers, assignment metadata, submission content, grades, and instructor annotations (these are provided via LMS integrations such as LTI/AGS where permitted).</li>
+            <li><strong>Interaction & performance data:</strong> quiz responses, timestamps, mastery estimates from the Bayesian Knowledge Tracing (BKT) engine, activity logs, and other analytics used to power the adaptive models and instructor dashboards.</li>
+            <li><strong>Device & usage data:</strong> IP address, browser/user agent, OS, and diagnostics and error logs.</li>
+            <li><strong>Derived data:</strong> mastery scores, inferred learning paths, and other analytics produced by our models.</li>
+          </ul>
+
+          <h3>2. How we use your data</h3>
+          <ul>
+            <li>To provide, operate, and improve the Service (including the Adaptive Knowledge Tracking and dashboards).</li>
+            <li>To generate quizzes, answer keys, and provide Socratic tutoring flows based on submitted content.</li>
+            <li>To verify student work using our Mathematical Judge and to combine verification results with model outputs.</li>
+            <li>To provide instructor analytics, identify at-risk students, and enable grade passback when authorized.</li>
+            <li>To comply with legal or institutional obligations and to protect the security of our systems.</li>
+          </ul>
+
+          <h3>3. Legal basis & institutional integrations</h3>
+          <p>For institutions in jurisdictions with data-protection laws (for example, GDPR), the institution typically acts as the data controller and Altera Labs is a data processor under the institution's agreement. When you connect via an LMS (e.g., Canvas LTI 1.3) the institution provides the course and user data we need to operate; our use is governed by the institution's agreement with us and by this Privacy Policy.</p>
+
+          <h3>4. Third-party services & transfers</h3>
+          <p>We may engage third-party service providers to host, store, or process data (examples used in our development include Google Vertex AI for vector embeddings and retrieval, and verification tools such as the Lean 4 verifier for our Mathematical Judge). When third parties process personal data on our behalf, we enter data-processing agreements requiring them to implement appropriate security measures. Data may be processed in jurisdictions outside your country; we will take appropriate safeguards where required.</p>
+
+          <h3>5. Cookies & tracking</h3>
+          <p>We use cookies and similar technologies for session management, security, and analytics. Institutionally managed integrations (LTI) typically handle single sign-on via OAuth/OIDC; cookies are only used where necessary to maintain sessions and performance.</p>
+
+          <h3>6. Data retention & deletion</h3>
+          <p>We retain personal data only as long as necessary to provide the Service, comply with institutional recordkeeping requirements, or meet legal obligations. Institutions may request export or deletion of course or student data under the terms of our institutional agreement; individual users may request deletion of personal account information subject to institutional constraints (e.g., instructor records required by the institution).</p>
+
+          <h3>7. Security</h3>
+          <p>We implement administrative, technical, and physical safeguards designed to protect personal data. While we follow industry best practices, no system can be 100% secure; please report security concerns to <a class="meta-link" href="mailto:akira@altera-labs.com">akira@altera-labs.com</a>.</p>
+
+          <h3>8. Your rights</h3>
+          <p>Depending on your jurisdiction, you may have rights such as access, correction, deletion, restriction, or portability of your data. To make a request, contact <a class="meta-link" href="mailto:akira@altera-labs.com">akira@altera-labs.com</a>. Institutional users should also contact their institution's administrator for requests that involve course data.</p>
+
+          <h3>9. Children</h3>
+          <p>The Service is intended for higher-education use. We do not knowingly collect information from children under 13; if we discover such collection, we will take reasonable steps to remove that data.</p>
+
+          <h3>10. Changes to this policy</h3>
+          <p>We may update this Privacy Policy. We will post the updated policy with an effective date. Continued use of the Service after changes indicates acceptance of the updated policy.</p>
+
+          <h3>11. Contact</h3>
+          <p>Questions about privacy or data requests can be sent to: <a class="meta-link" href="mailto:akira@altera-labs.com">akira@altera-labs.com</a></p>
+        </section>
+
+        <footer class="small muted" style="margin-top:18px">
+          <p>Last Updated: November 24, 2025</p>
+        </footer>
+      </main>
+
+      <!-- Sidebar / navigation -->
+      <nav class="card" aria-label="Legal navigation">
+        <a href="#tos" id="link-tos" class="active">Terms of Service</a>
+        <a href="#privacy" id="link-privacy">Privacy Policy</a>
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:12px 0" />
+        <p class="small muted">Useful links</p>
+        <a href="/">Our Homepage</a>
+        <a href="mailto:akira@altera-labs.com">Contact Support</a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    // Small script to mark active link on scroll (progressive enhancement)
+    (function(){
+      const links = { tos:document.getElementById('link-tos'), privacy:document.getElementById('link-privacy') };
+      function onScroll(){
+        const y = window.scrollY + 120;
+        const tos = document.getElementById('tos').offsetTop;
+        const priv = document.getElementById('privacy').offsetTop;
+        if(y < priv) {
+          links.tos.classList.add('active'); links.privacy.classList.remove('active');
+        } else {
+          links.privacy.classList.add('active'); links.tos.classList.remove('active');
+        }
+      }
+      window.addEventListener('scroll', onScroll);
+    })();
+  </script>
+</body>
+</html>
