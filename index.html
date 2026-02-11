@@ -1,24 +1,1073 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Altera Labs | Cognitive Architecture for STEM Mastery</title>
-  <meta name="description"
-    content="Helping educators and students utilize AI to create a smarter, more efficient world through structured, agentic tutoring systems." />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;600;700&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altera Labs | Cognitive Architecture for STEM Mastery</title>
+    <meta name="description" content="Helping educators and students utilize AI to create a smarter, more efficient world through structured, agentic tutoring systems.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zinc: { 950: '#09090b', 900: '#18181b', 800: '#27272a' },
+                        royal: { blue: '#476ee3' },
+                        cyan: { 400: '#22d3ee' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Work Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-zinc-950 text-zinc-100; }
+        }
+        .bento-card {
+            @apply bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden p-6 transition-all duration-300;
+        }
+        .bento-card:hover {
+            @apply border-zinc-700;
+        }
+    </style>
+
+    <!-- KaTeX CSS + JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"></script>
+
+    <!-- D3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+<body class="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-royal-blue/30">
 
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group cursor-pointer" onclick="event.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});">
+                <img src="/logos/Altera/Altera-Logo-Cropped.png" alt="Altera Labs" class="h-14 group-hover:opacity-80 transition-opacity">
+            </a>
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#problem" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">The Problem</a>
+                <a href="#solution" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Our Solution</a>
+                <a href="#product" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Product</a>
+                <a href="#traction" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Traction</a>
+                <a href="https://altera-labs.web.app" target="_blank" rel="noopener noreferrer">
+                    <button class="bg-royal-blue hover:bg-royal-blue/90 text-white px-7 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(71,110,227,0.4)] border border-white/10 transform-gpu antialiased">
+                        Try the Beta
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="mission" class="relative pt-40 pb-24 px-8 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-20 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-royal-blue/10 rounded-full blur-[120px] animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-600/5 rounded-full blur-[100px]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-[0.95] text-white">
+                State-Aware AI <br>
+                <span class="text-zinc-100">Tutoring for STEM.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+                Helping educators and students utilize AI to create a smarter, more efficient world.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 relative z-10">
+                <a href="https://altera-labs.web.app" target="_blank" rel="noopener noreferrer">
+                    <button class="bg-royal-blue hover:bg-royal-blue/90 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 group transition-all text-base hover:scale-[1.02] hover:shadow-xl hover:shadow-royal-blue/25 border border-white/10 transform-gpu antialiased">
+                        Try the Beta
+                        <i data-lucide="chevron-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </a>
+                <a href="#problem" class="text-zinc-400 hover:text-white font-bold text-sm transition-all uppercase tracking-widest px-8 py-3 rounded-2xl border border-white/10 hover:border-white/20 hover:bg-white/5">
+                    Our Mission
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Partner / Trust Banner -->
+    <div class="py-12 border-y border-white/5 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-8">
+            <p class="text-center text-[10px] font-bold text-zinc-400 uppercase tracking-[0.3em] mb-8">Institutional Partners &amp; Support</p>
+            <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-8 md:gap-16 transition-opacity duration-300 w-full">
+                <a href="https://pavacenter.jhu.edu/programs/student-programs/fuel/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group whitespace-nowrap opacity-90 hover:opacity-100 transition-all hover:scale-105 origin-center">
+                    <img src="/logos/JHU/JHU.logo_horizontal.white.svg" alt="JHU Logo" class="h-10 md:h-14">
+                    <div class="h-10 w-px bg-zinc-600 mx-1"></div>
+                    <img src="/logos/JHU/pava_logo_stacked.svg" alt="Pava Center Shield" class="h-8 md:h-10">
+                    <div class="flex flex-col items-start leading-none gap-0.5 font-['Work_Sans']">
+                        <span class="text-[10px] font-bold text-zinc-300 group-hover:text-white transition-colors uppercase tracking-wide">Pava Marie LaPere Center</span>
+                        <span class="text-[10px] font-bold text-zinc-300 group-hover:text-white transition-colors uppercase tracking-wide">for Entrepreneurship</span>
+                    </div>
+                </a>
+                <a href="https://www.nvidia.com/en-us/startups/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group whitespace-nowrap opacity-90 hover:opacity-100 transition-opacity">
+                    <img src="/logos/NVIDIA/nvidia-inception-logo-cropped-white.png" alt="NVIDIA Inception" class="h-8 md:h-10 object-contain transition-transform group-hover:scale-105">
+                </a>
+                <a href="https://cloud.google.com/startup" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group whitespace-nowrap opacity-90 hover:opacity-100 transition-opacity">
+                    <img src="/logos/Google/gcloud-cropped-white.png" alt="Google Cloud Startup" class="h-8 md:h-10 object-contain transition-transform group-hover:scale-105">
+                </a>
+                <a href="https://www.instructure.com/canvas" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group whitespace-nowrap opacity-90 hover:opacity-100 transition-all hover:scale-105 origin-center transform-gpu">
+                    <img src="/logos/Canvas/Canvas_Horizontal_Full-Color_RGB-cropped-white.png" alt="Canvas" class="h-7 md:h-9 object-contain">
+                    <div class="flex flex-col leading-none gap-0.5">
+                        <span class="text-[9px] font-bold tracking-wide text-zinc-300 group-hover:text-white transition-colors uppercase">Integrated Tier</span>
+                        <span class="text-[9px] font-bold tracking-wide text-zinc-300 group-hover:text-white transition-colors uppercase">Partner</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="py-24 px-8 border-b border-white/5 bg-zinc-950/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                <div>
+                    <span class="text-royal-blue font-bold text-xs uppercase tracking-widest mb-4 block">The Crisis</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">The Substitution Model.</h2>
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                        Current AI tools create a "substitution" effect where students bypass critical reasoning.
+                        We are seeing a 75% reduction in critical thinking and a "black box" of learning loss that leaves faculty blind.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                            <p class="text-2xl font-bold text-white mb-1">86%</p>
+                            <p class="text-[9px] text-zinc-500 uppercase font-bold tracking-wider leading-tight">of students use AI tools</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                            <p class="text-2xl font-bold text-white mb-1">75%</p>
+                            <p class="text-[9px] text-zinc-500 uppercase font-bold tracking-wider leading-tight">report weaker critical thinking</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                            <p class="text-2xl font-bold text-white mb-1">73%</p>
+                            <p class="text-[9px] text-zinc-500 uppercase font-bold tracking-wider leading-tight">depend on AI over own skills</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                            <p class="text-2xl font-bold text-white mb-1">70%</p>
+                            <p class="text-[9px] text-zinc-500 uppercase font-bold tracking-wider leading-tight">encounter AI misinformation</p>
+                        </div>
+                    </div>
+                    <a href="https://www.mdpi.com/2075-4698/15/1/6" target="_blank" rel="noopener noreferrer" class="text-zinc-600 text-[10px] mt-3 inline-flex items-center gap-0.5 hover:text-zinc-400 transition-colors">
+                        Source: Gerlich, 2025 — AI Tools in Society (n=666) <i data-lucide="external-link" class="w-2.5 h-2.5 inline ml-0.5"></i>
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-royal-blue/20 blur-[80px] -z-10"></div>
+                    <div class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 shadow-2xl skew-y-1">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                            <p class="text-xs font-mono text-zinc-500 uppercase">Input: Homework Problem #4</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-zinc-950 border border-zinc-800 italic text-zinc-500 text-sm">
+                                Here is the answer. Don't worry about the proof steps.
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="px-4 py-2 rounded-lg bg-red-500/10 text-red-400 text-[10px] font-bold uppercase tracking-widest border border-red-500/20">
+                                    Stateless Answer Machine
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-8 border-t border-zinc-800">
+                            <p class="text-sm font-bold text-zinc-400 mb-4">Outcome: Student bypasses reasoning entirely</p>
+                            <div class="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden">
+                                <div class="h-full w-[10%] bg-red-500/80 animate-pulse"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution Section -->
+    <section id="solution" class="py-24 px-8 bg-zinc-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                <div class="order-2 md:order-1 relative">
+                    <div class="absolute inset-0 bg-royal-blue/20 blur-[80px] -z-10"></div>
+                    <div class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 shadow-2xl -skew-y-1 overflow-hidden">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-royal-blue/50"></div>
+                            </div>
+                            <span class="text-[10px] font-mono text-royal-blue bg-royal-blue/10 px-3 py-1 rounded-full uppercase font-bold">State-Aware Mode</span>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 rounded-full bg-zinc-700 flex-shrink-0 flex items-center justify-center">
+                                    <i data-lucide="user" class="w-4 h-4 text-zinc-400"></i>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-zinc-950 border border-zinc-800 text-xs text-zinc-300">
+                                    How do I solve for displacement?
+                                </div>
+                            </div>
+                            <div class="flex gap-4 justify-end">
+                                <div class="p-4 rounded-2xl bg-royal-blue/10 border border-royal-blue/20 text-xs text-zinc-200 italic max-w-[80%]">
+                                    Instead of the answer, let's look at your knowledge graph. You master Velocity, but are struggling with Area Under the Curve. Let's explore the geometric relationship first.
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-royal-blue flex-shrink-0 flex items-center justify-center">
+                                    <i data-lucide="brain" class="w-4 h-4 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 bg-zinc-800/20 p-4 rounded-xl border border-white/5">
+                            <div class="flex justify-between items-center mb-2 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+                                <span>Mastery Score</span>
+                                <span class="text-royal-blue">84%</span>
+                            </div>
+                            <div class="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden">
+                                <div class="h-full w-[84%] bg-royal-blue animate-pulse"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-royal-blue font-bold text-xs uppercase tracking-widest mb-4 block">Our Solution</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Adaptive Knowledge Tracking.</h2>
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                        Our engine builds a real-time, personalized model of each student's mastery.
+                        This state-aware approach ensures deep understanding while providing faculty with precise,
+                        actionable analytics to optimize teaching.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm font-medium text-zinc-300">
+                            <div class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,1)]"></div>
+                            Bayesian Knowledge Tracing (BKT) Engine
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-medium text-zinc-300">
+                            <div class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,1)]"></div>
+                            State-Aware Cognitive Modeling
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-medium text-zinc-300">
+                            <div class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,1)]"></div>
+                            Institutional Insight Dashboard
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-medium text-zinc-300">
+                            <div class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,1)]"></div>
+                            Integrated Tier Canvas Partner
+                        </li>
+                    </ul>
+
+                    <!-- Faculty Testimonial -->
+                    <div class="mt-10 p-5 rounded-2xl bg-white/[0.03] border border-white/10 relative">
+                        <div class="absolute -top-3 left-5 px-3 py-0.5 bg-zinc-950 text-[9px] font-bold text-royal-blue uppercase tracking-widest">Faculty Endorsement</div>
+                        <p class="text-zinc-400 text-sm leading-relaxed italic">
+                            "A tool that would be <strong class="text-zinc-200 not-italic">indispensable to me as an instructor</strong>."
+                        </p>
+                        <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-wider mt-3">— Prof. Kobe Marshall-Stevens, JHU Mathematics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section - Bento -->
+    <section id="product" class="py-24 px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 tracking-tight">Cognitive Architecture.</h2>
+                <p class="text-zinc-500 max-w-2xl mx-auto">A complete learning lifecycle powered by state-aware intelligence and institutional scale.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Phase 1: BKT Engine -->
+                <div class="md:col-span-8 bento-card p-10 flex flex-col justify-between group overflow-hidden relative">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="p-2.5 bg-royal-blue/10 rounded-xl border border-royal-blue/20">
+                                <i data-lucide="cpu" class="w-5 h-5 text-royal-blue"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-royal-blue uppercase tracking-[0.15em]">Proprietary Engine</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">State-Aware BKT</h3>
+                        <p class="text-zinc-400 text-base leading-relaxed max-w-lg mb-8">
+                            Our probabilistic mastery engine uses <strong>Recursive CTE Super-Queries</strong> to resolve multi-hop dependencies in <span class="text-royal-blue font-bold">O(1)</span> time, dynamically injecting student state into every LLM inference.
+                        </p>
+                    </div>
+
+                    <!-- BKT Equation (rendered by KaTeX on load) -->
+                    <div class="relative z-10 mt-auto">
+                        <div class="p-5 rounded-2xl bg-zinc-900/80 border border-white/10 backdrop-blur-sm group-hover:border-royal-blue/30 transition-colors">
+                            <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mb-4">Bayesian Mastery Transition Model</p>
+                            <div id="katex-main" class="text-center overflow-x-auto [&_.katex]:text-white"></div>
+                            <div class="flex gap-6 mt-3 justify-center [&_.katex]:text-zinc-600 [&_.katex]:text-[11px]">
+                                <span id="katex-legend-1"></span>
+                                <span id="katex-legend-2"></span>
+                                <span id="katex-legend-3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Ontology Graph -->
+                <div class="md:col-span-4 bento-card p-10 flex flex-col group bg-zinc-900 border-zinc-800">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="p-2.5 bg-royal-blue/10 rounded-xl border border-royal-blue/20">
+                            <i data-lucide="network" class="w-5 h-5 text-royal-blue"></i>
+                        </div>
+                        <span class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.15em]">Dynamic Ontology</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 leading-tight">Multi-Relational Knowledge Graph</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed mb-8">
+                        AI-Native curriculum mapping using <strong>KNN Auto-Generating Edges</strong> to establish N-dimensional relationships between STEM concepts.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">FastAPI</div>
+                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">pgvector</div>
+                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">Neo4j</div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Socratic UI -->
+                <div class="md:col-span-4 bento-card p-10 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="p-2.5 bg-zinc-800/50 rounded-xl border border-zinc-700/50">
+                                <i data-lucide="message-square" class="w-5 h-5 text-zinc-300"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.15em]">Latency-Masked UX</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Socratic UI Sync</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed uppercase font-bold tracking-widest italic mb-4">Context Injection Layer</p>
+                        <p class="text-xs text-zinc-500 leading-relaxed">
+                            Streaming mastery updates with UI state synchronization to provide instant, high-fidelity feedback.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Canvas -->
+                <div class="md:col-span-4 bento-card p-10 flex flex-col justify-between group border-royal-blue/20">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <img src="/logos/Canvas/Canvas_Horizontal_Full-Color_RGB-cropped-white.png" alt="Canvas" class="h-8 object-contain">
+                            <span class="text-[11px] font-bold text-royal-blue uppercase tracking-[0.15em]">Integrated Tier Partner</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Canvas / LTI 1.3</h4>
+                        <p class="text-[11px] text-zinc-500 font-medium">LTI Advantage certified integration with grade services.</p>
+                    </div>
+                </div>
+
+                <!-- Phase 5: Dashboard -->
+                <div class="md:col-span-4 bento-card p-6 flex flex-col group bg-zinc-900 border-zinc-800 overflow-hidden">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2 text-zinc-500">
+                            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-widest">Live Ontology Build</span>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="w-1.5 h-1.5 rounded-full bg-red-500/30"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-amber-500/30"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-emerald-500/30"></div>
+                        </div>
+                    </div>
+                    <div class="relative flex-1 rounded-lg overflow-hidden border border-white/5 bg-black/40 mb-4 group-hover:border-royal-blue/30 transition-colors">
+                        <div class="w-full h-full min-h-[200px] flex items-center justify-center">
+                            <p class="text-zinc-600 text-xs font-mono">[Knowledge Graph Preview]</p>
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-zinc-900/90 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 text-[8px] font-mono text-cyan-400 animate-pulse">
+                            [RESOLVING: Partial Differential Equations]
+                        </div>
+                    </div>
+                    <h4 class="text-sm font-bold mb-1 text-white">Institutional Intelligence</h4>
+                    <p class="text-[10px] text-white/50 leading-relaxed">Real-world deployment: Mapping 42 interconnected concepts in a Senior PDE course.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulation Section -->
+    <section class="py-24 px-8 bg-zinc-950 border-y border-white/5 overflow-hidden relative">
+        <div class="absolute inset-0 bg-royal-blue/5 blur-[120px] -z-10"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-4">
+                    <div class="p-3 bg-royal-blue/10 rounded-2xl border border-royal-blue/20 inline-flex mb-6">
+                        <i data-lucide="zap" class="w-6 h-6 text-royal-blue"></i>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">Interactive <br>Cognitive Graph.</h2>
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                        Experience the physics-based simulation of our state-aware ontology. This demo uses our production D3 engine and a curriculum derived from an <strong>Advanced Kinematics</strong> syllabus.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-zinc-200">Mastery Encoding</p>
+                                <p class="text-xs text-zinc-500">Node colors update in real-time as the BKT engine processes student evidence.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-royal-blue/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div class="w-2 h-2 rounded-full bg-royal-blue shadow-[0_0_8px_#476ee3]"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-zinc-200">Force-Directed UI</p>
+                                <p class="text-xs text-zinc-500">Draggable physics simulation preserves the pedagogical structure of the graph.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-8">
+                    <div class="p-1 rounded-[2.5rem] bg-gradient-to-br from-zinc-800 to-zinc-950 border border-white/5 shadow-2xl relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-royal-blue/20 blur-3xl -z-10 animate-pulse"></div>
+                        <div class="bg-zinc-950 rounded-[2.25rem] overflow-hidden border border-white/5 shadow-inner p-4">
+                            <!-- Knowledge Graph Demo Container -->
+                            <div class="relative group" id="knowledge-demo">
+                                <div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+                                    <div class="bg-zinc-950/80 px-3 py-1.5 rounded-full border border-zinc-800 text-[10px] font-mono text-cyan-400 flex items-center gap-2 backdrop-blur-md">
+                                        <span class="relative flex h-2 w-2">
+                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                                        </span>
+                                        LIVE MASTERY ENGINE
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-6 right-6 z-10 flex flex-col gap-2 pointer-events-none">
+                                    <div class="bg-zinc-950/90 p-4 rounded-xl border border-zinc-800 backdrop-blur-xl max-w-[240px] shadow-2xl transition-all duration-500 group-hover:border-royal-blue/30">
+                                        <p class="text-[10px] font-bold text-royal-blue uppercase tracking-widest mb-2">Socratic Insight</p>
+                                        <p class="text-xs text-zinc-300 leading-relaxed italic">
+                                            "I notice you're struggling with <span class="text-rose-400 font-bold">Vector Decomposition</span>. How would you resolve the gravity vector into components parallel and perpendicular to the incline?"
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- D3 Graph -->
+                                <div id="graph-container" class="relative w-full min-h-[400px] h-[500px] overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/30 backdrop-blur-sm shadow-inner" style="cursor:grab;">
+                                    <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image:linear-gradient(#3f3f46 1px,transparent 1px),linear-gradient(90deg,#3f3f46 1px,transparent 1px);background-size:20px 20px;"></div>
+                                    <svg id="graph-svg" class="w-full h-full relative z-0 active:cursor-grabbing"></svg>
+                                    <div id="graph-tooltip" class="absolute z-50 bg-zinc-950/95 backdrop-blur-sm border border-zinc-800 rounded-lg p-3 pointer-events-none hidden" style="transform:translateY(-100%);"></div>
+                                </div>
+                                <!-- Legend -->
+                                <div id="graph-legend" class="absolute bottom-4 left-4 right-4 z-10 rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2 pointer-events-none flex flex-wrap gap-x-4 gap-y-1.5 text-[10px] text-zinc-500 font-mono"></div>
+                                <div class="mt-4 flex items-center justify-between text-[10px] font-mono text-zinc-500 uppercase tracking-tighter">
+                                    <span>Click nodes to toggle cognitive state</span>
+                                    <span>Physics v1.02 • Mastery Service active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traction / Timeline Section -->
+    <section id="traction" class="py-24 px-8 border-t border-white/5 bg-zinc-950">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-20">
+                <span class="text-royal-blue font-bold text-[10px] uppercase tracking-widest mb-4 block">Our Journey</span>
+                <h2 class="text-4xl font-bold tracking-tight text-white">Traction &amp; Milestones.</h2>
+            </div>
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-zinc-800 transform md:-translate-x-1/2"></div>
+                <div class="space-y-12">
+                    <!-- Dec 17, 2025: Canvas -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-royal-blue rounded-full border-4 border-zinc-950 transform -translate-x-1/2 z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-16 md:text-right">
+                            <span class="inline-block px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-[10px] font-bold uppercase tracking-wider mb-2">Dec 17, 2025</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Integrated Tier Partnership</h3>
+                            <p class="text-zinc-500 text-sm leading-relaxed">
+                                Secured <strong class="text-zinc-200">Integrated Tier Partnership</strong> with Instructure. Verified LTI 1.3 standards implementation for seamless institutional LMS integration.
+                            </p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+
+                    <!-- Dec 7, 2025: JHU FUEL -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-royal-blue rounded-full border-4 border-zinc-950 transform -translate-x-1/2 z-10"></div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-16 text-left">
+                            <span class="inline-block px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-[10px] font-bold uppercase tracking-wider mb-2">Dec 7, 2025</span>
+                            <h3 class="text-xl font-bold text-white mb-2">JHU FUEL Demo Day Win</h3>
+                            <p class="text-zinc-500 text-sm leading-relaxed mb-3">
+                                Winner of the <strong class="text-zinc-200">Audience Award</strong> at the 2025 Johns Hopkins FUEL Demo Day. Recognized for pedagogical innovation in applied AI.
+                            </p>
+                            <a href="https://pavacenter.jhu.edu/news/catching-up-with-the-fall-2025-fuel-winners/" target="_blank" rel="noopener noreferrer" class="text-royal-blue text-xs font-bold uppercase tracking-wider flex items-center gap-1 hover:text-white transition-colors mb-4">
+                                Read Article <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                            <div class="rounded-xl overflow-hidden shadow-lg mt-4 group cursor-pointer">
+                                <div class="aspect-video relative">
+                                    <img src="/logos/FUEL.JPEG" alt="JHU FUEL Demo Day Win" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 scale-105 group-hover:scale-100 transition-transform duration-700">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Late 2025: Strategic Pivot -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-zinc-700 rounded-full border-4 border-zinc-950 transform -translate-x-1/2 z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-16 md:text-right">
+                            <span class="inline-block px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-[10px] font-bold uppercase tracking-wider mb-2">Late 2025</span>
+                            <h3 class="text-xl font-bold text-white mb-2">The Strategic Pivot</h3>
+                            <p class="text-zinc-500 text-sm leading-relaxed">
+                                Strategic shift from "Verifiable AI" (Lean 4) to <strong class="text-zinc-200">State-Aware Cognitive Modeling</strong>.
+                                Prioritizing scalable mastery tracking over formal proof correctness.
+                            </p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+
+                    <!-- Q4 2025: Institutional Support -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-zinc-700 rounded-full border-4 border-zinc-950 transform -translate-x-1/2 z-10"></div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-16 text-left">
+                            <span class="inline-block px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-[10px] font-bold uppercase tracking-wider mb-2">Q4 2025</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Institutional Support</h3>
+                            <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+                                Accepted into elite startup programs to secure infrastructure and resources.
+                            </p>
+                            <div class="flex gap-4">
+                                <div class="px-3 py-1.5 rounded border border-white/10 bg-white/5 text-[10px] font-bold text-zinc-300">NVIDIA Inception</div>
+                                <div class="px-3 py-1.5 rounded border border-white/10 bg-white/5 text-[10px] font-bold text-zinc-300">Google Cloud</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nov 2025: Faculty Champion -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-royal-blue rounded-full border-4 border-zinc-950 transform -translate-x-1/2 z-10"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-16 md:text-right">
+                            <span class="inline-block px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-[10px] font-bold uppercase tracking-wider mb-2">Nov 2025</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Faculty Champion Endorsement</h3>
+                            <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+                                Secured endorsement from <strong class="text-zinc-200">Prof. Kobe Marshall-Stevens</strong> (JHU Mathematics) as primary Faculty Champion for the TEDCO Baltimore Innovation Initiative.
+                            </p>
+                            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 text-left">
+                                <p class="text-zinc-400 text-sm leading-relaxed italic">
+                                    "I strongly believe that the platform has potential to <strong class="text-zinc-200 not-italic">scale to large-scale classes with hundreds of students</strong>. I am hopeful that their platform will help to better shape university environments in the years to come."
+                                </p>
+                                <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-wider mt-3">— Prof. Kobe Marshall-Stevens</p>
+                            </div>
+                            <a href="/Altera Labs recommendation letter.pdf" target="_blank" rel="noopener noreferrer" class="text-royal-blue text-xs font-bold uppercase tracking-wider flex items-center gap-1 hover:text-white transition-colors mt-4 md:justify-end">
+                                Read Letter <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+
+                    <!-- May 2025: Research Publication -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-zinc-700 rounded-full border-4 border-zinc-950 transform -translate-x-1/2 z-10"></div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-16 text-left">
+                            <span class="inline-block px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-[10px] font-bold uppercase tracking-wider mb-2">May 2025</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Research Foundation</h3>
+                            <p class="text-zinc-500 text-sm leading-relaxed mb-3">
+                                CEO publishes <strong class="text-zinc-200">"AI and Education: A Neurocognitive Perspective"</strong> at Johns Hopkins, establishing the scientific foundation for Altera's state-aware approach. The paper synthesizes research demonstrating a <strong class="text-zinc-200">significant negative correlation between AI tool use and critical thinking</strong> (<a href="https://www.mdpi.com/2075-4698/15/1/6" target="_blank" rel="noopener noreferrer" class="text-royal-blue hover:text-white transition-colors">Gerlich, 2025</a>).
+                            </p>
+                            <a href="/Artificial Intelligence and the Brain_ A Neurocognitive Perspective.pdf" target="_blank" rel="noopener noreferrer" class="text-royal-blue text-xs font-bold uppercase tracking-wider flex items-center gap-1 hover:text-white transition-colors">
+                                Read Paper <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-32 px-8 border-t border-white/5 bg-zinc-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold tracking-tight mb-4 text-white">Built by Altera Labs</h2>
+                <p class="text-zinc-500 font-medium max-w-2xl mx-auto">
+                    Our founding team has raised over <strong class="text-zinc-200">$190,000</strong> for previous ventures from NIH, NSF I-Corps, JHU, and more.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Peter -->
+                <div class="rounded-3xl bg-zinc-900/50 border border-zinc-800/50 hover:bg-zinc-900 transition-all cursor-pointer group hover:border-royal-blue/30 h-full flex flex-col overflow-hidden">
+                    <div class="p-6 pb-0">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-1">Peter Seelman</h4>
+                        <p class="text-royal-blue text-[10px] font-bold tracking-wider uppercase">CEO</p>
+                    </div>
+                    <div class="aspect-[4/3] mt-4 overflow-hidden">
+                        <img src="/Headshots/Peter.jpg" alt="Peter Seelman" style="object-position:center 15%;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 pt-5 flex flex-col flex-1">
+                        <div class="mb-4 space-y-1">
+                            <p class="text-zinc-300 text-xs font-bold">Johns Hopkins University</p>
+                            <p class="text-zinc-500 text-[10px] uppercase tracking-wide leading-tight">BS, Physics | BA, Mathematics</p>
+                        </div>
+                        <p class="text-zinc-500 text-xs leading-relaxed mt-auto font-medium border-t border-white/5 pt-4">AI researcher with experience at JHU Applied Physics Lab (APL) and NASA. Expert in multi-agent AI systems and B2B customer discovery.</p>
+                    </div>
+                </div>
+
+                <!-- Alex -->
+                <div class="rounded-3xl bg-zinc-900/50 border border-zinc-800/50 hover:bg-zinc-900 transition-all cursor-pointer group hover:border-royal-blue/30 h-full flex flex-col overflow-hidden">
+                    <div class="p-6 pb-0">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-1">Alex Kroumov</h4>
+                        <p class="text-royal-blue text-[10px] font-bold tracking-wider uppercase">CFO</p>
+                    </div>
+                    <div class="aspect-[4/3] mt-4 overflow-hidden">
+                        <img src="/Headshots/Alex.jpeg" alt="Alex Kroumov" style="object-position:center 10%;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 pt-5 flex flex-col flex-1">
+                        <div class="mb-4 space-y-1">
+                            <p class="text-zinc-300 text-xs font-bold">Johns Hopkins University</p>
+                            <p class="text-zinc-500 text-[10px] uppercase tracking-wide leading-tight">BS/MSE, Biomedical Engineering | BS, Applied Mathematics &amp; Statistics</p>
+                        </div>
+                        <p class="text-zinc-500 text-xs leading-relaxed mt-auto font-medium border-t border-white/5 pt-4">JHU BME and Applied Math researcher specializing in entrepreneurship and financial management.</p>
+                    </div>
+                </div>
+
+                <!-- Akira -->
+                <div class="rounded-3xl bg-zinc-900/50 border border-zinc-800/50 hover:bg-zinc-900 transition-all cursor-pointer group hover:border-royal-blue/30 h-full flex flex-col overflow-hidden">
+                    <div class="p-6 pb-0">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-1">Akira Lonske</h4>
+                        <p class="text-royal-blue text-[10px] font-bold tracking-wider uppercase">CTO, Lead Developer</p>
+                    </div>
+                    <div class="aspect-[4/3] mt-4 overflow-hidden">
+                        <img src="/Headshots/Akira.jpeg" alt="Akira Lonske" style="object-position:center 45%;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 pt-5 flex flex-col flex-1">
+                        <div class="mb-4 space-y-1">
+                            <p class="text-zinc-300 text-xs font-bold">Johns Hopkins University</p>
+                            <p class="text-zinc-500 text-[10px] uppercase tracking-wide leading-tight">BS Computer Science | BS Applied Mathematics &amp; Statistics</p>
+                        </div>
+                        <p class="text-zinc-500 text-xs leading-relaxed mt-auto font-medium border-t border-white/5 pt-4">Former Amazon software engineer with expertise in full-stack development, AI systems, and rigorous software engineering practices.</p>
+                    </div>
+                </div>
+
+                <!-- Chris -->
+                <div class="rounded-3xl bg-zinc-900/50 border border-zinc-800/50 hover:bg-zinc-900 transition-all cursor-pointer group hover:border-royal-blue/30 h-full flex flex-col overflow-hidden">
+                    <div class="p-6 pb-0">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-1">Qiyue (Chris) Yao</h4>
+                        <p class="text-royal-blue text-[10px] font-bold tracking-wider uppercase">Carey Strategic Venture Fellow</p>
+                    </div>
+                    <div class="aspect-[4/3] mt-4 overflow-hidden">
+                        <img src="/Headshots/Chris.jpeg" alt="Qiyue (Chris) Yao" style="object-position:center 20%;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 pt-5 flex flex-col flex-1">
+                        <div class="mb-4 space-y-1">
+                            <p class="text-zinc-300 text-xs font-bold">Johns Hopkins University, Carey Business School</p>
+                            <p class="text-zinc-500 text-[10px] uppercase tracking-wide leading-tight">MS, Business Analytics and Artificial Intelligence</p>
+                        </div>
+                        <p class="text-zinc-500 text-xs leading-relaxed mt-auto font-medium border-t border-white/5 pt-4">Strategic advisor specializing in business analytics, AI applications, and commercialization strategy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advisory Board -->
+            <div class="mt-24 pt-20 border-t border-white/5">
+                <div class="text-center mb-12">
+                    <span class="text-royal-blue text-[10px] font-bold uppercase tracking-[0.2em] block mb-3">Advisory Board</span>
+                    <p class="text-zinc-600 text-sm max-w-xl mx-auto">Domain, institutional, and commercial validation from leading experts.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                    <!-- Dr. Riehl -->
+                    <div class="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/40 hover:border-zinc-700/60 transition-all group h-full">
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                            <div class="w-32 h-32 rounded-full flex-shrink-0 overflow-hidden border-2 border-zinc-700 shadow-xl bg-zinc-900">
+                                <img src="/Headshots/Dr_Riehl.png" alt="Dr. Emily Riehl" style="object-position:70% 5%;" class="w-full h-full object-cover">
+                            </div>
+                            <div class="min-w-0">
+                                <h4 class="text-2xl font-bold text-zinc-200 group-hover:text-white transition-colors">Dr. Emily Riehl</h4>
+                                <p class="text-zinc-500 text-sm font-medium leading-tight mt-1">Associate Professor of Mathematics, JHU</p>
+                                <p class="text-royal-blue text-xs font-bold uppercase tracking-widest mt-4">Formal Verification &amp; AI-Generated Math</p>
+                                <p class="text-zinc-400 text-base leading-relaxed mt-3">Leading expert on mathlib and formal proof systems. Provides unmatched insight into competitor weaknesses in AI mathematics.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Brown -->
+                    <div class="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/40 hover:border-zinc-700/60 transition-all group h-full">
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                            <div class="w-32 h-32 rounded-full flex-shrink-0 overflow-hidden border-2 border-zinc-700 shadow-xl bg-zinc-900">
+                                <img src="/Headshots/Dr_Brown.png" alt="Dr. Richard Brown" class="w-full h-full object-cover">
+                            </div>
+                            <div class="min-w-0">
+                                <h4 class="text-2xl font-bold text-zinc-200 group-hover:text-white transition-colors">Dr. Richard Brown</h4>
+                                <p class="text-zinc-500 text-sm font-medium leading-tight mt-1">Dean of Undergraduate Studies, JHU Mathematics</p>
+                                <p class="text-royal-blue text-xs font-bold uppercase tracking-widest mt-4">Institutional Adoption &amp; Procurement</p>
+                                <p class="text-zinc-400 text-base leading-relaxed mt-3">Our "voice of the customer," guiding pricing, procurement strategy, and institutional adoption pathways.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Marshall-Stevens -->
+                    <div class="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/40 hover:border-zinc-700/60 transition-all group h-full">
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                            <div class="w-32 h-32 rounded-full flex-shrink-0 overflow-hidden border-2 border-zinc-700 shadow-xl bg-zinc-900">
+                                <img src="/Headshots/Dr_Marhsall-Stevens.jpg" alt="Dr. Kobe Marshall-Stevens" class="w-full h-full object-cover">
+                            </div>
+                            <div class="min-w-0">
+                                <h4 class="text-2xl font-bold text-zinc-200 group-hover:text-white transition-colors">Dr. Kobe Marshall-Stevens</h4>
+                                <p class="text-zinc-500 text-sm font-medium leading-tight mt-1">Mathematics Faculty, JHU</p>
+                                <p class="text-royal-blue text-xs font-bold uppercase tracking-widest mt-4">Faculty Champion &amp; Pilot Data</p>
+                                <p class="text-zinc-400 text-base leading-relaxed mt-3">Primary Faculty Champion providing direct access to our pilot cohort and the ground-truth data to validate our BKT engine.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jennifer Harvey -->
+                    <div class="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/40 hover:border-zinc-700/60 transition-all group h-full">
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                            <div class="w-32 h-32 rounded-full flex-shrink-0 overflow-hidden border-2 border-zinc-700 shadow-xl bg-zinc-900">
+                                <img src="/Headshots/Jen_Harvey.jpeg" alt="Jennifer Harvey" class="w-full h-full object-cover">
+                            </div>
+                            <div class="min-w-0">
+                                <h4 class="text-2xl font-bold text-zinc-200 group-hover:text-white transition-colors">Jennifer Harvey</h4>
+                                <p class="text-zinc-500 text-sm font-medium leading-tight mt-1">Ex-Google Accelerator Program Manager</p>
+                                <p class="text-royal-blue text-xs font-bold uppercase tracking-widest mt-4">Brand Strategy &amp; Community Building</p>
+                                <p class="text-zinc-400 text-base leading-relaxed mt-3">15-year Google veteran guiding brand strategy and community-building to de-risk early adoption.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Iris Gupta -->
+                    <div class="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/40 hover:border-zinc-700/60 transition-all group h-full">
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                            <div class="w-32 h-32 rounded-full flex-shrink-0 overflow-hidden border-2 border-zinc-700 shadow-xl bg-zinc-900">
+                                <img src="/Headshots/Iris.jpeg" alt="Iris Gupta" class="w-full h-full object-cover">
+                            </div>
+                            <div class="min-w-0">
+                                <h4 class="text-2xl font-bold text-zinc-200 group-hover:text-white transition-colors">Iris Gupta</h4>
+                                <p class="text-zinc-500 text-sm font-medium leading-tight mt-1">Founder &amp; CEO, ProCounsel</p>
+                                <p class="text-royal-blue text-xs font-bold uppercase tracking-widest mt-4">FUEL Program Advisor</p>
+                                <p class="text-zinc-400 text-base leading-relaxed mt-3">JHU CS &amp; Economics alum. Bisciotti Award winner and founder of ProCounsel, an AI-powered legal discovery platform.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-8 border-t border-white/5 text-zinc-500 text-[10px] tracking-wide font-medium uppercase">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <img src="/logos/Altera/Altera-Logo-Cropped.png" alt="Altera Labs" class="h-4 opacity-30 grayscale contrast-50">
+                <span class="text-zinc-700">&copy; 2026 Altera-Labs.</span>
+            </div>
+            <div class="flex gap-10">
+                <a href="/privacy.html" class="hover:text-zinc-100 transition-colors tracking-[0.15em] font-bold">Privacy Policy</a>
+                <a href="/terms.html" class="hover:text-zinc-100 transition-colors tracking-[0.15em] font-bold">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== Scripts ========== -->
+    <script>
+    // Initialize Lucide icons
+    document.addEventListener('DOMContentLoaded', function() {
+        lucide.createIcons();
+    });
+
+    // Render KaTeX equations once the library loads
+    document.addEventListener('DOMContentLoaded', function() {
+        function tryRenderKatex() {
+            if (typeof katex === 'undefined') {
+                setTimeout(tryRenderKatex, 100);
+                return;
+            }
+            var main = document.getElementById('katex-main');
+            if (main) {
+                main.innerHTML = katex.renderToString(
+                    'P(\\textcolor{#476EE3}{L_n}) = P(\\textcolor{#476EE3}{L_{n-1}} \\mid \\text{obs}) + \\bigl(1 - P(\\textcolor{#476EE3}{L_{n-1}} \\mid \\text{obs})\\bigr) \\cdot \\textcolor{#34d399}{P(T)}',
+                    { displayMode: true, throwOnError: false }
+                );
+            }
+            var l1 = document.getElementById('katex-legend-1');
+            var l2 = document.getElementById('katex-legend-2');
+            var l3 = document.getElementById('katex-legend-3');
+            if (l1) l1.innerHTML = katex.renderToString('\\textcolor{#476EE3}{L_n} = \\text{Mastery}', { throwOnError: false });
+            if (l2) l2.innerHTML = katex.renderToString('\\textcolor{#34d399}{P(T)} = \\text{Transit}', { throwOnError: false });
+            if (l3) l3.innerHTML = katex.renderToString('\\text{obs} = \\text{Evidence}', { throwOnError: false });
+        }
+        tryRenderKatex();
+    });
+
+    // ===== D3 Knowledge Graph Demo =====
+    document.addEventListener('DOMContentLoaded', function() {
+        var graphData = {
+            nodes: [
+                { id: "diff", label: "Basic Differentiation", type: "concept", mastery: 0.95, weight: 2 },
+                { id: "int", label: "Geometric Integration", type: "concept", mastery: 0.85, weight: 2 },
+                { id: "vec", label: "Vector Decomposition", type: "concept", mastery: 0.8, weight: 2 },
+                { id: "pos", label: "Position & Displacement", type: "concept", mastery: 0.75, weight: 3 },
+                { id: "vel", label: "Instantaneous Velocity", type: "concept", mastery: 0.6, weight: 3 },
+                { id: "acc", label: "Constant Acceleration", type: "concept", mastery: 0.45, weight: 3 },
+                { id: "newton", label: "Newton's Second Law", type: "concept", mastery: 0.35, weight: 4 },
+                { id: "fbd", label: "Free Body Diagrams", type: "concept", mastery: 0.25, weight: 4 },
+                { id: "err_calc", label: "Calculation Error", type: "misconception", mastery: 0.1, weight: 1 }
+            ],
+            links: [
+                { source: "diff", target: "vel", type: "is_prerequisite_for" },
+                { source: "int", target: "pos", type: "is_prerequisite_for" },
+                { source: "vec", target: "fbd", type: "is_prerequisite_for" },
+                { source: "vel", target: "acc", type: "is_prerequisite_for" },
+                { source: "acc", target: "newton", type: "is_prerequisite_for" },
+                { source: "fbd", target: "newton", type: "is_component_of" },
+                { source: "newton", target: "err_calc", type: "conflicts_with" }
+            ]
+        };
+
+        // Edge styles
+        var EDGE_STYLES = {
+            is_prerequisite_for: { label: 'Prerequisite', color: '#476ee3', dasharray: '0', markerId: 'arrow-indigo' },
+            is_component_of:     { label: 'Component',    color: '#34d399', dasharray: '4,2', markerId: 'arrow-emerald' },
+            conflicts_with:      { label: 'Conflict',     color: '#f43f5e', dasharray: '0', markerId: 'arrow-rose' },
+            is_analogous_to:     { label: 'Analogy',      color: '#22d3ee', dasharray: '2,2', markerId: 'arrow-cyan' },
+            is_specialization_of:{ label: 'Specialization',color: '#fbbf24', dasharray: '6,2', markerId: 'arrow-amber' },
+            is_application_of:   { label: 'Application',  color: '#a855f7', dasharray: '0', markerId: 'arrow-violet' },
+            assesses_concept:    { label: 'Assessment',   color: '#f97316', dasharray: '1,3', markerId: 'arrow-orange' }
+        };
+        var DEFAULT_EDGE = { label: 'Related', color: '#476ee3', dasharray: '0', markerId: 'arrow-indigo' };
+
+        function getEdgeStyle(type) {
+            if (type === 'prerequisite') type = 'is_prerequisite_for';
+            if (type === 'is_related_to') type = 'is_analogous_to';
+            return EDGE_STYLES[type] || DEFAULT_EDGE;
+        }
+
+        function getMasteryColor(mastery) {
+            if (mastery >= 0.7) return { fill: '#059669', stroke: '#34d399' };
+            if (mastery >= 0.4) return { fill: '#d97706', stroke: '#fbbf24' };
+            return { fill: '#be123c', stroke: '#f43f5e' };
+        }
+
+        var container = document.getElementById('graph-container');
+        var svgEl = document.getElementById('graph-svg');
+        var tooltip = document.getElementById('graph-tooltip');
+
+        if (!container || !svgEl) return;
+
+        var width = container.clientWidth;
+        var height = container.clientHeight;
+
+        var svg = d3.select(svgEl)
+            .attr('viewBox', [0, 0, width, height])
+            .style('overflow', 'visible');
+
+        var g = svg.append('g');
+
+        // Defs: glow filter + arrow markers
+        var defs = svg.append('defs');
+        var filter = defs.append('filter').attr('id', 'glow');
+        filter.append('feGaussianBlur').attr('stdDeviation', '2.5').attr('result', 'coloredBlur');
+        var feMerge = filter.append('feMerge');
+        feMerge.append('feMergeNode').attr('in', 'coloredBlur');
+        feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+        var markers = [
+            ['arrow-indigo', '#476ee3'], ['arrow-rose', '#f43f5e'], ['arrow-cyan', '#22d3ee'],
+            ['arrow-emerald', '#34d399'], ['arrow-amber', '#fbbf24'], ['arrow-violet', '#a855f7'],
+            ['arrow-orange', '#f97316']
+        ];
+        markers.forEach(function(m) {
+            defs.append('marker')
+                .attr('id', m[0]).attr('viewBox', '0 -5 10 10')
+                .attr('refX', 24).attr('refY', 0)
+                .attr('markerWidth', 6).attr('markerHeight', 6)
+                .attr('orient', 'auto')
+                .append('path').attr('fill', m[1]).attr('d', 'M0,-5L10,0L0,5');
+        });
+
+        // Deep copy data for simulation
+        var nodes = graphData.nodes.map(function(n) { return Object.assign({}, n); });
+        var links = graphData.links.map(function(l) { return Object.assign({}, l); });
+
+        var simulation = d3.forceSimulation(nodes)
+            .force('link', d3.forceLink(links).id(function(d) { return d.id; }).distance(90))
+            .force('charge', d3.forceManyBody().strength(-300))
+            .force('center', d3.forceCenter(width / 2, height / 2))
+            .force('collide', d3.forceCollide().radius(30));
+
+        var link = g.append('g').selectAll('line').data(links).join('line')
+            .attr('stroke-width', function(d) { return d.type === 'is_prerequisite_for' ? 2 : 1.5; })
+            .attr('stroke', function(d) { return getEdgeStyle(d.type).color; })
+            .attr('stroke-dasharray', function(d) { return getEdgeStyle(d.type).dasharray; })
+            .attr('marker-end', function(d) { var s = getEdgeStyle(d.type); return s.markerId ? 'url(#' + s.markerId + ')' : null; })
+            .style('stroke-opacity', 0.8);
+
+        var node = g.append('g').selectAll('g').data(nodes).join('g')
+            .attr('cursor', 'grab');
+
+        // Drag
+        node.call(d3.drag()
+            .on('start', function(event) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                event.subject.fx = event.subject.x;
+                event.subject.fy = event.subject.y;
+                container.style.cursor = 'grabbing';
+            })
+            .on('drag', function(event) {
+                event.subject.fx = event.x;
+                event.subject.fy = event.y;
+            })
+            .on('end', function(event) {
+                if (!event.active) simulation.alphaTarget(0);
+                event.subject.fx = null;
+                event.subject.fy = null;
+                container.style.cursor = 'grab';
+            })
+        );
+
+        // Draw nodes
+        node.each(function(d) {
+            var el = d3.select(this);
+            // Invisible hit area
+            el.append('circle').attr('r', 20).attr('fill', 'transparent');
+
+            var isMisconception = d.type === 'misconception';
+            if (isMisconception) {
+                el.append('rect')
+                    .attr('width', 20).attr('height', 20).attr('x', -10).attr('y', -10)
+                    .attr('fill', '#1e1b4b').attr('stroke', '#f43f5e').attr('stroke-width', 2)
+                    .style('filter', 'url(#glow)');
+            } else {
+                var mc = getMasteryColor(d.mastery);
+                el.append('circle')
+                    .attr('r', 8 + Math.sqrt(d.weight || 1) * 2)
+                    .attr('fill', mc.fill).attr('stroke', mc.stroke).attr('stroke-width', 2)
+                    .style('filter', 'url(#glow)')
+                    .attr('class', 'node-circle');
+            }
+        });
+
+        node.append('text')
+            .text(function(d) { return d.label; })
+            .attr('x', 14).attr('y', 4)
+            .attr('font-family', 'monospace').attr('font-size', '10px')
+            .attr('fill', '#a1a1aa')
+            .style('pointer-events', 'none').style('user-select', 'none');
+
+        // Click to toggle mastery
+        node.on('click', function(event, d) {
+            event.stopPropagation();
+
+            // Cycle mastery
+            if (d.mastery === 0.95) d.mastery = 0.45;
+            else if (d.mastery === 0.45) d.mastery = 0.1;
+            else d.mastery = 0.95;
+
+            // Update color
+            if (d.type !== 'misconception') {
+                var mc = getMasteryColor(d.mastery);
+                d3.select(this).select('.node-circle')
+                    .transition().duration(300)
+                    .attr('fill', mc.fill).attr('stroke', mc.stroke);
+            }
+
+            // Highlight connected
+            var connectedIds = new Set();
+            connectedIds.add(d.id);
+            links.forEach(function(l) {
+                var sid = typeof l.source === 'string' ? l.source : l.source.id;
+                var tid = typeof l.target === 'string' ? l.target : l.target.id;
+                if (sid === d.id) connectedIds.add(tid);
+                if (tid === d.id) connectedIds.add(sid);
+            });
+
+            node.transition().duration(200).style('opacity', function(n) {
+                return connectedIds.has(n.id) ? 1 : 0.2;
+            });
+            link.transition().duration(200).style('opacity', function(l) {
+                var sid = typeof l.source === 'string' ? l.source : l.source.id;
+                var tid = typeof l.target === 'string' ? l.target : l.target.id;
+                return (sid === d.id || tid === d.id) ? 0.8 : 0.05;
+            });
+        });
+
+        // Tooltip
+        node.on('mouseenter', function(event, d) {
+            var rect = container.getBoundingClientRect();
+            var masteryHtml = '';
+            if (typeof d.mastery === 'number') {
+                var cls = d.mastery >= 0.7 ? 'color:#34d399' : d.mastery >= 0.4 ? 'color:#fbbf24' : 'color:#f43f5e';
+                masteryHtml = '<div style="font-size:12px;color:#d4d4d8;">Mastery: <span style="font-weight:600;' + cls + '">' + Math.round(d.mastery * 100) + '%</span></div>';
+            }
+            tooltip.innerHTML =
+                '<div style="font-size:14px;font-weight:600;color:#f4f4f5;margin-bottom:4px;">' + d.label + '</div>' +
+                '<div style="font-size:12px;color:#a1a1aa;margin-bottom:8px;text-transform:capitalize;">' + (d.type || '') + '</div>' +
+                masteryHtml;
+            tooltip.style.left = (event.clientX - rect.left + 10) + 'px';
+            tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
+            tooltip.classList.remove('hidden');
+        }).on('mouseleave', function() {
+            tooltip.classList.add('hidden');
+        });
+
+        // Reset on background click
+        svg.on('click', function() {
+            node.transition().duration(200).style('opacity', 1);
+            link.transition().duration(200).style('opacity', 0.8);
+        });
+
+        // Zoom
+        var zoom = d3.zoom()
+            .scaleExtent([0.1, 4])
+            .on('zoom', function(event) { g.attr('transform', event.transform); });
+        svg.call(zoom).on('dblclick.zoom', null);
+
+        // Simulation tick
+        simulation.on('tick', function() {
+            link
+                .attr('x1', function(d) { return d.source.x; })
+                .attr('y1', function(d) { return d.source.y; })
+                .attr('x2', function(d) { return d.target.x; })
+                .attr('y2', function(d) { return d.target.y; });
+            node.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+        });
+
+        // Build legend
+        var legendEl = document.getElementById('graph-legend');
+        if (legendEl) {
+            // Gather unique edge types from data
+            var usedEdgeTypes = {};
+            graphData.links.forEach(function(l) {
+                var t = l.type;
+                if (t === 'prerequisite') t = 'is_prerequisite_for';
+                if (t === 'is_related_to') t = 'is_analogous_to';
+                usedEdgeTypes[t] = true;
+            });
+
+            var legendHtml = '';
+            // Node types
+            legendHtml += '<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#476ee3;box-shadow:0 0 6px #476ee3;"></div><span>Concept</span></div>';
+            legendHtml += '<div class="flex items-center gap-2"><div class="w-3 h-3" style="background:#1e1b4b;border:1px solid #f43f5e;box-shadow:0 0 6px #f43f5e;"></div><span>Misconception</span></div>';
+            // Edge types
+            Object.keys(usedEdgeTypes).forEach(function(type) {
+                var s = EDGE_STYLES[type];
+                if (!s) return;
+                var borderStyle = s.dasharray === '0' ? 'solid' : 'dashed';
+                legendHtml += '<div class="flex items-center gap-2"><div class="w-6 h-0.5" style="border-top:2px ' + borderStyle + ' ' + s.color + ';"></div><span>' + s.label + '</span></div>';
+            });
+            // Mastery legend
+            legendHtml += '<div class="w-px h-4 bg-zinc-800 mx-1"></div>';
+            legendHtml += '<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#059669;box-shadow:0 0 5px #34d399;"></div><span>High Mastery</span></div>';
+            legendHtml += '<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#d97706;box-shadow:0 0 5px #fbbf24;"></div><span>Medium</span></div>';
+            legendHtml += '<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#be123c;box-shadow:0 0 5px #f43f5e;"></div><span>Low</span></div>';
+
+            legendEl.innerHTML = legendHtml;
+        }
+    });
+    </script>
+</body>
 </html>
