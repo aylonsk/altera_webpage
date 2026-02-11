@@ -1,0 +1,104 @@
+{
+    "nodes": [
+        {
+            "id": "diff",
+            "label": "Basic Differentiation",
+            "type": "concept",
+            "mastery": 0.95,
+            "weight": 2
+        },
+        {
+            "id": "int",
+            "label": "Geometric Integration",
+            "type": "concept",
+            "mastery": 0.85,
+            "weight": 2
+        },
+        {
+            "id": "vec",
+            "label": "Vector Decomposition",
+            "type": "concept",
+            "mastery": 0.8,
+            "weight": 2
+        },
+        {
+            "id": "pos",
+            "label": "Position & Displacement",
+            "type": "concept",
+            "mastery": 0.75,
+            "weight": 3
+        },
+        {
+            "id": "vel",
+            "label": "Instantaneous Velocity",
+            "type": "concept",
+            "mastery": 0.6,
+            "weight": 3
+        },
+        {
+            "id": "acc",
+            "label": "Constant Acceleration",
+            "type": "concept",
+            "mastery": 0.45,
+            "weight": 3
+        },
+        {
+            "id": "newton",
+            "label": "Newton's Second Law",
+            "type": "concept",
+            "mastery": 0.35,
+            "weight": 4
+        },
+        {
+            "id": "fbd",
+            "label": "Free Body Diagrams",
+            "type": "concept",
+            "mastery": 0.25,
+            "weight": 4
+        },
+        {
+            "id": "err_calc",
+            "label": "Calculation Error",
+            "type": "misconception",
+            "mastery": 0.1,
+            "weight": 1
+        }
+    ],
+    "links": [
+        {
+            "source": "diff",
+            "target": "vel",
+            "type": "is_prerequisite_for"
+        },
+        {
+            "source": "int",
+            "target": "pos",
+            "type": "is_prerequisite_for"
+        },
+        {
+            "source": "vec",
+            "target": "fbd",
+            "type": "is_prerequisite_for"
+        },
+        {
+            "source": "vel",
+            "target": "acc",
+            "type": "is_prerequisite_for"
+        },
+        {
+            "source": "acc",
+            "target": "newton",
+            "type": "is_prerequisite_for"
+        },
+        {
+            "source": "fbd",
+            "target": "newton",
+            "type": "is_component_of"
+        },
+        {
+            "source": "newton",
+            "target": "err_calc",
+            "type": "conflicts_with"
+        }
+    ]
+}

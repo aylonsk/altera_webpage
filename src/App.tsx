@@ -3,16 +3,16 @@ import katex from 'katex';
 import 'katex/dist/katex.min.css';
 import {
     Brain,
-
     ChevronRight,
     LayoutDashboard,
-    Target,
-
     MessageSquare,
     Zap,
     ExternalLink,
-    User
+    User,
+    Cpu,
+    Network
 } from 'lucide-react';
+import KnowledgeDemo from './components/graph/KnowledgeDemo';
 
 const App: React.FC = () => {
     return (
@@ -30,7 +30,7 @@ const App: React.FC = () => {
                         <a href="#product" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Product</a>
                         <a href="#traction" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Traction</a>
                         <a href="https://altera-labs.web.app" target="_blank" rel="noopener noreferrer">
-                            <button className="bg-royal-blue hover:bg-royal-blue/90 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all hover:shadow-[0_0_20px_rgba(71,110,227,0.3)]">
+                            <button className="bg-royal-blue hover:bg-royal-blue/90 text-white px-7 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(71,110,227,0.4)] border border-white/10 transform-gpu antialiased">
                                 Try the Beta
                             </button>
                         </a>
@@ -59,9 +59,9 @@ const App: React.FC = () => {
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4 relative z-10">
                         <a href="https://altera-labs.web.app" target="_blank" rel="noopener noreferrer">
-                            <button className="bg-royal-blue hover:bg-royal-blue/90 text-white px-8 py-3 rounded-2xl font-bold flex items-center gap-2 group transition-all text-base hover:shadow-lg hover:shadow-royal-blue/20 border border-white/5">
+                            <button className="bg-royal-blue hover:bg-royal-blue/90 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 group transition-all text-base hover:scale-[1.02] hover:shadow-xl hover:shadow-royal-blue/25 border border-white/10 transform-gpu antialiased">
                                 Try the Beta
-                                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
                         </a>
                         <a href="#problem" className="text-zinc-400 hover:text-white font-bold text-sm transition-all uppercase tracking-widest px-8 py-3 rounded-2xl border border-white/10 hover:border-white/20 hover:bg-white/5">
@@ -153,9 +153,9 @@ const App: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="mt-8 pt-8 border-t border-zinc-800">
-                                    <p className="text-sm font-bold text-zinc-400 mb-2">Outcome: Student bypasses reasoning entirely</p>
+                                    <p className="text-sm font-bold text-zinc-400 mb-4">Outcome: Student bypasses reasoning entirely</p>
                                     <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden">
-                                        <div className="h-full w-1/4 bg-zinc-700"></div>
+                                        <div className="h-full w-[10%] bg-red-500/80 animate-pulse"></div>
                                     </div>
                                 </div>
                             </div>
@@ -256,21 +256,20 @@ const App: React.FC = () => {
                             <div className="relative z-10">
                                 <div className="flex items-center gap-2 mb-6">
                                     <div className="p-2.5 bg-royal-blue/10 rounded-xl border border-royal-blue/20">
-                                        <Target className="w-5 h-5 text-royal-blue" />
+                                        <Cpu className="w-5 h-5 text-royal-blue" />
                                     </div>
-                                    <span className="text-[11px] font-bold text-royal-blue uppercase tracking-[0.15em]">Core Engine</span>
+                                    <span className="text-[11px] font-bold text-royal-blue uppercase tracking-[0.15em]">Proprietary Engine</span>
                                 </div>
-                                <h3 className="text-3xl font-bold mb-4">Bayesian Mastery Engine</h3>
-                                <p className="text-zinc-400 text-base leading-relaxed max-w-md mb-8">
-                                    Precision-weighted Bayesian fusion mathematically combines prior knowledge
-                                    with real-time evidence to generate accurate concept mastery probabilities.
+                                <h3 className="text-3xl font-bold mb-4">State-Aware BKT</h3>
+                                <p className="text-zinc-400 text-base leading-relaxed max-w-lg mb-8">
+                                    Our probabilistic mastery engine uses **Recursive CTE Super-Queries** to resolve multi-hop dependencies in <span className="text-royal-blue font-bold">O(1)</span> time, dynamically injecting student state into every LLM inference.
                                 </p>
                             </div>
 
                             {/* BKT Equation */}
                             <div className="relative z-10 mt-auto">
-                                <div className="p-5 rounded-2xl bg-zinc-900/80 border border-white/10 backdrop-blur-sm">
-                                    <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mb-4">Bayesian Knowledge Tracing Update</p>
+                                <div className="p-5 rounded-2xl bg-zinc-900/80 border border-white/10 backdrop-blur-sm group-hover:border-royal-blue/30 transition-colors">
+                                    <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest mb-4">Bayesian Mastery Transition Model</p>
                                     <div className="text-center overflow-x-auto [&_.katex]:text-white" dangerouslySetInnerHTML={{
                                         __html: katex.renderToString(
                                             String.raw`P(\textcolor{#476EE3}{L_n}) = P(\textcolor{#476EE3}{L_{n-1}} \mid \text{obs}) + \bigl(1 - P(\textcolor{#476EE3}{L_{n-1}} \mid \text{obs})\bigr) \cdot \textcolor{#34d399}{P(T)}`,
@@ -286,21 +285,22 @@ const App: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Phase 2: FastAPI / Graph */}
+                        {/* Phase 2: Ontology Graph */}
                         <div className="md:col-span-4 bento-card p-10 flex flex-col group bg-zinc-900 border-zinc-800">
                             <div className="flex items-center gap-2 mb-6">
                                 <div className="p-2.5 bg-royal-blue/10 rounded-xl border border-royal-blue/20">
-                                    <Zap className="w-5 h-5 text-royal-blue" />
+                                    <Network className="w-5 h-5 text-royal-blue" />
                                 </div>
-                                <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.15em]">Infrastructure</span>
+                                <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.15em]">Dynamic Ontology</span>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4 leading-tight">Semantic Knowledge Graph</h3>
+                            <h3 className="text-2xl font-bold mb-4 leading-tight">Multi-Relational Knowledge Graph</h3>
                             <p className="text-zinc-500 text-sm leading-relaxed mb-8">
-                                Structured pedagogical graph (7-Edge Ontology) preventing hallucinations via map-based reasoning.
+                                AI-Native curriculum mapping using **KNN Auto-Generating Edges** to establish N-dimensional relationships between STEM concepts.
                             </p>
-                            <div className="mt-auto flex items-center gap-3">
-                                <div className="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[10px] font-bold text-zinc-400 uppercase">FastAPI</div>
-                                <div className="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[10px] font-bold text-zinc-400 uppercase">Python</div>
+                            <div className="mt-auto flex flex-wrap gap-2">
+                                <div className="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">FastAPI</div>
+                                <div className="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">pgvector</div>
+                                <div className="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">Neo4j</div>
                             </div>
                         </div>
 
@@ -311,10 +311,13 @@ const App: React.FC = () => {
                                     <div className="p-2.5 bg-zinc-800/50 rounded-xl border border-zinc-700/50">
                                         <MessageSquare className="w-5 h-5 text-zinc-300" />
                                     </div>
-                                    <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.15em]">Interface</span>
+                                    <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.15em]">Latency-Masked UX</span>
                                 </div>
-                                <h4 className="text-xl font-bold mb-2">Socratic AI Tutor</h4>
-                                <p className="text-xs text-zinc-500 leading-relaxed uppercase font-bold tracking-widest italic">Guiding labor, not answers.</p>
+                                <h4 className="text-xl font-bold mb-2">Socratic UI Sync</h4>
+                                <p className="text-xs text-zinc-500 leading-relaxed uppercase font-bold tracking-widest italic mb-4">Context Injection Layer</p>
+                                <p className="text-xs text-zinc-500 leading-relaxed">
+                                    Streaming mastery updates with UI state synchronization to provide instant, high-fidelity feedback.
+                                </p>
                             </div>
                         </div>
 
@@ -329,17 +332,79 @@ const App: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Phase 5: Dashboard */}
-                        <div className="md:col-span-4 bento-card p-10 flex flex-col justify-between group bg-royal-blue">
-                            <div>
-                                <div className="flex items-center gap-2 mb-6">
-                                    <div className="p-2.5 bg-white/10 rounded-xl border border-white/20">
-                                        <LayoutDashboard className="w-5 h-5 text-white" />
-                                    </div>
-                                    <span className="text-[11px] font-bold text-white/50 uppercase tracking-[0.15em]">Insights</span>
+                        {/* Phase 5: Dashboard with Real Screenshot */}
+                        <div className="md:col-span-4 bento-card p-6 flex flex-col group bg-zinc-900 border-zinc-800 overflow-hidden">
+                            <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center gap-2 text-zinc-500">
+                                    <LayoutDashboard className="w-4 h-4" />
+                                    <span className="text-[10px] font-bold uppercase tracking-widest">Live Ontology Build</span>
                                 </div>
-                                <h4 className="text-xl font-bold mb-2 text-white">Institutional Intelligence</h4>
-                                <p className="text-sm text-white/70 leading-relaxed">Quantifiable impact on student retention for administrators.</p>
+                                <div className="flex gap-1">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-red-500/30"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500/30"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/30"></div>
+                                </div>
+                            </div>
+
+                            <div className="relative flex-1 rounded-lg overflow-hidden border border-white/5 bg-black/40 mb-4 group-hover:border-royal-blue/30 transition-colors">
+                                <img
+                                    src="/Users/pseelma1/.gemini/antigravity/brain/0cd2f3b2-c8e4-491a-aacf-c4a3f4fce5f6/media__1770847600959.png"
+                                    alt="Actual platform Knowledge Graph for PDE course"
+                                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-zinc-900/90 to-transparent"></div>
+                                <div className="absolute bottom-3 left-3 text-[8px] font-mono text-cyan-400 animate-pulse">
+                                    [RESOLVING: Partial Differential Equations]
+                                </div>
+                            </div>
+
+                            <h4 className="text-sm font-bold mb-1 text-white">Institutional Intelligence</h4>
+                            <p className="text-[10px] text-white/50 leading-relaxed">Real-world deployment: Mapping 42 interconnected concepts in a Senior PDE course.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Interactive Simulation Section */}
+            <section className="py-24 px-8 bg-zinc-950 border-y border-white/5 overflow-hidden relative">
+                <div className="absolute inset-0 bg-royal-blue/5 blur-[120px] -z-10"></div>
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                        <div className="lg:col-span-4">
+                            <div className="p-3 bg-royal-blue/10 rounded-2xl border border-royal-blue/20 inline-flex mb-6">
+                                <Zap className="w-6 h-6 text-royal-blue" />
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">Interactive <br />Cognitive Graph.</h2>
+                            <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+                                Experience the physics-based simulation of our state-aware ontology. This demo uses our production D3 engine and a curriculum derived from an <strong>Advanced Kinematics</strong> syllabus.
+                            </p>
+                            <div className="space-y-4">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-bold text-zinc-200">Mastery Encoding</p>
+                                        <p className="text-xs text-zinc-500">Node colors update in real-time as the BKT engine processes student evidence.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-6 h-6 rounded-full bg-royal-blue/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <div className="w-2 h-2 rounded-full bg-royal-blue shadow-[0_0_8px_#476ee3]" />
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-bold text-zinc-200">Force-Directed UI</p>
+                                        <p className="text-xs text-zinc-500">Draggable physics simulation preserves the pedagogical structure of the graph.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="lg:col-span-8">
+                            <div className="p-1 rounded-[2.5rem] bg-gradient-to-br from-zinc-800 to-zinc-950 border border-white/5 shadow-2xl relative">
+                                <div className="absolute -top-6 -left-6 w-32 h-32 bg-royal-blue/20 blur-3xl -z-10 animate-pulse"></div>
+                                <div className="bg-zinc-950 rounded-[2.25rem] overflow-hidden border border-white/5 shadow-inner p-4">
+                                    <KnowledgeDemo />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -551,7 +616,7 @@ const App: React.FC = () => {
                                     name: 'Dr. Emily Riehl',
                                     title: 'Associate Professor of Mathematics, JHU',
                                     headshot: '/Headshots/Dr_Riehl.png',
-                                    imgStyle: { objectPosition: '55% 40%' }, // Move head right and down
+                                    imgStyle: { objectPosition: '70% 5%' }, // Cut more off left, keep forehead
                                     focus: 'Formal Verification & AI-Generated Math',
                                     detail: 'Leading expert on mathlib and formal proof systems. Provides unmatched insight into competitor weaknesses in AI mathematics.',
                                 },
@@ -566,7 +631,6 @@ const App: React.FC = () => {
                                     name: 'Dr. Kobe Marshall-Stevens',
                                     title: 'Mathematics Faculty, JHU',
                                     headshot: '/Headshots/Dr_Marhsall-Stevens.jpg',
-                                    imgStyle: { objectPosition: 'center 15%', transform: 'scale(0.9)' }, // Fixed: center 15% to see forehead and chin
                                     focus: 'Faculty Champion & Pilot Data',
                                     detail: 'Primary Faculty Champion providing direct access to our pilot cohort and the ground-truth data to validate our BKT engine.',
                                 },
@@ -584,9 +648,10 @@ const App: React.FC = () => {
                                     focus: 'FUEL Program Advisor',
                                     detail: 'JHU CS & Economics alum. Bisciotti Award winner and founder of ProCounsel, an AI-powered legal discovery platform.',
                                 },
-                            ].map((advisor) => (
+                            ].map((advisor: { name: string; title: string; headshot: string; focus: string; detail: string; imgStyle?: React.CSSProperties }) => (
                                 <div key={advisor.name} className="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/40 hover:border-zinc-700/60 transition-all group h-full">
                                     <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+
                                         <div className="w-32 h-32 rounded-full flex-shrink-0 overflow-hidden border-2 border-zinc-700 shadow-xl bg-zinc-900">
                                             {advisor.headshot ? (
                                                 <img src={advisor.headshot} alt={advisor.name} style={advisor.imgStyle} className="w-full h-full object-cover" />
