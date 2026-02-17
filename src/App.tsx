@@ -630,7 +630,7 @@ const App: React.FC = () => {
                                 {
                                     name: 'Dr. Kobe Marshall-Stevens',
                                     title: 'Mathematics Faculty, JHU',
-                                    headshot: '/Headshots/Dr_Marhsall-Stevens.jpg',
+                                    headshot: '/Headshots/Dr_Marshall-Stevens.jpg',
                                     focus: 'Faculty Champion & Pilot Data',
                                     detail: 'Primary Faculty Champion providing direct access to our pilot cohort and the ground-truth data to validate our BKT engine.',
                                 },

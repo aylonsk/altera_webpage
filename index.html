@@ -222,7 +222,7 @@
                             </div>
                             <div class="flex gap-4 justify-end">
                                 <div class="p-4 rounded-2xl bg-royal-blue/10 border border-royal-blue/20 text-xs text-zinc-200 italic max-w-[80%]">
-                                    Instead of the answer, let's look at your knowledge graph. You master Velocity, but are struggling with Area Under the Curve. Let's explore the geometric relationship first.
+                                    Based on your knowledge graph, you've <strong class="text-white not-italic">mastered Velocity (94%)</strong> but your <strong class="text-white not-italic">Area Under the Curve mastery is at 38%</strong>. Displacement is the integral of velocity over time. Let's start there: can you sketch what the area under a v(t) curve represents physically?
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-royal-blue flex-shrink-0 flex items-center justify-center">
                                     <i data-lucide="brain" class="w-4 h-4 text-white"></i>
@@ -270,10 +270,17 @@
                     <!-- Faculty Testimonial -->
                     <div class="mt-10 p-5 rounded-2xl bg-white/[0.03] border border-white/10 relative">
                         <div class="absolute -top-3 left-5 px-3 py-0.5 bg-zinc-950 text-[9px] font-bold text-royal-blue uppercase tracking-widest">Faculty Endorsement</div>
-                        <p class="text-zinc-400 text-sm leading-relaxed italic">
-                            "A tool that would be <strong class="text-zinc-200 not-italic">indispensable to me as an instructor</strong>."
-                        </p>
-                        <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-wider mt-3">— Prof. Kobe Marshall-Stevens, JHU Mathematics</p>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full flex-shrink-0 overflow-hidden border border-zinc-700 bg-zinc-900 mt-0.5">
+                                <img src="/Headshots/Dr_Marshall-Stevens.jpg" alt="Prof. Kobe Marshall-Stevens" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="text-zinc-400 text-sm leading-relaxed italic">
+                                    "A tool that would be <strong class="text-zinc-200 not-italic">indispensable to me as an instructor</strong>."
+                                </p>
+                                <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-wider mt-3">— Prof. Kobe Marshall-Stevens, JHU Mathematics</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -333,7 +340,8 @@
                     <div class="mt-auto flex flex-wrap gap-2">
                         <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">FastAPI</div>
                         <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">pgvector</div>
-                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">Neo4j</div>
+                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">Supabase</div>
+                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">D3.js</div>
                     </div>
                 </div>
 
@@ -348,9 +356,28 @@
                         </div>
                         <h4 class="text-xl font-bold mb-2">Socratic UI Sync</h4>
                         <p class="text-xs text-zinc-500 leading-relaxed uppercase font-bold tracking-widest italic mb-4">Context Injection Layer</p>
-                        <p class="text-xs text-zinc-500 leading-relaxed">
+                        <p class="text-xs text-zinc-500 leading-relaxed mb-4">
                             Streaming mastery updates with UI state synchronization to provide instant, high-fidelity feedback.
                         </p>
+                        <ul class="space-y-2 text-xs text-zinc-500">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1 h-1 rounded-full bg-royal-blue"></div>
+                                Real-time BKT state injection into LLM context
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1 h-1 rounded-full bg-royal-blue"></div>
+                                Zustand-powered optimistic UI updates
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1 h-1 rounded-full bg-royal-blue"></div>
+                                3-layer Redis caching for sub-200ms response
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">React 19</div>
+                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">Zustand</div>
+                        <div class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-[9px] font-bold text-zinc-400 uppercase tracking-tighter">Redis</div>
                     </div>
                 </div>
 
@@ -362,7 +389,21 @@
                             <span class="text-[11px] font-bold text-royal-blue uppercase tracking-[0.15em]">Integrated Tier Partner</span>
                         </div>
                         <h4 class="text-xl font-bold mb-2">Canvas / LTI 1.3</h4>
-                        <p class="text-[11px] text-zinc-500 font-medium">LTI Advantage certified integration with grade services.</p>
+                        <p class="text-[11px] text-zinc-500 font-medium mb-4">LTI Advantage certified integration with grade services.</p>
+                        <ul class="space-y-2 text-xs text-zinc-500">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1 h-1 rounded-full bg-royal-blue"></div>
+                                One-click deployment via LTI 1.3 Advantage
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1 h-1 rounded-full bg-royal-blue"></div>
+                                Automatic grade passback to Canvas Gradebook
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1 h-1 rounded-full bg-royal-blue"></div>
+                                Roster sync and deep-linking support
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -380,8 +421,35 @@
                         </div>
                     </div>
                     <div class="relative flex-1 rounded-lg overflow-hidden border border-white/5 bg-black/40 mb-4 group-hover:border-royal-blue/30 transition-colors">
-                        <div class="w-full h-full min-h-[200px] flex items-center justify-center">
-                            <p class="text-zinc-600 text-xs font-mono">[Knowledge Graph Preview]</p>
+                        <div class="w-full h-full min-h-[200px] flex items-center justify-center p-4">
+                            <svg viewBox="0 0 200 160" class="w-full h-full max-h-[180px] opacity-60 group-hover:opacity-80 transition-opacity">
+                                <defs>
+                                    <filter id="mini-glow">
+                                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                    </filter>
+                                </defs>
+                                <!-- Edges -->
+                                <line x1="100" y1="28" x2="55" y2="75" stroke="#476ee3" stroke-width="1" opacity="0.5"/>
+                                <line x1="100" y1="28" x2="145" y2="75" stroke="#476ee3" stroke-width="1" opacity="0.5"/>
+                                <line x1="55" y1="75" x2="30" y2="125" stroke="#476ee3" stroke-width="1" opacity="0.3" stroke-dasharray="4,2"/>
+                                <line x1="55" y1="75" x2="80" y2="125" stroke="#34d399" stroke-width="1" opacity="0.4" stroke-dasharray="4,2"/>
+                                <line x1="145" y1="75" x2="120" y2="125" stroke="#476ee3" stroke-width="1" opacity="0.3"/>
+                                <line x1="145" y1="75" x2="170" y2="125" stroke="#f43f5e" stroke-width="1" opacity="0.3" stroke-dasharray="2,2"/>
+                                <line x1="80" y1="125" x2="120" y2="125" stroke="#fbbf24" stroke-width="1" opacity="0.3" stroke-dasharray="6,2"/>
+                                <!-- Nodes -->
+                                <circle cx="100" cy="28" r="6" fill="#059669" stroke="#34d399" stroke-width="1.5" filter="url(#mini-glow)"/>
+                                <circle cx="55" cy="75" r="5" fill="#d97706" stroke="#fbbf24" stroke-width="1.5" filter="url(#mini-glow)"/>
+                                <circle cx="145" cy="75" r="5" fill="#059669" stroke="#34d399" stroke-width="1.5" filter="url(#mini-glow)"/>
+                                <circle cx="30" cy="125" r="4" fill="#be123c" stroke="#f43f5e" stroke-width="1.5" filter="url(#mini-glow)"/>
+                                <circle cx="80" cy="125" r="4" fill="#d97706" stroke="#fbbf24" stroke-width="1.5" filter="url(#mini-glow)"/>
+                                <circle cx="120" cy="125" r="4" fill="#059669" stroke="#34d399" stroke-width="1.5" filter="url(#mini-glow)"/>
+                                <rect x="166" y="121" width="8" height="8" fill="#1e1b4b" stroke="#f43f5e" stroke-width="1.5" filter="url(#mini-glow)"/>
+                                <!-- Labels -->
+                                <text x="100" y="16" text-anchor="middle" fill="#a1a1aa" font-size="6" font-family="monospace">PDEs</text>
+                                <text x="47" y="67" text-anchor="middle" fill="#a1a1aa" font-size="5" font-family="monospace">Fourier</text>
+                                <text x="153" y="67" text-anchor="middle" fill="#a1a1aa" font-size="5" font-family="monospace">Boundary</text>
+                            </svg>
                         </div>
                         <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-zinc-900/90 to-transparent"></div>
                         <div class="absolute bottom-3 left-3 text-[8px] font-mono text-cyan-400 animate-pulse">
@@ -435,7 +503,8 @@
                         <div class="bg-zinc-950 rounded-[2.25rem] overflow-hidden border border-white/5 shadow-inner p-4">
                             <!-- Knowledge Graph Demo Container -->
                             <div class="relative group" id="knowledge-demo">
-                                <div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+                                <!-- Header bar -->
+                                <div class="flex items-center justify-between mb-3">
                                     <div class="bg-zinc-950/80 px-3 py-1.5 rounded-full border border-zinc-800 text-[10px] font-mono text-cyan-400 flex items-center gap-2 backdrop-blur-md">
                                         <span class="relative flex h-2 w-2">
                                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -443,13 +512,8 @@
                                         </span>
                                         LIVE MASTERY ENGINE
                                     </div>
-                                </div>
-                                <div class="absolute bottom-6 right-6 z-10 flex flex-col gap-2 pointer-events-none">
-                                    <div class="bg-zinc-950/90 p-4 rounded-xl border border-zinc-800 backdrop-blur-xl max-w-[240px] shadow-2xl transition-all duration-500 group-hover:border-royal-blue/30">
-                                        <p class="text-[10px] font-bold text-royal-blue uppercase tracking-widest mb-2">Socratic Insight</p>
-                                        <p class="text-xs text-zinc-300 leading-relaxed italic">
-                                            "I notice you're struggling with <span class="text-rose-400 font-bold">Vector Decomposition</span>. How would you resolve the gravity vector into components parallel and perpendicular to the incline?"
-                                        </p>
+                                    <div class="text-[10px] font-mono text-zinc-600 uppercase tracking-tighter">
+                                        Physics v1.02 &bull; Mastery Service active
                                     </div>
                                 </div>
                                 <!-- D3 Graph -->
@@ -458,12 +522,20 @@
                                     <svg id="graph-svg" class="w-full h-full relative z-0 active:cursor-grabbing"></svg>
                                     <div id="graph-tooltip" class="absolute z-50 bg-zinc-950/95 backdrop-blur-sm border border-zinc-800 rounded-lg p-3 pointer-events-none hidden" style="transform:translateY(-100%);"></div>
                                 </div>
-                                <!-- Legend -->
-                                <div id="graph-legend" class="absolute bottom-4 left-4 right-4 z-10 rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2 pointer-events-none flex flex-wrap gap-x-4 gap-y-1.5 text-[10px] text-zinc-500 font-mono"></div>
-                                <div class="mt-4 flex items-center justify-between text-[10px] font-mono text-zinc-500 uppercase tracking-tighter">
-                                    <span>Click nodes to toggle cognitive state</span>
-                                    <span>Physics v1.02 • Mastery Service active</span>
+                                <!-- Socratic Insight + instructions row -->
+                                <div class="flex items-start justify-between gap-4 mt-3">
+                                    <div class="text-[10px] font-mono text-zinc-500 uppercase tracking-tighter pt-1">
+                                        Click nodes to toggle cognitive state
+                                    </div>
+                                    <div class="bg-zinc-950/90 p-4 rounded-xl border border-zinc-800 backdrop-blur-xl max-w-[240px] shadow-2xl transition-all duration-500 group-hover:border-royal-blue/30 flex-shrink-0">
+                                        <p class="text-[10px] font-bold text-royal-blue uppercase tracking-widest mb-2">Socratic Insight</p>
+                                        <p class="text-xs text-zinc-300 leading-relaxed italic">
+                                            "I notice you're struggling with <span class="text-rose-400 font-bold">Vector Decomposition</span>. How would you resolve the gravity vector into components parallel and perpendicular to the incline?"
+                                        </p>
+                                    </div>
                                 </div>
+                                <!-- Legend -->
+                                <div id="graph-legend" class="mt-3 rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2 flex flex-wrap gap-x-4 gap-y-1.5 text-[10px] text-zinc-500 font-mono"></div>
                             </div>
                         </div>
                     </div>
@@ -557,10 +629,17 @@
                                 Secured endorsement from <strong class="text-zinc-200">Prof. Kobe Marshall-Stevens</strong> (JHU Mathematics) as primary Faculty Champion for the TEDCO Baltimore Innovation Initiative.
                             </p>
                             <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 text-left">
-                                <p class="text-zinc-400 text-sm leading-relaxed italic">
-                                    "I strongly believe that the platform has potential to <strong class="text-zinc-200 not-italic">scale to large-scale classes with hundreds of students</strong>. I am hopeful that their platform will help to better shape university environments in the years to come."
-                                </p>
-                                <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-wider mt-3">— Prof. Kobe Marshall-Stevens</p>
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-full flex-shrink-0 overflow-hidden border border-zinc-700 bg-zinc-900 mt-0.5">
+                                        <img src="/Headshots/Dr_Marshall-Stevens.jpg" alt="Prof. Kobe Marshall-Stevens" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <p class="text-zinc-400 text-sm leading-relaxed italic">
+                                            "I strongly believe that the platform has potential to <strong class="text-zinc-200 not-italic">scale to large-scale classes with hundreds of students</strong>. I am hopeful that their platform will help to better shape university environments in the years to come."
+                                        </p>
+                                        <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-wider mt-3">— Prof. Kobe Marshall-Stevens</p>
+                                    </div>
+                                </div>
                             </div>
                             <a href="/Altera Labs recommendation letter.pdf" target="_blank" rel="noopener noreferrer" class="text-royal-blue text-xs font-bold uppercase tracking-wider flex items-center gap-1 hover:text-white transition-colors mt-4 md:justify-end">
                                 Read Letter <i data-lucide="external-link" class="w-3 h-3"></i>
@@ -713,7 +792,7 @@
                     <div class="p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800/40 hover:border-zinc-700/60 transition-all group h-full">
                         <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
                             <div class="w-32 h-32 rounded-full flex-shrink-0 overflow-hidden border-2 border-zinc-700 shadow-xl bg-zinc-900">
-                                <img src="/Headshots/Dr_Marhsall-Stevens.jpg" alt="Dr. Kobe Marshall-Stevens" class="w-full h-full object-cover">
+                                <img src="/Headshots/Dr_Marshall-Stevens.jpg" alt="Dr. Kobe Marshall-Stevens" class="w-full h-full object-cover">
                             </div>
                             <div class="min-w-0">
                                 <h4 class="text-2xl font-bold text-zinc-200 group-hover:text-white transition-colors">Dr. Kobe Marshall-Stevens</h4>
