@@ -6,8 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | Altera Labs</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zinc: {
+                            950: '#09090b',
+                            900: '#18181b',
+                            800: '#27272a',
+                            700: '#3f3f46',
+                            600: '#52525b',
+                            500: '#71717a',
+                            400: '#a1a1aa',
+                            100: '#f4f4f5'
+                        },
+                        royal: { blue: '#476ee3' },
+                        cyan: { 400: '#22d3ee' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Work Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    fontSize: {
+                        'micro': '8px',
+                        'nano': '9px',
+                        'tag': '10px',
+                        'xs-plus': '11px'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap');
+
+        :root {
+            /* Core Colors */
+            --color-royal-blue: #476ee3;
+            --color-zinc-950: #09090b;
+            --color-zinc-900: #18181b;
+            --color-zinc-800: #27272a;
+            --color-zinc-100: #f4f4f5;
+            --color-zinc-400: #a1a1aa;
+            --color-zinc-500: #71717a;
+
+            /* Mastery States */
+            --color-mastery-high: #059669;
+            --color-mastery-high-stroke: #34d399;
+            --color-mastery-med: #d97706;
+            --color-mastery-med-stroke: #fbbf24;
+            --color-mastery-low: #be123c;
+            --color-mastery-low-stroke: #f43f5e;
+
+            /* Standardized Font Sizes */
+            --font-size-micro: 8px;
+            --font-size-nano: 9px;
+            --font-size-tag: 10px;
+            --font-size-label: 11px;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -19,7 +76,7 @@
     <div class="max-w-3xl mx-auto py-24 px-8">
         <header class="mb-16 border-b border-zinc-900 pb-8">
             <h1 class="text-4xl font-bold tracking-tight mb-4">Terms of Service</h1>
-            <p class="text-zinc-500 font-medium uppercase tracking-widest text-[11px]">Effective date: November 24, 2025
+            <p class="text-zinc-500 font-medium uppercase tracking-widest text-label">Effective date: November 24, 2025
             </p>
         </header>
 
@@ -35,7 +92,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">01</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">01</span>
                     Who may use the Service
                 </h2>
                 <p class="text-zinc-400 leading-relaxed text-sm">
@@ -47,7 +104,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">02</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">02</span>
                     Account registration & access
                 </h2>
                 <p class="text-zinc-400 leading-relaxed text-sm">
@@ -60,7 +117,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">03</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">03</span>
                     License & acceptable use
                 </h2>
                 <div class="space-y-4 text-zinc-400 leading-relaxed text-sm">
@@ -78,7 +135,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">04</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">04</span>
                     Content and user submissions
                 </h2>
                 <p class="text-zinc-400 leading-relaxed text-sm">
@@ -92,7 +149,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">05</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">05</span>
                     Use of verification & third-party services
                 </h2>
                 <p class="text-zinc-400 leading-relaxed text-sm">
@@ -106,7 +163,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">06</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">06</span>
                     Fees & billing
                 </h2>
                 <p class="text-zinc-400 leading-relaxed text-sm">
@@ -117,7 +174,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">07</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">07</span>
                     Disclaimers & limitation of liability
                 </h2>
                 <div class="space-y-4 text-zinc-400 leading-relaxed text-sm">
@@ -133,7 +190,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">08</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">08</span>
                     Termination
                 </h2>
                 <p class="text-zinc-400 leading-relaxed text-sm">
@@ -145,7 +202,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">09</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">09</span>
                     Governing law
                 </h2>
                 <p class="text-zinc-400 leading-relaxed text-sm">
@@ -156,7 +213,7 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-6 text-zinc-100 flex items-center gap-3">
-                    <span class="text-blue-500 font-mono text-sm leading-none">10</span>
+                    <span class="text-royal-blue font-mono text-sm leading-none">10</span>
                     Changes to these Terms
                 </h2>
                 <p class="text-zinc-400 leading-relaxed text-sm">
@@ -170,10 +227,10 @@
                 <p class="text-zinc-400 text-sm mb-8">
                     For questions about these Terms or to report abuse, contact:
                     <a href="mailto:akira@altera-labs.com"
-                        class="text-blue-500 hover:underline">akira@altera-labs.com</a>
+                        class="text-royal-blue hover:underline">akira@altera-labs.com</a>
                 </p>
-                <a href="/"
-                    class="inline-flex items-center gap-2 text-zinc-100 font-bold text-xs uppercase tracking-widest hover:text-blue-500 transition-colors">
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 text-zinc-100 font-bold text-xs uppercase tracking-widest hover:text-royal-blue transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M10 19l-7-7m0 0l7-7m-7 7h18" />
