@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altera Labs | Cognitive Architecture for STEM Mastery</title>
+    <title>Altera Labs | AI Tutoring That Actually Teaches</title>
     <meta name="description"
         content="Helping educators and students utilize AI to create a smarter, more efficient world through structured, agentic tutoring systems.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -49,6 +49,35 @@
         }
     </script>
     <style>
+        /* ===================================================
+           DESIGN SYSTEM — Altera Labs
+
+           Color Palette:
+             Primary:  royal-blue #476ee3
+             Surface:  zinc-950 → zinc-100
+             Mastery:  emerald (high) / amber (mid) / red (low)
+
+           Borders:
+             Subtle:   border-white/5
+             Emphasis: border-white/10
+             Accent:   border-royal-blue/20 (hover: /30)
+             Cards:    border-zinc-800
+
+           Tracking:
+             Eyebrow/labels: tracking-widest (0.1em)
+             Tech badges:    tracking-tighter (-0.05em)
+             Body links:     tracking-wider (0.05em)
+
+           Font sizes: text-xs (12px) minimum floor.
+             Never use text-[10px], text-[11px], or sub-12px.
+
+           Border-radius:
+             rounded (4px):     badges, small pills
+             rounded-xl (12px): icon containers, inner elements
+             rounded-2xl (16px): mockups, code blocks
+             rounded-3xl (24px): cards, sections
+           =================================================== */
+
         :root {
             /* Core Colors */
             --color-royal-blue: #476ee3;
@@ -59,17 +88,13 @@
             --color-zinc-400: #a1a1aa;
             --color-zinc-500: #71717a;
 
-            /* Mastery States */
+            /* Mastery States — use ONLY these for status colors */
             --color-mastery-high: #059669;
             --color-mastery-high-stroke: #34d399;
             --color-mastery-med: #d97706;
             --color-mastery-med-stroke: #fbbf24;
             --color-mastery-low: #be123c;
             --color-mastery-low-stroke: #f43f5e;
-
-            /* Standardized Font Sizes (12px minimum floor) */
-            --font-size-tag: 12px;
-            --font-size-label: 13px;
         }
 
         body {
@@ -78,7 +103,7 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Blooms */
+        /* ---- Layout ---- */
         .ambient-bloom {
             position: fixed;
             width: 100vw;
@@ -92,6 +117,18 @@
                 radial-gradient(circle at 90% 80%, rgba(71, 110, 227, 0.02) 0%, transparent 30%);
         }
 
+        /* ---- Component: Section Eyebrow ---- */
+        .section-eyebrow {
+            color: var(--color-royal-blue);
+            font-size: 0.75rem; /* 12px = text-xs */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em; /* tracking-widest */
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* ---- Component: Bento Card ---- */
         .bento-card {
             background: rgba(24, 24, 27, 0.6);
             backdrop-filter: blur(12px);
@@ -104,7 +141,6 @@
             box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
         }
 
-        /* Border Glow Effect */
         .bento-card::before {
             content: '';
             position: absolute;
@@ -132,7 +168,143 @@
             opacity: 1;
         }
 
-        /* Entrance Animations */
+        /* ---- Component: Card Eyebrow ---- */
+        .card-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-royal-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ---- Component: Icon Container ---- */
+        .icon-container {
+            padding: 0.75rem;
+            background: rgba(71, 110, 227, 0.1);
+            border-radius: 0.75rem;
+            border: 1px solid rgba(71, 110, 227, 0.2);
+        }
+
+        /* ---- Component: Glow Dot (bullet marker) ---- */
+        .glow-dot {
+            width: 0.375rem;
+            height: 0.375rem;
+            border-radius: 9999px;
+            background: var(--color-royal-blue);
+            box-shadow: 0 0 8px rgba(71, 110, 227, 0.5);
+            flex-shrink: 0;
+        }
+
+        /* ---- Component: Tech Badge ---- */
+        .tech-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            background: var(--color-zinc-800);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-zinc-400);
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+        }
+
+        /* ---- Component: Primary Button ---- */
+        .btn-primary {
+            background: var(--color-royal-blue);
+            color: white;
+            padding: 0.625rem 1.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .btn-primary:hover {
+            background: rgba(71, 110, 227, 0.9);
+            transform: scale(1.02);
+            box-shadow:
+                0 0 25px -5px rgba(71, 110, 227, 0.4),
+                0 0 15px -5px rgba(71, 110, 227, 0.2);
+        }
+
+        .btn-primary--lg {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary--lg:hover {
+            box-shadow:
+                0 0 30px -5px rgba(71, 110, 227, 0.5),
+                0 0 20px -5px rgba(71, 110, 227, 0.3);
+        }
+
+        /* ---- Component: Secondary Button ---- */
+        .btn-secondary {
+            color: var(--color-zinc-400);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            color: white;
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ---- Component: Mockup Container ---- */
+        .mockup-container {
+            border-radius: 0.75rem;
+            background: var(--color-zinc-900);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        /* ---- Component: Timeline Date Pill ---- */
+        .timeline-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: rgba(71, 110, 227, 0.1);
+            color: var(--color-royal-blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-pill--muted {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-zinc-400);
+        }
+
+        /* ---- Component: External Link ---- */
+        .ext-link {
+            color: var(--color-royal-blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s;
+        }
+
+        .ext-link:hover {
+            color: white;
+        }
+
+        /* ---- Entrance Animations ---- */
         .reveal {
             opacity: 0;
             transform: translateY(30px) scale(0.98);
@@ -145,59 +317,33 @@
             transform: translateY(0) scale(1);
         }
 
-        .delay-100 {
-            transition-delay: 100ms;
-        }
-
-        .delay-200 {
-            transition-delay: 200ms;
-        }
-
-        .delay-300 {
-            transition-delay: 300ms;
-        }
-
-        .delay-400 {
-            transition-delay: 400ms;
-        }
-
-        .delay-500 {
-            transition-delay: 500ms;
-        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
 
         .premium-card {
             box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.01),
                 0 20px 40px -20px rgba(0, 0, 0, 0.5);
         }
 
-        /* Typography Refinement */
-        h1,
-        h2,
-        h3,
-        h4 {
+        /* ---- Typography ---- */
+        h1, h2, h3, h4 {
             letter-spacing: -0.02em;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--color-zinc-950);
-        }
-
+        /* ---- Scrollbar ---- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-zinc-950); }
         ::-webkit-scrollbar-thumb {
             background: var(--color-zinc-800);
             border-radius: 10px;
             border: 2px solid var(--color-zinc-950);
         }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-zinc-700); }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--color-zinc-700);
-        }
-
-        /* Premium Highlights */
+        /* ---- Interactive Highlights ---- */
         .mastery-highlight {
             position: relative;
             cursor: pointer;
@@ -249,8 +395,7 @@
                 <a href="#traction"
                     class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">Traction</a>
                 <a href="https://altera-labs.web.app" target="_blank" rel="noopener noreferrer">
-                    <button
-                        class="bg-royal-blue hover:bg-royal-blue/90 text-white px-7 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-[1.02] hover:shadow-[0_0_25px_-5px_rgba(71,110,227,0.4),_0_0_15px_-5px_rgba(71,110,227,0.2)] border border-white/10 transform-gpu antialiased">
+                    <button class="btn-primary">
                         Try the Beta
                     </button>
                 </a>
@@ -267,7 +412,7 @@
                     class="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-royal-blue/5 rounded-full blur-[150px] animate-pulse">
                 </div>
                 <div
-                    class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-indigo-600/3 rounded-full blur-[120px]">
+                    class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-royal-blue/5 rounded-full blur-[120px]">
                 </div>
             </div>
             <div class="max-w-7xl mx-auto text-center">
@@ -281,15 +426,13 @@
                 </p>
                 <div class="flex flex-col md:flex-row items-center justify-center gap-4 relative z-10 reveal delay-200">
                     <a href="https://altera-labs.web.app" target="_blank" rel="noopener noreferrer">
-                        <button
-                            class="bg-royal-blue hover:bg-royal-blue/90 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 group transition-all text-base hover:scale-[1.02] hover:shadow-[0_0_30px_-5px_rgba(71,110,227,0.5),_0_0_20px_-5px_rgba(71,110,227,0.3)] border border-white/10 transform-gpu antialiased">
+                        <button class="btn-primary btn-primary--lg flex items-center gap-2 group">
                             Try the Beta
                             <i data-lucide="chevron-right"
                                 class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                         </button>
                     </a>
-                    <a href="#problem"
-                        class="text-zinc-400 hover:text-white font-bold text-sm transition-all uppercase tracking-widest px-8 py-3 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5">
+                    <a href="#problem" class="btn-secondary">
                         Our Mission
                     </a>
                 </div>
@@ -299,7 +442,7 @@
         <!-- Partner / Trust Banner -->
         <div class="py-12 border-b border-white/5 reveal">
             <div class="max-w-7xl mx-auto px-8">
-                <p class="text-center text-2xl font-bold text-zinc-100 uppercase tracking-[0.3em] mb-8">Institutional
+                <p class="text-center text-2xl font-bold text-zinc-100 uppercase tracking-widest mb-8">Institutional
                     Partners &amp; Support</p>
                 <div
                     class="flex flex-wrap items-center justify-center gap-8 md:gap-16 lg:gap-24 transition-opacity duration-300 w-full">
@@ -354,8 +497,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                 <div>
-                    <span class="text-royal-blue font-bold text-xs uppercase tracking-widest mb-4 block">The
-                        Crisis</span>
+                    <span class="section-eyebrow">The Crisis</span>
                     <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">The Substitution Model.</h2>
                     <p class="text-zinc-400 text-lg leading-relaxed mb-8">
                         Current AI tools create a "substitution" effect where students bypass critical reasoning.
@@ -367,28 +509,28 @@
                             class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center text-center justify-start overflow-hidden">
                             <p class="text-xl sm:text-2xl font-bold text-white mb-2">86%</p>
                             <p
-                                class="text-[10px] sm:text-xs text-zinc-500 uppercase font-bold tracking-wider leading-tight break-words" style="word-break:break-word">
+                                class="text-xs text-zinc-500 uppercase font-bold tracking-wider leading-tight break-words" style="word-break:break-word">
                                 of students use AI tools</p>
                         </div>
                         <div
                             class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center text-center justify-start overflow-hidden">
                             <p class="text-xl sm:text-2xl font-bold text-white mb-2">75%</p>
                             <p
-                                class="text-[10px] sm:text-xs text-zinc-500 uppercase font-bold tracking-wider leading-tight break-words" style="word-break:break-word">
+                                class="text-xs text-zinc-500 uppercase font-bold tracking-wider leading-tight break-words" style="word-break:break-word">
                                 report weaker critical thinking</p>
                         </div>
                         <div
                             class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center text-center justify-start overflow-hidden">
                             <p class="text-xl sm:text-2xl font-bold text-white mb-2">73%</p>
                             <p
-                                class="text-[10px] sm:text-xs text-zinc-500 uppercase font-bold tracking-wider leading-tight break-words" style="word-break:break-word">
+                                class="text-xs text-zinc-500 uppercase font-bold tracking-wider leading-tight break-words" style="word-break:break-word">
                                 depend on AI over own skills</p>
                         </div>
                         <div
                             class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center text-center justify-start overflow-hidden">
                             <p class="text-xl sm:text-2xl font-bold text-white mb-2">70%</p>
                             <p
-                                class="text-[10px] sm:text-xs text-zinc-500 uppercase font-bold tracking-wider leading-tight break-words" style="word-break:break-word">
+                                class="text-xs text-zinc-500 uppercase font-bold tracking-wider leading-tight break-words" style="word-break:break-word">
                                 encounter AI misinformation</p>
                         </div>
                     </div>
@@ -439,7 +581,7 @@
                         class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 premium-card -skew-y-1 overflow-hidden">
                         <div class="flex items-center justify-between mb-8">
                             <div class="flex gap-2">
-                                <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-500/50"></div>
                                 <div class="w-3 h-3 rounded-full bg-royal-blue/50"></div>
                             </div>
                             <span
@@ -490,8 +632,7 @@
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
-                    <span class="text-royal-blue font-bold text-xs uppercase tracking-widest mb-4 block">Our
-                        Solution</span>
+                    <span class="section-eyebrow">Our Solution</span>
                     <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Adaptive Knowledge Tracking.</h2>
                     <p class="text-zinc-400 text-lg leading-relaxed mb-8">
                         Our engine builds a real-time, personalized model of each student's mastery.
@@ -500,22 +641,22 @@
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3 text-base font-medium text-zinc-300">
-                            <div class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,1)]">
+                            <div class="glow-dot">
                             </div>
                             Bayesian Knowledge Tracing (BKT) Engine
                         </li>
                         <li class="flex items-center gap-3 text-base font-medium text-zinc-300">
-                            <div class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,1)]">
+                            <div class="glow-dot">
                             </div>
                             State-Aware Cognitive Modeling
                         </li>
                         <li class="flex items-center gap-3 text-base font-medium text-zinc-300">
-                            <div class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,1)]">
+                            <div class="glow-dot">
                             </div>
                             Institutional Insight Dashboard
                         </li>
                         <li class="flex items-center gap-3 text-base font-medium text-zinc-300">
-                            <div class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,1)]">
+                            <div class="glow-dot">
                             </div>
                             Integrated Tier Canvas Partner
                         </li>
@@ -552,23 +693,22 @@
     <section id="product" class="py-24 px-8 border-t border-white/5 bg-gradient-to-b from-zinc-950 to-zinc-900/30">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-royal-blue bg-royal-blue/10 border border-royal-blue/20 mb-6">The Platform</span>
-                <h2 class="text-5xl md:text-6xl font-bold mb-4 tracking-tight">How Altera Works.</h2>
-                <p class="text-zinc-500 max-w-2xl mx-auto text-lg">Five layers that turn passive AI into a system that actually teaches.</p>
-                <div class="mt-8 h-px w-24 bg-gradient-to-r from-transparent via-white/10 to-transparent mx-auto"></div>
+                <span class="section-eyebrow">The Platform</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">How Altera Works.</h2>
+                <p class="text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed">Five layers that turn passive AI into a system that actually teaches.</p>
+                <div class="mt-8 h-px w-24 bg-gradient-to-r from-transparent via-royal-blue/30 to-transparent mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                 <!-- Phase 1: BKT Engine -->
                 <div class="md:col-span-8 bento-card p-10 flex flex-col justify-between group overflow-hidden relative">
                     <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="p-3 bg-royal-blue/10 rounded-xl border border-royal-blue/20">
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="icon-container">
                                 <i data-lucide="cpu" class="w-6 h-6 text-royal-blue"></i>
                             </div>
-                            <span class="text-xs font-bold text-royal-blue uppercase tracking-[0.2em] px-2 py-0.5 rounded-full bg-royal-blue/10 border border-royal-blue/30">Proprietary Engine</span>
+                            <span class="card-eyebrow">Proprietary Engine</span>
                         </div>
-                        <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.25em] mb-3 mt-5">For Every Student</p>
                         <h3 class="text-4xl font-bold mb-6 leading-tight">Mastery Tracking Engine</h3>
                         <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mb-12">
                             Altera tracks exactly what each student knows and where they're struggling — updating in real time with every interaction. The AI always knows when to push harder and when to slow down.
@@ -578,11 +718,11 @@
                     <!-- BKT Equation (refined container) -->
                     <div class="relative z-10 mt-auto">
                         <div
-                            class="p-6 rounded-2xl bg-black/40 border border-white/5 backdrop-blur-md group-hover:border-royal-blue/30 transition-colors shadow-inner" style="border-left: 2px solid rgba(71,110,227,0.5)">
+                            class="p-6 rounded-2xl bg-black/40 border border-white/5 backdrop-blur-md group-hover:border-royal-blue/30 transition-colors shadow-inner">
                             <div class="flex items-center justify-between mb-6">
                                 <div>
                                     <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest">Live Mastery Formula</p>
-                                    <p class="text-[10px] text-zinc-600 mt-1 tracking-wider">Updated after every student interaction</p>
+                                    <p class="text-xs text-zinc-600 mt-1 tracking-wider">Updated after every student interaction</p>
                                 </div>
                                 <div class="flex gap-1.5">
                                     <div class="w-2 h-2 rounded-full bg-red-500/20"></div>
@@ -605,77 +745,74 @@
                 <!-- Phase 2: Teacher Dashboard -->
                 <div class="md:col-span-4 bento-card p-10 flex flex-col group h-full">
                     <div class="relative z-10 flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="p-3 bg-cyan-400/10 rounded-xl border border-cyan-400/20">
-                                <i data-lucide="brain-circuit" class="w-6 h-6 text-cyan-400"></i>
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="icon-container">
+                                <i data-lucide="brain-circuit" class="w-6 h-6 text-royal-blue"></i>
                             </div>
-                            <span class="text-xs font-bold text-cyan-400 uppercase tracking-[0.2em] px-2 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/20">For Teachers</span>
+                            <span class="card-eyebrow">For Teachers</span>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 leading-tight mt-5">Teacher Command Center</h3>
+                        <h3 class="text-3xl font-bold mb-4 leading-tight">Teacher Command Center</h3>
                         <p class="text-zinc-400 text-base leading-relaxed mb-6">
                             See who's thriving, who's stuck, and exactly which concepts to re-teach — before your next class.
                         </p>
                         <!-- Mini student data mockup -->
                         <div class="rounded-xl bg-zinc-900 border border-white/5 overflow-hidden mb-6">
-                            <div class="px-4 py-2 border-b border-white/5 flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
-                                <span class="text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-wider">Live Class View</span>
+                            <div class="px-4 py-2.5 border-b border-white/5 flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-royal-blue animate-pulse"></div>
+                                <span class="text-xs font-mono font-bold text-zinc-500 uppercase tracking-wider">Live Class View</span>
                             </div>
                             <div class="divide-y divide-white/5">
                                 <div class="px-4 py-3 flex items-center gap-3">
                                     <div class="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0"></div>
-                                    <span class="text-xs font-mono text-zinc-300 flex-1">Maya R.</span>
-                                    <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider mr-3">Mastered</span>
-                                    <div class="w-16 h-1.5 rounded-full bg-zinc-800 overflow-hidden flex-shrink-0">
+                                    <span class="text-xs font-mono text-zinc-300 flex-1 truncate">Maya R.</span>
+                                    <div class="w-20 h-1.5 rounded-full bg-zinc-800 overflow-hidden flex-shrink-0">
                                         <div class="h-full bg-emerald-400/70 rounded-full" style="width:82%"></div>
                                     </div>
-                                    <span class="text-[10px] font-mono text-zinc-500 ml-1 flex-shrink-0">82%</span>
+                                    <span class="text-xs font-mono text-zinc-500 ml-1 flex-shrink-0">82%</span>
                                 </div>
                                 <div class="px-4 py-3 flex items-center gap-3">
                                     <div class="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0"></div>
-                                    <span class="text-xs font-mono text-zinc-300 flex-1">Jordan T.</span>
-                                    <span class="text-[10px] text-amber-400 font-bold uppercase tracking-wider mr-3">Struggling</span>
-                                    <div class="w-16 h-1.5 rounded-full bg-zinc-800 overflow-hidden flex-shrink-0">
+                                    <span class="text-xs font-mono text-zinc-300 flex-1 truncate">Jordan T.</span>
+                                    <div class="w-20 h-1.5 rounded-full bg-zinc-800 overflow-hidden flex-shrink-0">
                                         <div class="h-full bg-amber-400/70 rounded-full" style="width:41%"></div>
                                     </div>
-                                    <span class="text-[10px] font-mono text-zinc-500 ml-1 flex-shrink-0">41%</span>
+                                    <span class="text-xs font-mono text-zinc-500 ml-1 flex-shrink-0">41%</span>
                                 </div>
                                 <div class="px-4 py-3 flex items-center gap-3">
                                     <div class="w-2 h-2 rounded-full bg-royal-blue flex-shrink-0"></div>
-                                    <span class="text-xs font-mono text-zinc-300 flex-1">Alex K.</span>
-                                    <span class="text-[10px] text-blue-400 font-bold uppercase tracking-wider mr-3">In Flow</span>
-                                    <div class="w-16 h-1.5 rounded-full bg-zinc-800 overflow-hidden flex-shrink-0">
+                                    <span class="text-xs font-mono text-zinc-300 flex-1 truncate">Alex K.</span>
+                                    <div class="w-20 h-1.5 rounded-full bg-zinc-800 overflow-hidden flex-shrink-0">
                                         <div class="h-full bg-royal-blue/70 rounded-full" style="width:63%"></div>
                                     </div>
-                                    <span class="text-[10px] font-mono text-zinc-500 ml-1 flex-shrink-0">63%</span>
+                                    <span class="text-xs font-mono text-zinc-500 ml-1 flex-shrink-0">63%</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mt-auto flex flex-wrap gap-2">
-                        <div class="px-3 py-1 rounded-full bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">Real-Time</div>
-                        <div class="px-3 py-1 rounded-full bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">Class-Wide</div>
-                        <div class="px-3 py-1 rounded-full bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">Intervention Alerts</div>
+                        <div class="tech-badge">Real-Time</div>
+                        <div class="tech-badge">Class-Wide</div>
+                        <div class="tech-badge">Alerts</div>
                     </div>
                 </div>
 
                 <!-- Phase 3: AI Tutor -->
                 <div class="md:col-span-4 bento-card p-10 flex flex-col group h-full">
                     <div class="relative z-10 flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="p-3 bg-zinc-800/50 rounded-xl border border-zinc-700/50">
-                                <i data-lucide="message-square" class="w-6 h-6 text-zinc-300"></i>
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="icon-container">
+                                <i data-lucide="message-square" class="w-6 h-6 text-royal-blue"></i>
                             </div>
-                            <span class="text-xs font-bold text-zinc-300 uppercase tracking-[0.2em] px-2 py-0.5 rounded-full bg-zinc-800 border border-zinc-700/50">For Students</span>
+                            <span class="card-eyebrow">For Students</span>
                         </div>
-                        <h4 class="text-2xl font-bold mb-4 leading-tight mt-5">AI Tutor That Teaches</h4>
+                        <h4 class="text-2xl font-bold mb-4 leading-tight">AI Tutor That Teaches</h4>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-6">
                             Altera never just hands over the answer. It reads your mastery profile and responds with guiding questions and personalized hints — keeping you in the learning zone.
                         </p>
                         <!-- Mini chat mockup -->
                         <div class="rounded-xl bg-zinc-900 border border-white/5 overflow-hidden p-4 space-y-3 mb-6">
                             <div class="flex justify-end">
-                                <div class="max-w-[85%] px-3 py-2 rounded-xl rounded-br-sm bg-royal-blue/20 border border-royal-blue/20 text-xs text-zinc-200">
+                                <div class="max-w-[85%] px-3 py-2 rounded-xl bg-royal-blue/20 border border-royal-blue/20 text-xs text-zinc-200">
                                     What's the derivative of x²?
                                 </div>
                             </div>
@@ -683,73 +820,73 @@
                                 <div class="w-5 h-5 rounded-full bg-royal-blue/20 border border-royal-blue/30 flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="sparkles" class="w-2.5 h-2.5 text-royal-blue"></i>
                                 </div>
-                                <div class="max-w-[85%] px-3 py-2 rounded-xl rounded-bl-sm bg-zinc-800 border border-white/5 text-xs text-zinc-300 italic">
+                                <div class="max-w-[85%] px-3 py-2 rounded-xl bg-zinc-800 border border-white/5 text-xs text-zinc-300 italic">
                                     Good question — what rule applies when the exponent is a constant?
                                 </div>
                             </div>
                         </div>
-                        <ul class="space-y-3 text-xs text-zinc-500">
+                        <ul class="space-y-4 text-xs text-zinc-500">
                             <li class="flex items-center gap-3">
-                                <span class="text-sm">💬</span>
+                                <div class="glow-dot"></div>
                                 <span>Personalized hints, not copy-paste answers</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="text-sm">🎯</span>
+                                <div class="glow-dot"></div>
                                 <span>Adjusts to your mastery level automatically</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="text-sm">📎</span>
+                                <div class="glow-dot"></div>
                                 <span>Supports math, diagrams, and file uploads</span>
                             </li>
                         </ul>
                     </div>
                     <div class="mt-auto flex flex-wrap gap-2 pt-8">
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             React 19</div>
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             Zustand</div>
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             Redis</div>
                     </div>
                 </div>
 
                 <!-- Phase 4: Canvas -->
-                <div class="md:col-span-4 bento-card p-10 flex flex-col group border-royal-blue/20 h-full">
+                <div class="md:col-span-4 bento-card p-10 flex flex-col group h-full">
                     <div class="relative z-10 flex-1">
-                        <div class="flex items-center gap-4 mb-3">
+                        <div class="flex items-center gap-4 mb-8">
                             <img src="./public/images/logos/Canvas/Canvas_Horizontal_Full-Color_RGB-cropped-white.png"
                                 alt="Canvas" class="h-10 object-contain">
-                            <span class="text-xs font-bold text-blue-400 uppercase tracking-[0.2em] px-2 py-0.5 rounded-full bg-royal-blue/10 border border-royal-blue/20">Certified Partner</span>
+                            <span class="card-eyebrow">Certified Partner</span>
                         </div>
-                        <h4 class="text-2xl font-bold mb-4 leading-tight mt-5">Works Inside Canvas</h4>
+                        <h4 class="text-2xl font-bold mb-4 leading-tight">Works Inside Canvas</h4>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-6">One click and your class is live. Altera syncs directly with Canvas — rosters, logins, and grades handled automatically. No new accounts, no manual setup.</p>
                         <!-- 3-step flow -->
                         <div class="flex items-center gap-2 mb-8 flex-wrap">
-                            <div class="px-3 py-1.5 rounded-lg bg-zinc-800 border border-white/5 text-[10px] font-bold text-zinc-300 uppercase tracking-wider">Canvas</div>
-                            <span class="text-zinc-600 text-sm">→</span>
-                            <div class="px-3 py-1.5 rounded-lg bg-zinc-800 border border-white/5 text-[10px] font-bold text-zinc-300 uppercase tracking-wider">Click Tool</div>
-                            <span class="text-zinc-600 text-sm">→</span>
-                            <div class="px-3 py-1.5 rounded-lg bg-royal-blue/10 border border-royal-blue/20 text-[10px] font-bold text-royal-blue uppercase tracking-wider">Altera Launches</div>
+                            <div class="px-3 py-1.5 rounded-lg bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-300 uppercase tracking-tighter">Canvas</div>
+                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-zinc-600 flex-shrink-0"></i>
+                            <div class="px-3 py-1.5 rounded-lg bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-300 uppercase tracking-tighter">Click Tool</div>
+                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-zinc-600 flex-shrink-0"></i>
+                            <div class="px-3 py-1.5 rounded-lg bg-royal-blue/10 border border-royal-blue/20 text-xs font-bold text-royal-blue uppercase tracking-tighter">Altera Live</div>
                         </div>
                         <ul class="space-y-4 text-xs text-zinc-500">
                             <li class="flex items-center gap-3">
                                 <div
-                                    class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,0.5)]">
+                                    class="glow-dot">
                                 </div>
                                 <span>LTI 1.3 Advantage Deployment</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div
-                                    class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,0.5)]">
+                                    class="glow-dot">
                                 </div>
                                 <span>Automatic grade passback</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div
-                                    class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,0.5)]">
+                                    class="glow-dot">
                                 </div>
                                 <span>Roster sync & Deep-linking</span>
                             </li>
@@ -757,13 +894,13 @@
                     </div>
                     <div class="mt-auto flex flex-wrap gap-2 pt-8">
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             LTI 1.3</div>
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             Express</div>
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             OAuth 2.0</div>
                     </div>
                 </div>
@@ -773,10 +910,10 @@
                     <div class="relative z-10 flex flex-col h-full">
                         <div class="flex items-center justify-between mb-8">
                             <div class="flex items-center gap-3">
-                                <div class="p-2 bg-zinc-800/50 rounded-lg">
-                                    <i data-lucide="layout-dashboard" class="w-5 h-5 text-zinc-500"></i>
+                                <div class="icon-container">
+                                    <i data-lucide="layout-dashboard" class="w-5 h-5 text-royal-blue"></i>
                                 </div>
-                                <span class="text-xs font-bold uppercase tracking-[0.2em] px-2 py-0.5 rounded-full bg-zinc-800 border border-zinc-700/50 text-zinc-400">For Admins</span>
+                                <span class="card-eyebrow">For Admins</span>
                             </div>
                             <div class="flex gap-1.5">
                                 <div class="w-1.5 h-1.5 rounded-full bg-red-500/30"></div>
@@ -824,9 +961,9 @@
                                 class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-zinc-950/90 via-zinc-950/40 to-transparent">
                             </div>
                             <div class="absolute bottom-4 left-5 flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
-                                <span class="text-[10px] font-mono font-bold text-cyan-400 tracking-wider">RESOLVING:
-                                    PDE</span>
+                                <div class="w-1.5 h-1.5 rounded-full bg-royal-blue animate-pulse"></div>
+                                <span class="text-xs font-mono font-bold text-royal-blue tracking-wider">MAPPING:
+                                    Curriculum Gaps</span>
                             </div>
                         </div>
                         <h4 class="text-2xl font-bold mb-4 text-white">Institution-Wide Analytics</h4>
@@ -836,19 +973,19 @@
                         <ul class="space-y-4 text-xs text-zinc-500">
                             <li class="flex items-center gap-3">
                                 <div
-                                    class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,0.5)]">
+                                    class="glow-dot">
                                 </div>
                                 <span>Dynamic concept dependency tracking</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div
-                                    class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,0.5)]">
+                                    class="glow-dot">
                                 </div>
                                 <span>Spot where students fail across multiple courses</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div
-                                    class="w-1.5 h-1.5 rounded-full bg-royal-blue shadow-[0_0_8px_rgba(71,110,227,0.5)]">
+                                    class="glow-dot">
                                 </div>
                                 <span>Upload a syllabus — it maps itself automatically</span>
                             </li>
@@ -856,13 +993,13 @@
                     </div>
                     <div class="mt-auto flex flex-wrap gap-2 pt-12">
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             D3.js</div>
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             FastAPI</div>
                         <div
-                            class="px-3 py-1 rounded bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-400 uppercase tracking-tighter">
+                            class="tech-badge">
                             pgvector</div>
                     </div>
                 </div>
@@ -925,11 +1062,11 @@
                                 <!-- Header bar -->
                                 <div class="flex items-center justify-between mb-3">
                                     <div
-                                        class="bg-zinc-950/80 px-3 py-1.5 rounded-full border border-zinc-800 text-xs font-mono text-cyan-400 flex items-center gap-2 backdrop-blur-md">
+                                        class="bg-zinc-950/80 px-3 py-1.5 rounded-full border border-zinc-800 text-xs font-mono text-royal-blue flex items-center gap-2 backdrop-blur-md">
                                         <span class="relative flex h-2 w-2">
                                             <span
-                                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-royal-blue opacity-75"></span>
+                                            <span class="relative inline-flex rounded-full h-2 w-2 bg-royal-blue"></span>
                                         </span>
                                         LIVE MASTERY ENGINE
                                     </div>
@@ -951,7 +1088,7 @@
                                 </div>
                                 <!-- Legend -->
                                 <div id="graph-legend"
-                                    class="mt-3 rounded-lg border border-zinc-800 bg-zinc-950/80 px-4 py-3 flex flex-col items-center gap-y-3 text-[11px] text-zinc-400 font-mono">
+                                    class="mt-3 rounded-lg border border-zinc-800 bg-zinc-950/80 px-4 py-3 flex flex-col items-center gap-y-3 text-xs text-zinc-400 font-mono">
                                 </div>
                                 <!-- Socratic Insight -->
                                 <div
@@ -963,13 +1100,13 @@
                                         <p class="text-xs font-bold text-royal-blue uppercase tracking-widest">
                                             Socratic Insight</p>
                                         <div class="ml-auto flex items-center gap-1.5">
-                                            <div class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></div>
-                                            <span class="text-xs font-mono text-rose-400 uppercase tracking-wider">Error
+                                            <div class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
+                                            <span class="text-xs font-mono text-red-400 uppercase tracking-wider">Error
                                                 Detected</span>
                                         </div>
                                     </div>
                                     <p class="text-sm text-zinc-300 leading-relaxed italic">
-                                        "I've detected a <span class="text-rose-400 font-bold not-italic">Calculation
+                                        "I've detected a <span class="text-red-400 font-bold not-italic">Calculation
                                             Error</span> pattern linked to your <span
                                             class="text-amber-400 font-bold not-italic">Newton's Second Law</span>
                                         mastery (<span class="text-amber-400 font-bold">35%</span>). Let's revisit:
@@ -991,8 +1128,7 @@
     <section id="traction" class="py-24 px-8 border-t border-white/5 bg-zinc-950">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-20">
-                <span class="text-royal-blue font-bold text-xs uppercase tracking-widest mb-4 block">Our
-                    Journey</span>
+                <span class="section-eyebrow">Our Journey</span>
                 <h2 class="text-4xl font-bold tracking-tight text-white">Traction &amp; Milestones.</h2>
             </div>
             <div class="relative">
@@ -1006,7 +1142,7 @@
                         </div>
                         <div class="ml-12 md:ml-0 md:w-1/2 md:pr-16 md:text-right">
                             <span
-                                class="inline-block px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold uppercase tracking-wider mb-2">Jan
+                                class="timeline-pill">Jan
                                 16, 2026</span>
                             <a href="https://cloud.google.com/startup" target="_blank" rel="noopener noreferrer"
                                 class="block mb-2 group">
@@ -1033,7 +1169,7 @@
                         <div class="hidden md:block md:w-1/2"></div>
                         <div class="ml-12 md:ml-0 md:w-1/2 md:pl-16 text-left">
                             <span
-                                class="inline-block px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold uppercase tracking-wider mb-2">Jan
+                                class="timeline-pill">Jan
                                 2, 2026</span>
                             <a href="https://www.nvidia.com/en-us/startups/" target="_blank" rel="noopener noreferrer"
                                 class="block mb-2 group">
@@ -1061,7 +1197,7 @@
                         </div>
                         <div class="ml-12 md:ml-0 md:w-1/2 md:pr-16 md:text-right">
                             <span
-                                class="inline-block px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold uppercase tracking-wider mb-2">Dec
+                                class="timeline-pill">Dec
                                 17, 2025</span>
                             <a href="https://www.instructure.com/canvas" target="_blank" rel="noopener noreferrer"
                                 class="block mb-2 group">
@@ -1090,7 +1226,7 @@
                         <div class="hidden md:block md:w-1/2"></div>
                         <div class="ml-12 md:ml-0 md:w-1/2 md:pl-16 text-left">
                             <span
-                                class="inline-block px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold uppercase tracking-wider mb-2">Dec
+                                class="timeline-pill">Dec
                                 7, 2025</span>
                             <a href="https://pavacenter.jhu.edu/news/catching-up-with-the-fall-2025-fuel-winners/"
                                 target="_blank" rel="noopener noreferrer" class="block mb-2 group">
@@ -1103,7 +1239,7 @@
                             </p>
                             <a href="https://pavacenter.jhu.edu/news/catching-up-with-the-fall-2025-fuel-winners/"
                                 target="_blank" rel="noopener noreferrer"
-                                class="text-royal-blue text-xs font-bold uppercase tracking-wider flex items-center gap-1 hover:text-white transition-colors mb-6">
+                                class="ext-link mb-6">
                                 Read Article <i data-lucide="external-link" class="w-3 h-3"></i>
                             </a>
                             <div class="rounded-xl overflow-hidden shadow-lg group cursor-pointer mb-6">
@@ -1162,7 +1298,7 @@
                             </div>
                         </div>
                         <a href="Altera%20Labs%20recommendation%20letter.pdf" target="_blank" rel="noopener noreferrer"
-                            class="text-royal-blue text-xs font-bold uppercase tracking-wider flex items-center gap-1 hover:text-white transition-colors mt-4 md:justify-end">
+                            class="ext-link mt-4 md:justify-end">
                             Read Letter <i data-lucide="external-link" class="w-3 h-3"></i>
                         </a>
                     </div>
@@ -1177,7 +1313,7 @@
                     <div class="hidden md:block md:w-1/2"></div>
                     <div class="ml-12 md:ml-0 md:w-1/2 md:pl-16 text-left">
                         <span
-                            class="inline-block px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-xs font-bold uppercase tracking-wider mb-2">Late
+                            class="timeline-pill timeline-pill--muted">Late
                             2025</span>
                         <h3 class="text-xl font-bold text-white mb-2">The Strategic Pivot</h3>
                         <p class="text-zinc-500 text-sm leading-relaxed mb-6">
@@ -1195,7 +1331,7 @@
                     </div>
                     <div class="ml-12 md:ml-0 md:w-1/2 md:pr-16 md:text-right">
                         <span
-                            class="inline-block px-3 py-1 rounded-full bg-royal-blue/10 text-royal-blue text-xs font-bold uppercase tracking-wider mb-2">Sep
+                            class="timeline-pill">Sep
                             2025</span>
                         <a href="https://pavacenter.jhu.edu/programs/student-programs/fuel/" target="_blank"
                             rel="noopener noreferrer" class="block mb-2 group">
@@ -1241,7 +1377,7 @@
                     <div class="hidden md:block md:w-1/2"></div>
                     <div class="ml-12 md:ml-0 md:w-1/2 md:pl-16 text-left">
                         <span
-                            class="inline-block px-3 py-1 rounded-full bg-white/5 text-zinc-400 text-xs font-bold uppercase tracking-wider mb-2">May
+                            class="timeline-pill timeline-pill--muted">May
                             2025</span>
                         <h3 class="text-xl font-bold text-white mb-2">Research Foundation</h3>
                         <p class="text-zinc-500 text-sm leading-relaxed mb-3">
@@ -1257,7 +1393,7 @@
                         </p>
                         <a href="Artificial%20Intelligence%20and%20the%20Brain_%20A%20Neurocognitive%20Perspective.pdf"
                             target="_blank" rel="noopener noreferrer"
-                            class="text-royal-blue text-xs font-bold uppercase tracking-wider flex items-center gap-1 hover:text-white transition-colors">
+                            class="ext-link">
                             Read Paper <i data-lucide="external-link" class="w-3 h-3"></i>
                         </a>
                     </div>
@@ -1268,7 +1404,7 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="py-32 px-8 border-t border-white/5 bg-zinc-950">
+    <section id="team" class="py-24 px-8 border-t border-white/5 bg-zinc-950">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
                 <h2 class="text-4xl font-bold tracking-tight mb-4 text-white">Built by Altera Labs</h2>
@@ -1388,8 +1524,7 @@
             <!-- Advisory Board -->
             <div class="mt-24 pt-20 border-t border-white/5">
                 <div class="text-center mb-12">
-                    <span class="text-royal-blue text-sm font-bold uppercase tracking-[0.2em] block mb-3">Advisory
-                        Board</span>
+                    <span class="section-eyebrow text-sm">Advisory Board</span>
                     <p class="text-zinc-400 text-base max-w-xl mx-auto">Domain, institutional, and commercial
                         validation
                         from leading experts.</p>
@@ -1535,9 +1670,9 @@
                 <span class="text-zinc-500">&copy; 2026 Altera-Labs.</span>
             </div>
             <div class="flex gap-10">
-                <a href="privacy.html" class="hover:text-zinc-100 transition-colors tracking-[0.15em] font-bold">Privacy
+                <a href="privacy.html" class="hover:text-zinc-100 transition-colors tracking-wider font-bold">Privacy
                     Policy</a>
-                <a href="terms.html" class="hover:text-zinc-100 transition-colors tracking-[0.15em] font-bold">Terms of
+                <a href="terms.html" class="hover:text-zinc-100 transition-colors tracking-wider font-bold">Terms of
                     Service</a>
             </div>
         </div>
@@ -1940,7 +2075,7 @@
                 semanticRow += '</div>';
 
                 var masteryRow = '<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 w-full">';
-                masteryRow += '<span class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mr-1">Live Mastery Encoding:</span>';
+                masteryRow += '<span class="text-xs text-zinc-500 uppercase tracking-widest font-bold mr-1">Live Mastery Encoding:</span>';
                 masteryRow += '<div class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded-full" style="background:var(--color-mastery-high);box-shadow:0 0 5px var(--color-mastery-high-stroke);"></div><span>High</span></div>';
                 masteryRow += '<div class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded-full" style="background:var(--color-mastery-med);box-shadow:0 0 5px var(--color-mastery-med-stroke);"></div><span>Medium</span></div>';
                 masteryRow += '<div class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded-full" style="background:var(--color-mastery-low);box-shadow:0 0 5px var(--color-mastery-low-stroke);"></div><span>Low</span></div>';
