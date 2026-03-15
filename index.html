@@ -7,10 +7,28 @@
     <title>Altera Labs | AI Tutoring That Actually Teaches</title>
     <meta name="description"
         content="Helping educators and students utilize AI to create a smarter, more efficient world.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="public/images/logos/Altera/Altera-Logo-Cropped.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="public/images/logos/Altera/Altera-Logo-Cropped.png">
-    <link rel="apple-touch-icon" href="public/images/logos/Altera/Altera-Logo-Cropped.png">
+    <link rel="icon" type="image/svg+xml" href="public/images/logos/Altera/favicon.svg?v=5">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=5">
+    <link rel="icon" type="image/png" sizes="64x64" href="public/images/logos/Altera/favicon-64x64.png?v=5">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/images/logos/Altera/favicon-32x32.png?v=5">
+    <link rel="apple-touch-icon" href="public/images/logos/Altera/apple-touch-icon.png?v=5">
+
+    <!-- Social Preview Mapping -->
+    <meta property="og:title" content="Altera Labs | AI Tutoring That Actually Teaches">
+    <meta property="og:description"
+        content="Helping educators and students utilize AI to create a smarter, more efficient world.">
+    <meta property="og:image" content="https://altera-labs.com/public/images/logos/Altera/Altera-Social-Preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://altera-labs.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Altera Labs">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Altera Labs | AI Tutoring That Actually Teaches">
+    <meta name="twitter:description"
+        content="Helping educators and students utilize AI to create a smarter, more efficient world.">
+    <meta name="twitter:image" content="https://altera-labs.com/public/images/logos/Altera/Altera-Social-Preview.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,7 +118,8 @@
             --color-mastery-low-stroke: #f43f5e;
         }
 
-        html, body {
+        html,
+        body {
             background-color: var(--color-zinc-950);
             color: var(--color-zinc-100);
             overflow-x: hidden;
@@ -409,7 +428,7 @@
         <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group cursor-pointer"
                 onclick="event.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});">
-                <img src="./public/images/logos/Altera/Altera-Logo-Cropped.png" alt="Altera Labs"
+                <img src="./public/images/logos/Altera/Altera-Logo-Transparent.svg" alt="Altera Labs"
                     class="h-14 group-hover:opacity-80 transition-opacity">
             </a>
             <div class="hidden md:flex items-center gap-8">
@@ -625,11 +644,11 @@
                             <div class="flex gap-4 justify-end">
                                 <div
                                     class="p-4 rounded-2xl bg-royal-blue/10 border border-royal-blue/20 text-xs text-zinc-200 italic max-w-[80%]">
-                                    Based on your knowledge graph, you've <strong
+                                    Based on your cognitive core, you've <strong
                                         class="text-white not-italic mastery-highlight inline-block">mastered
-                                        Velocity (94%)</strong> but your <strong
+                                        Velocity (94% SMI)</strong> but your <strong
                                         class="text-white not-italic mastery-highlight inline-block">Area
-                                        Under the Curve mastery is at 38%</strong>. Displacement is the integral of
+                                        Under the Curve mastery is 38% SMI</strong>. Displacement is the integral of
                                     velocity over time. Let's start there: can you sketch what the area under a v(t)
                                     curve represents physically?
                                 </div>
@@ -641,14 +660,21 @@
                         </div>
                         <div class="mt-8 bg-zinc-800/20 p-4 rounded-xl border border-white/5">
                             <div class="mb-4 text-xs font-bold uppercase tracking-widest text-zinc-500">
-                                Prerequisite Mastery
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="text-xs font-bold uppercase tracking-widest text-zinc-500">
+                                        Sustainable Mastery Index (SMI)
+                                    </div>
+                                    <div class="px-2 py-0.5 rounded border border-white/5 bg-white/5 text-[10px] font-bold text-zinc-500 uppercase tracking-tighter">
+                                        Knowledge Retention & Prerequisite Stability
+                                    </div>
+                                </div>
                             </div>
                             <!-- Bar 1: Velocity (94%) -->
                             <div class="mb-4">
                                 <div
                                     class="flex justify-between items-center mb-1.5 font-mono text-xs text-zinc-400 uppercase">
                                     <span>Velocity</span>
-                                    <span class="text-emerald-400 font-bold">94%</span>
+                                    <span class="text-emerald-400 font-bold">94% SMI</span>
                                 </div>
                                 <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
                                     <div class="bg-emerald-500 h-full rounded-full" style="width: 94%"></div>
@@ -659,7 +685,7 @@
                                 <div
                                     class="flex justify-between items-center mb-1.5 font-mono text-xs text-zinc-400 uppercase">
                                     <span>Area Under the Curve</span>
-                                    <span class="text-amber-400 font-bold">38%</span>
+                                    <span class="text-amber-400 font-bold">38% SMI</span>
                                 </div>
                                 <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
                                     <div class="bg-amber-400 h-full rounded-full" style="width: 38%"></div>
@@ -672,15 +698,14 @@
                     <span class="section-eyebrow">Our Solution</span>
                     <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Adaptive Knowledge Tracking.</h2>
                     <p class="text-zinc-400 text-lg leading-relaxed mb-8">
-                        Our engine builds a real-time, personalized model of each student's mastery.
-                        This state-aware approach ensures deep understanding while providing faculty with precise,
-                        actionable analytics to optimize teaching.
+                        Our engine builds a real-time, personalized model of each student's journey through the <strong>Cognitive Core</strong>.
+                        Using the <strong>Sustainable Mastery Index (SMI)</strong>, we track not just immediate performance, but <strong>long-term retention</strong> and the strength of prerequisite foundations.
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3 text-base font-medium text-zinc-300">
                             <div class="glow-dot">
                             </div>
-                            Bayesian Knowledge Tracing (BKT) Engine
+                            Bayesian Knowledge Tracing (Beta BKT) Engine
                         </li>
                         <li class="flex items-center gap-3 text-base font-medium text-zinc-300">
                             <div class="glow-dot">
@@ -748,9 +773,7 @@
                         </div>
                         <h3 class="text-4xl font-bold mb-6 leading-tight">Mastery Tracking Engine</h3>
                         <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mb-12">
-                            Altera tracks exactly what each student knows and where they're struggling — updating in
-                            real time with every interaction. The AI always knows when to push harder and when to slow
-                            down.
+                            Altera uses <strong>Probabilistic Mastery Tracking</strong> to calculate the <strong>Sustainable Mastery Index (SMI)</strong>—a composite metric that represents the stability and retention probability of a student's knowledge. This ensures students achieve true mastery that lasts, rather than ephemeral memorization.
                         </p>
                     </div>
 
@@ -850,8 +873,7 @@
                         </div>
                         <h4 class="text-2xl font-bold mb-4 leading-tight">AI Tutor That Teaches</h4>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Altera never just hands over the answer. It reads your mastery profile and responds with
-                            guiding questions and personalized hints — keeping you in the learning zone.
+                            Altera never just hands over the answer. It uses <strong>Socratic Scouting</strong> to find exactly where you're stuck and provides high-impact hints that bridge the gap—personalized to your specific learning path.
                         </p>
                         <!-- Mini chat mockup -->
                         <div class="rounded-xl bg-zinc-900 border border-white/5 overflow-hidden p-4 space-y-3 mb-6">
@@ -875,11 +897,11 @@
                         <ul class="space-y-4 text-xs text-zinc-500">
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot"></div>
-                                <span>Personalized hints, not copy-paste answers</span>
+                                <span><strong>Socratic Scouting:</strong> Bridges conceptual gaps with targeted hints</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot"></div>
-                                <span>Adjusts to your mastery level automatically</span>
+                                <span><strong>Pedagogical Physics:</strong> Preserves the integrity of the core curriculum</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot"></div>
@@ -889,11 +911,11 @@
                     </div>
                     <div class="mt-auto flex flex-wrap gap-2 pt-8">
                         <div class="tech-badge">
-                            React 19</div>
+                            Pydantic-AI</div>
                         <div class="tech-badge">
-                            Zustand</div>
+                            Supabase</div>
                         <div class="tech-badge">
-                            Redis</div>
+                            pgvector</div>
                     </div>
                 </div>
 
@@ -1008,7 +1030,7 @@
                             </div>
                             <div class="absolute bottom-4 left-5 flex items-center gap-2">
                                 <div class="w-1.5 h-1.5 rounded-full bg-royal-blue animate-pulse"></div>
-                                <span class="text-xs font-mono font-bold text-royal-blue tracking-wider">MAPPING:
+                                <span class="text-xs font-mono font-bold text-royal-blue tracking-wider">COGNITIVE CORE:
                                     Curriculum Gaps</span>
                             </div>
                         </div>
@@ -1037,9 +1059,9 @@
                     </div>
                     <div class="mt-auto flex flex-wrap gap-2 pt-12">
                         <div class="tech-badge">
-                            D3.js</div>
+                            Pydantic-AI</div>
                         <div class="tech-badge">
-                            FastAPI</div>
+                            Beta BKT</div>
                         <div class="tech-badge">
                             pgvector</div>
                     </div>
@@ -1055,16 +1077,28 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 <div class="lg:col-span-4">
                     <div class="p-3 bg-royal-blue/10 rounded-2xl border border-royal-blue/20 inline-flex mb-6">
-                        <i data-lucide="zap" class="w-6 h-6 text-royal-blue"></i>
+                        <i data-lucide="network" class="w-6 h-6 text-royal-blue"></i>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">Interactive
-                        <br>Cognitive Graph.
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">The
+                        Cognitive Core.
                     </h2>
-                    <p class="text-zinc-400 text-lg leading-relaxed mb-8">
-                        Experience the physics-based simulation of our state-aware ontology. This demo uses our
-                        production D3 engine and a curriculum derived from an <strong>Advanced Kinematics</strong>
-                        syllabus.
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-6">
+                        This is the graph that powers every Altera tutor. Each node is a concept from a
+                        <strong>Physics I</strong> syllabus. Edges encode prerequisite, component, analogy, and
+                        conflict relationships. Student mastery is tracked per-node as a Beta distribution:
                     </p>
+                    <!-- Inline KaTeX formula -->
+                    <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl px-5 py-5 mb-6 overflow-x-auto">
+                        <div id="katex-sidebar-main" class="mb-1"></div>
+                        <div id="katex-sidebar-l1" class="mb-0"></div>
+                        <hr class="border-zinc-700/50 my-3">
+                        <div class="space-y-1.5 text-zinc-500">
+                            <div id="katex-sidebar-l2"></div>
+                            <div id="katex-sidebar-l3"></div>
+                            <div id="katex-sidebar-l4"></div>
+                            <div id="katex-sidebar-l5"></div>
+                        </div>
+                    </div>
                     <div class="space-y-4">
                         <div class="flex items-start gap-4">
                             <div
@@ -1072,9 +1106,9 @@
                                 <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]"></div>
                             </div>
                             <div>
-                                <p class="text-sm font-bold text-zinc-200">Mastery Encoding</p>
-                                <p class="text-sm text-zinc-400">Node colors update in real-time as the BKT engine
-                                    processes student evidence.</p>
+                                <p class="text-sm font-bold text-zinc-200">Node Color = Mastery State</p>
+                                <p class="text-sm text-zinc-400">Green nodes have high SMI (the student retains the
+                                    concept long-term). Red nodes need work. Colors update after every interaction.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -1083,10 +1117,22 @@
                                 <div class="w-2 h-2 rounded-full bg-royal-blue shadow-[0_0_8px_#476ee3]"></div>
                             </div>
                             <div>
-                                <p class="text-sm font-bold text-zinc-200">Force-Directed UI</p>
-                                <p class="text-sm text-zinc-400">Draggable physics simulation preserves the
-                                    pedagogical
-                                    structure of the graph.</p>
+                                <p class="text-sm font-bold text-zinc-200">Node Size = Curricular Weight</p>
+                                <p class="text-sm text-zinc-400">Bigger nodes are higher-leverage concepts. If a student
+                                    masters "Newton's Second Law," downstream topics like projectile motion and friction
+                                    become easier to teach.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                <div class="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_8px_#fbbf24]"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-zinc-200">Edges = Relationships</p>
+                                <p class="text-sm text-zinc-400">Solid lines are prerequisites, dashed lines are
+                                    components, and red lines flag conflicts with misconceptions. When a student gets
+                                    stuck, the tutor walks these edges to find what's actually missing.</p>
                             </div>
                         </div>
                     </div>
@@ -1112,9 +1158,6 @@
                                         </span>
                                         LIVE MASTERY ENGINE
                                     </div>
-                                    <div class="text-xs font-mono text-zinc-500 uppercase tracking-tighter">
-                                        Physics v1.02 &bull; Mastery Service active
-                                    </div>
                                 </div>
                                 <!-- D3 Graph -->
                                 <div id="graph-container"
@@ -1134,7 +1177,7 @@
                                 </div>
                                 <!-- Socratic Insight -->
                                 <div
-                                    class="mt-4 bg-zinc-950/90 p-5 rounded-xl border border-zinc-800 backdrop-blur-xl shadow-2xl transition-all duration-500 group-hover:border-royal-blue/30">
+                                    class="mt-4 bg-zinc-950/90 p-5 rounded-xl border border-zinc-800 backdrop-blur-xl shadow-2xl transition-colors duration-500">
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="p-1.5 bg-royal-blue/10 rounded-lg border border-royal-blue/20">
                                             <i data-lucide="brain" class="w-4 h-4 text-royal-blue"></i>
@@ -1143,8 +1186,8 @@
                                             Socratic Insight</p>
                                         <div class="ml-auto flex items-center gap-1.5">
                                             <div class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
-                                            <span class="text-xs font-mono text-red-400 uppercase tracking-wider">Error
-                                                Detected</span>
+                                            <span class="text-xs font-mono text-red-400 uppercase tracking-wider">Misconception
+                                                Hijacking</span>
                                         </div>
                                     </div>
                                     <p class="text-sm text-zinc-300 leading-relaxed italic">
@@ -1257,7 +1300,7 @@
                         <div class="hidden md:block md:w-1/2"></div>
                     </div>
 
-                    <!-- Dec 7, 2025: JHU FUEL -->
+                    <!-- Dec 7, 2025: JHU Fuel -->
                     <div class="relative flex flex-col md:flex-row items-center">
                         <div
                             class="absolute left-4 md:left-1/2 w-6 h-6 bg-royal-blue rounded-full border-4 border-zinc-950 transform -translate-x-1/2 z-10">
@@ -1268,12 +1311,10 @@
                                 7, 2025</span>
                             <a href="https://pavacenter.jhu.edu/news/catching-up-with-the-fall-2025-fuel-winners/"
                                 target="_blank" rel="noopener noreferrer" class="block mb-2 group">
-                                <h3 class="text-xl font-bold text-white">JHU FUEL Demo Day Win</h3>
+                                <h3 class="text-xl font-bold text-white">JHU Fuel Demo Day Win</h3>
                             </a>
                             <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-                                Winner of the <strong class="text-zinc-200">Audience Award</strong> at the 2025
-                                Johns
-                                Hopkins FUEL Demo Day. Recognized for pedagogical innovation in applied AI.
+                                Won the <strong>$5,000 Audience Award</strong> at the 2025 Johns Hopkins Fuel Demo Day—an audience-voted victory proving significant interest from both students and faculty in the future of AI tutoring.
                             </p>
                             <a href="https://pavacenter.jhu.edu/news/catching-up-with-the-fall-2025-fuel-winners/"
                                 target="_blank" rel="noopener noreferrer" class="ext-link mb-6">
@@ -1281,7 +1322,7 @@
                             </a>
                             <div class="rounded-xl overflow-hidden shadow-lg group cursor-pointer mb-6">
                                 <div class="aspect-video relative">
-                                    <img src="./public/images/logos/FUEL.JPEG" alt="JHU FUEL Demo Day Win"
+                                    <img src="./public/images/logos/FUEL.JPEG" alt="JHU Fuel Demo Day Win"
                                         class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 scale-105 group-hover:scale-100 transition-transform duration-700">
                                 </div>
                             </div>
@@ -1359,7 +1400,7 @@
                     </div>
                 </div>
 
-                <!-- Sep 2025: Pava Center FUEL Accelerator -->
+                <!-- Sep 2025: Pava Center Fuel Accelerator -->
                 <div class="relative flex flex-col md:flex-row items-center">
                     <div
                         class="absolute left-4 md:left-1/2 w-6 h-6 bg-royal-blue rounded-full border-4 border-zinc-950 transform -translate-x-1/2 z-10">
@@ -1368,19 +1409,17 @@
                         <span class="timeline-pill">Sep 2025</span>
                         <a href="https://pavacenter.jhu.edu/programs/student-programs/fuel/" target="_blank"
                             rel="noopener noreferrer" class="block mb-2 group">
-                            <h3 class="text-xl font-bold text-white">Pava Center FUEL Accelerator</h3>
+                            <h3 class="text-xl font-bold text-white">Pava Center Fuel Accelerator</h3>
                         </a>
                         <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-                            Accepted into the <strong class="text-zinc-200">JHU Pava Marie LaPere Center FUEL
-                                Accelerator</strong> with a <strong class="text-zinc-200">&lt;15% acceptance
-                                rate</strong>. Received a $5K stipend, weekly 1:1 strategic mentorship, and
-                            access
-                            to Johns Hopkins' entrepreneurial network.
+                            Accepted into the <strong class="text-zinc-200">JHU Pava Marie LaPere Center Fuel
+                                Accelerator</strong>. Selected as part of a high-growth cohort for ed-tech venture
+                                development.
                         </p>
-                        <div class="rounded-xl overflow-hidden shadow-lg group cursor-pointer mb-6">
-                            <div class="aspect-video relative">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-6 max-w-sm">
+                            <div class="aspect-[4/3] relative">
                                 <img src="./public/images/Pava-Center-Wrap-Up-2025-Main-photo-980x654.jpg"
-                                    alt="2025 FUEL Cohort"
+                                    alt="2025 Fuel Cohort"
                                     class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 scale-105 group-hover:scale-100 transition-transform duration-700">
                             </div>
                         </div>
@@ -1487,7 +1526,8 @@
                         </div>
                         <p
                             class="text-zinc-500 text-xs leading-relaxed mt-auto font-medium border-t border-white/5 pt-4">
-                            JHU BME and Applied Math researcher specializing in learning outcome modeling, neurocognitive data analysis, and statistical validation of product efficacy.</p>
+                            JHU BME and Applied Math researcher specializing in learning outcome modeling,
+                            neurocognitive data analysis, and statistical validation of product efficacy.</p>
                     </div>
                 </div>
 
@@ -1647,9 +1687,14 @@
                             <div class="min-w-0">
                                 <h4 class="text-2xl font-bold text-zinc-200 group-hover:text-white transition-colors">
                                     Jennifer Harvey</h4>
-                                <p class="text-zinc-500 text-sm font-medium leading-tight mt-1">Global Developer Marketing Manager, Google</p>
-                                <p class="text-royal-blue text-xs font-bold uppercase tracking-widest mt-4">Go-To-Market &amp; Developer Ecosystem</p>
-                                <p class="text-zinc-400 text-base leading-relaxed mt-3">15+ year Google veteran who scaled developer communities and startup accelerator programs globally. Brings proven GTM playbooks and direct access to Google's developer and startup networks.</p>
+                                <p class="text-zinc-500 text-sm font-medium leading-tight mt-1">Global Developer
+                                    Marketing Manager, Google</p>
+                                <p class="text-royal-blue text-xs font-bold uppercase tracking-widest mt-4">Go-To-Market
+                                    &amp; Developer Ecosystem</p>
+                                <p class="text-zinc-400 text-base leading-relaxed mt-3">15+ year Google veteran who
+                                    scaled developer communities and startup accelerator programs globally. Brings
+                                    proven GTM playbooks and direct access to Google's developer and startup networks.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1669,9 +1714,7 @@
                                     Iris Gupta</h4>
                                 <p class="text-zinc-500 text-sm font-medium leading-tight mt-1">Founder &amp; CEO,
                                     ProCounsel</p>
-                                <p class="text-royal-blue text-xs font-bold uppercase tracking-widest mt-4">FUEL
-                                    Program
-                                    Advisor</p>
+                                <p class="text-royal-blue text-xs font-bold tracking-widest mt-4">Fuel Program Advisor</p>
                                 <p class="text-zinc-400 text-base leading-relaxed mt-3">JHU CS &amp; Economics alum.
                                     Bisciotti Award winner and founder of ProCounsel, an AI-powered legal discovery
                                     platform.</p>
@@ -1687,7 +1730,7 @@
     <footer class="py-16 px-8 border-t border-white/5 text-zinc-500 text-xs tracking-wide font-medium uppercase">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-4">
-                <img src="./public/images/logos/Altera/Altera-Logo-Cropped.png" alt="Altera Labs"
+                <img src="./public/images/logos/Altera/Altera-Logo-Transparent.svg" alt="Altera Labs"
                     class="h-4 opacity-30 grayscale contrast-50">
                 <span class="text-zinc-500">&copy; 2026 Altera-Labs.</span>
             </div>
@@ -1740,16 +1783,40 @@
                 var main = document.getElementById('katex-main');
                 if (main) {
                     main.innerHTML = katex.renderToString(
-                        `P(\\textcolor{${royalBlue}}{L_n}) = P(\\textcolor{${royalBlue}}{L_{n-1}} \\mid \\text{obs}) + \\bigl(1 - P(\\textcolor{${royalBlue}}{L_{n-1}} \\mid \\text{obs})\\bigr) \\cdot \\textcolor{${emerald}}{P(T)}`,
+                        `\\textcolor{${royalBlue}}{L_n} \\sim \\text{Beta}(\\alpha_{n}, \\beta_{n}) \\quad \\text{where} \\quad \\alpha_{n} = \\alpha_{n-1} + y_n`,
                         { displayMode: true, throwOnError: false }
                     );
                 }
                 var l1 = document.getElementById('katex-legend-1');
                 var l2 = document.getElementById('katex-legend-2');
                 var l3 = document.getElementById('katex-legend-3');
-                if (l1) l1.innerHTML = katex.renderToString(`\\textcolor{${royalBlue}}{L_n} = \\text{Mastery}`, { throwOnError: false });
-                if (l2) l2.innerHTML = katex.renderToString(`\\textcolor{${emerald}}{P(T)} = \\text{Transit}`, { throwOnError: false });
-                if (l3) l3.innerHTML = katex.renderToString('\\text{obs} = \\text{Evidence}', { throwOnError: false });
+                if (l1) l1.innerHTML = katex.renderToString(`\\textcolor{${royalBlue}}{L_n} = \\text{Probabilistic Mastery}`, { throwOnError: false });
+                if (l2) l2.innerHTML = katex.renderToString(`\\textcolor{${emerald}}{y_n} = \\text{Evidence Activity}`, { throwOnError: false });
+                if (l3) l3.innerHTML = katex.renderToString('\\alpha, \\beta = \\text{Cognitive Parameters}', { throwOnError: false });
+
+                // Sidebar formula (Cognitive Core section) — Option E: two-line combo
+                var sMain = document.getElementById('katex-sidebar-main');
+                if (sMain) {
+                    sMain.innerHTML = katex.renderToString(
+                        `P(\\text{mastery}_n) = \\frac{\\textcolor{${royalBlue}}{\\alpha_n}}{\\textcolor{${royalBlue}}{\\alpha_n} + \\textcolor{${emerald}}{\\beta_n}}`,
+                        { displayMode: true, throwOnError: false }
+                    );
+                }
+                var sl1 = document.getElementById('katex-sidebar-l1');
+                if (sl1) {
+                    sl1.innerHTML = katex.renderToString(
+                        `\\text{SMI} = P(\\text{mastery}) \\cdot e^{-\\lambda \\Delta t} - k \\cdot \\sigma`,
+                        { displayMode: true, throwOnError: false }
+                    );
+                }
+                var sl2 = document.getElementById('katex-sidebar-l2');
+                var sl3 = document.getElementById('katex-sidebar-l3');
+                var sl4 = document.getElementById('katex-sidebar-l4');
+                var sl5 = document.getElementById('katex-sidebar-l5');
+                if (sl2) sl2.innerHTML = katex.renderToString(`\\small \\textcolor{${royalBlue}}{\\alpha} = \\text{cumulative correct answers}`, { throwOnError: false });
+                if (sl3) sl3.innerHTML = katex.renderToString(`\\small \\textcolor{${emerald}}{\\beta} = \\text{cumulative incorrect answers}`, { throwOnError: false });
+                if (sl4) sl4.innerHTML = katex.renderToString('\\small \\lambda \\Delta t = \\text{time decay since last practice}', { throwOnError: false });
+                if (sl5) sl5.innerHTML = katex.renderToString('\\small k \\cdot \\sigma = \\text{penalty for uncertain estimates}', { throwOnError: false });
             }
             tryRenderKatex();
         });
@@ -1866,29 +1933,62 @@
             markers.forEach(function (m) {
                 defs.append('marker')
                     .attr('id', m[0]).attr('viewBox', '0 -4 8 8')
-                    .attr('refX', 22).attr('refY', 0)
+                    .attr('refX', 8).attr('refY', 0)
                     .attr('markerWidth', 6).attr('markerHeight', 6)
                     .attr('orient', 'auto')
                     .append('path').attr('fill', m[1]).attr('d', 'M0,-3L8,0L0,3'); // Sleeker arrowhead
             });
 
-            // Deep copy data for simulation with initial positions at center
+            // Process data first - do not redefine below
             var nodes = graphData.nodes.map(function (n) {
-                return Object.assign({}, n, { x: width / 2, y: height / 2 });
+                return Object.assign({}, n, {
+                    x: width / 2 + (Math.random() - 0.5) * 50,
+                    y: height / 2 + (Math.random() - 0.5) * 50
+                });
             });
             var links = graphData.links.map(function (l) { return Object.assign({}, l); });
 
+            // Mask for links to avoid ONLY labels (Nodes already obscure links via render order and opacity)
+            var mask = defs.append('mask')
+                .attr('id', 'graph-mask')
+                .attr('maskUnits', 'userSpaceOnUse')
+                .attr('maskContentUnits', 'userSpaceOnUse');
+
+            mask.append('rect')
+                .attr('x', -20000).attr('y', -20000)
+                .attr('width', 40000).attr('height', 40000)
+                .attr('fill', 'white');
+            
+            var labelFontSize = d => 10 + (d.weight || 1) * 1.5 + 'px';
+            var labelWrapWidth = d => 70 + (d.weight || 1) * 10;
+            var maskStrokeWidth = d => 2.5 + (d.weight || 1) * 0.5 + 'px';
+
+            var maskHolesText = mask.append('g')
+                .selectAll('text')
+                .data(nodes)
+                .join('text')
+                .text(function(d) { return d.label; })
+                .attr('text-anchor', 'middle')
+                .attr('font-family', 'Inter, system-ui, sans-serif')
+                .attr('font-size', labelFontSize)
+                .attr('font-weight', '500')
+                .attr('fill', 'black')
+                .attr('stroke', 'black')
+                .attr('stroke-width', maskStrokeWidth)
+                .attr('stroke-linejoin', 'round')
+                .each(function(d) { d3.select(this).call(wrapText, labelWrapWidth(d)); });
+
             var simulation = d3.forceSimulation(nodes)
-                .force('link', d3.forceLink(links).id(function (d) { return d.id; }).distance(80))
-                .force('charge', d3.forceManyBody().strength(-300))
+                .force('link', d3.forceLink(links).id(function (d) { return d.id; }).distance(85))
+                .force('charge', d3.forceManyBody().strength(d => -250 * (d.weight || 1)))
                 .force('center', d3.forceCenter(width / 2, height / 2))
-                .force('x', d3.forceX(width / 2).strength(0.08))
-                .force('y', d3.forceY(height / 2).strength(0.08))
-                .force('collide', d3.forceCollide().radius(35))
-                .velocityDecay(0.4);
+                .force('x', d3.forceX(width / 2).strength(0.1))
+                .force('y', d3.forceY(height / 2).strength(0.1))
+                .force('collide', d3.forceCollide().radius(d => 25 + (d.weight || 1) * 3 + (labelWrapWidth(d) / 3)))
+                .velocityDecay(0.45);
 
             // Centering function (Zoom to fit)
-            function centerView() {
+            function centerView(immediate) {
                 const w = container.clientWidth;
                 const h = container.clientHeight;
                 if (w === 0 || h === 0) return;
@@ -1905,19 +2005,23 @@
                 if (fullWidth === 0 || fullHeight === 0) return;
 
                 // Calculate scale to fit with padding
-                const padding = 40;
-                const scale = Math.min(
+                const padding = 60;
+                const scale = Math.max(0.45, Math.min(
                     (w - padding * 2) / fullWidth,
                     (h - padding * 2) / fullHeight,
-                    1.2 // Max scale
-                );
+                    1.4 // Max scale
+                ));
 
                 const transform = d3.zoomIdentity
                     .translate(w / 2, h / 2)
                     .scale(scale)
                     .translate(-midX, -midY);
 
-                svg.transition().duration(1000).call(zoom.transform, transform);
+                if (immediate) {
+                    svg.call(zoom.transform, transform);
+                } else {
+                    svg.transition().duration(1000).call(zoom.transform, transform);
+                }
             }
 
             // Watch for container resize
@@ -1926,10 +2030,13 @@
             });
             resizeObserver.observe(container);
 
-            // Initial centering after simulation has had a moment to settle
-            setTimeout(centerView, 500);
+            // Initial centering (Immediate for stability, then delayed for refinement)
+            centerView(true);
+            setTimeout(function () { centerView(false); }, 500);
 
-            var link = g.append('g').selectAll('line').data(links).join('line')
+            var link = g.append('g')
+                .attr('mask', 'url(#graph-mask)')
+                .selectAll('line').data(links).join('line')
                 .attr('stroke-width', function (d) { return d.type === 'is_prerequisite_for' ? 2 : 1.5; })
                 .attr('stroke', function (d) { return getEdgeStyle(d.type).color; })
                 .attr('stroke-dasharray', function (d) { return getEdgeStyle(d.type).dasharray; })
@@ -1980,19 +2087,69 @@
                 } else {
                     var mc = getMasteryColor(d.mastery);
                     el.append('circle')
-                        .attr('r', 5 + Math.sqrt(d.weight || 1) * 2)
+                        .attr('r', 4 + (d.weight || 1) * 2.5)
                         .attr('fill', mc.fill).attr('stroke', mc.stroke).attr('stroke-width', 2)
                         .style('filter', 'url(#glow)')
                         .attr('class', 'node-circle');
                 }
             });
 
+            // Text wrapping utility for SVG
+            function wrapText(text, width) {
+                text.each(function () {
+                    var text = d3.select(this),
+                        words = text.text().split(/\s+/).reverse(),
+                        word,
+                        line = [],
+                        lineNumber = 0,
+                        lineHeight = 1.2, // ems
+                        y = text.attr("y"),
+                        dy = 0,
+                        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+
+                    while (word = words.pop()) {
+                        line.push(word);
+                        tspan.text(line.join(" "));
+                        if (tspan.node().getComputedTextLength() > width && line.length > 1) {
+                            line.pop();
+                            tspan.text(line.join(" "));
+                            line = [word];
+                            tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                        }
+                    }
+                    // Vertical centering adjustment for multi-line
+                    if (lineNumber > 0) {
+                        text.selectAll("tspan").attr("y", y - (lineNumber * 4));
+                    }
+                });
+            }
+
+            // Node labels centered below nodes
+            var nodeRadius = function (d) { return 4 + (d.weight || 1) * 2.5; };
+            var verticalOffset = function (d) { return nodeRadius(d) + 20 + (d.weight || 1) * 3; };
+
             node.append('text')
                 .text(function (d) { return d.label; })
-                .attr('x', 14).attr('y', 4)
-                .attr('font-family', 'monospace').attr('font-size', '10px')
-                .attr('fill', '#a1a1aa')
-                .style('pointer-events', 'none').style('user-select', 'none');
+                .attr('x', 0).attr('y', verticalOffset)
+                .attr('text-anchor', 'middle')
+                .attr('font-family', 'Inter, system-ui, sans-serif')
+                .attr('font-size', labelFontSize)
+                .attr('font-weight', '500')
+                .attr('stroke', '#000').attr('stroke-width', '2px').attr('stroke-linejoin', 'round')
+                .attr('fill', '#000')
+                .style('pointer-events', 'none').style('user-select', 'none').style('opacity', 0.5)
+                .each(function(d) { d3.select(this).call(wrapText, labelWrapWidth(d)); });
+
+            node.append('text')
+                .text(function (d) { return d.label; })
+                .attr('x', 0).attr('y', verticalOffset)
+                .attr('text-anchor', 'middle')
+                .attr('font-family', 'Inter, system-ui, sans-serif')
+                .attr('font-size', labelFontSize)
+                .attr('font-weight', '500')
+                .attr('fill', '#f4f4f5')
+                .style('pointer-events', 'none').style('user-select', 'none')
+                .each(function(d) { d3.select(this).call(wrapText, labelWrapWidth(d)); });
 
             // Click to highlight connected nodes
             node.on('click', function (event, d) {
@@ -2021,6 +2178,10 @@
             // Tooltip + Hover Effects
             node.on('mouseenter', function (event, d) {
                 if (isDragging) return;
+                
+                // Calm the simulation to prevent "tweaking out" on hover
+                simulation.alphaTarget(0.05).restart();
+                
                 // Scale and glow transition
                 d3.select(this).select('.node-circle')
                     .transition().duration(200)
@@ -2032,16 +2193,21 @@
                 var masteryHtml = '';
                 if (typeof d.mastery === 'number' && d.type !== 'misconception') {
                     var cls = d.mastery >= 0.7 ? 'color:#34d399' : d.mastery >= 0.4 ? 'color:#fbbf24' : 'color:#f43f5e';
-                    masteryHtml = '<div style="font-size:12px;color:#d4d4d8;">Mastery: <span style="font-weight:600;' + cls + '">' + Math.round(d.mastery * 100) + '%</span></div>';
+                    masteryHtml = '<div style="font-size:12px;color:#a1a1aa;margin-bottom:2px;">Mastery: <span style="font-weight:600;' + cls + '">' + Math.round(d.mastery * 100) + '%</span></div>';
                 }
+                var importanceHtml = '<div style="font-size:12px;color:#a1a1aa;">Importance: <span style="font-weight:600;color:' + THEME.royalBlue + '">' + (d.weight || 1) + '</span></div>';
                 tooltip.innerHTML =
                     '<div style="font-size:14px;font-weight:600;color:#f4f4f5;margin-bottom:4px;">' + d.label + '</div>' +
-                    '<div style="font-size:12px;color:#a1a1aa;margin-bottom:8px;text-transform:capitalize;">' + (d.type || '') + '</div>' +
-                    masteryHtml;
+                    '<div style="font-size:11px;color:#71717a;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">' + (d.type || '') + '</div>' +
+                    masteryHtml +
+                    importanceHtml;
                 tooltip.style.left = (event.clientX - rect.left + 10) + 'px';
                 tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
                 tooltip.classList.remove('hidden');
             }).on('mouseleave', function (event, d) {
+                // Return simulation to sleep
+                simulation.alphaTarget(0);
+
                 // Reset scale and glow
                 d3.select(this).select('.node-circle')
                     .transition().duration(200)
@@ -2068,8 +2234,25 @@
                 link
                     .attr('x1', function (d) { return d.source.x; })
                     .attr('y1', function (d) { return d.source.y; })
-                    .attr('x2', function (d) { return d.target.x; })
-                    .attr('y2', function (d) { return d.target.y; });
+                    .attr('x2', function (d) {
+                        var dx = d.target.x - d.source.x,
+                            dy = d.target.y - d.source.y,
+                            dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist === 0) return d.target.x;
+                        var radius = 4 + (d.target.weight || 1) * 2.5;
+                        return d.target.x - (dx * radius / dist);
+                    })
+                    .attr('y2', function (d) {
+                        var dx = d.target.x - d.source.x,
+                            dy = d.target.y - d.source.y,
+                            dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist === 0) return d.target.y;
+                        var radius = 4 + (d.target.weight || 1) * 2.5;
+                        return d.target.y - (dy * radius / dist);
+                    });
+
+                if (maskHolesText) maskHolesText.attr('transform', d => `translate(${d.x}, ${d.y + verticalOffset(d)})`);
+
                 node.attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
             });
 
