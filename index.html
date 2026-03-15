@@ -17,8 +17,8 @@
     <meta property="og:title" content="Altera Labs | AI Tutoring That Actually Teaches">
     <meta property="og:description"
         content="Helping educators and students utilize AI to create a smarter, more efficient world.">
-    <meta property="og:image" content="https://altera-labs.com/public/images/logos/Altera/apple-touch-icon.png?v=6">
-    <meta property="og:image:secure_url" content="https://altera-labs.com/public/images/logos/Altera/apple-touch-icon.png?v=6">
+    <meta property="og:image" content="https://altera-labs.com/public/images/logos/Altera/Altera-Social-Square-Padded.png?v=7">
+    <meta property="og:image:secure_url" content="https://altera-labs.com/public/images/logos/Altera/Altera-Social-Square-Padded.png?v=7">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
@@ -31,7 +31,7 @@
     <meta name="twitter:title" content="Altera Labs | AI Tutoring That Actually Teaches">
     <meta name="twitter:description"
         content="Helping educators and students utilize AI to create a smarter, more efficient world.">
-    <meta name="twitter:image" content="https://altera-labs.com/public/images/logos/Altera/Altera-Social-Preview.png?v=6">
+    <meta name="twitter:image" content="https://altera-labs.com/public/images/logos/Altera/Altera-Social-Square-Padded.png?v=7">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -363,6 +363,73 @@
         .premium-card {
             box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.01),
                 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            border-color: rgba(255, 255, 255, 0.08);
+            transform-style: preserve-3d;
+            transition: transform 350ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 350ms ease;
+        }
+
+        .premium-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(125deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.015) 32%, transparent 58%),
+                radial-gradient(120% 70% at 50% -12%, rgba(255, 255, 255, 0.05), transparent 58%);
+            mix-blend-mode: screen;
+            opacity: 0.45;
+        }
+
+        .premium-card::after {
+            content: "";
+            position: absolute;
+            inset: 1px;
+            border-radius: inherit;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            opacity: 0.75;
+        }
+
+        .mockup-tilt-left {
+            transform: perspective(1200px) rotateY(8deg) rotateX(2deg);
+            box-shadow:
+                0 30px 60px -35px rgba(0, 0, 0, 0.75),
+                -14px 18px 30px -24px rgba(0, 0, 0, 0.35),
+                inset 0 1px 1px rgba(255, 255, 255, 0.02);
+        }
+
+        .mockup-tilt-right {
+            transform: perspective(1200px) rotateY(-8deg) rotateX(2deg);
+            box-shadow:
+                0 30px 60px -35px rgba(0, 0, 0, 0.75),
+                14px 18px 30px -24px rgba(0, 0, 0, 0.35),
+                inset 0 1px 1px rgba(255, 255, 255, 0.02);
+        }
+
+        .premium-card:hover {
+            box-shadow:
+                0 40px 80px -40px rgba(0, 0, 0, 0.85),
+                0 24px 40px -28px rgba(0, 0, 0, 0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.04);
+        }
+
+        .mockup-tilt-left:hover {
+            transform: perspective(1200px) rotateY(10deg) rotateX(3deg) translateY(-3px);
+        }
+
+        .mockup-tilt-right:hover {
+            transform: perspective(1200px) rotateY(-10deg) rotateX(3deg) translateY(-3px);
+        }
+
+        @media (max-width: 767px) {
+            .mockup-tilt-left,
+            .mockup-tilt-right,
+            .mockup-tilt-left:hover,
+            .mockup-tilt-right:hover {
+                transform: none;
+            }
         }
 
         /* ---- Typography ---- */
@@ -612,7 +679,7 @@
                     </a>
                 </div>
                 <div class="relative">
-                    <div class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 premium-card skew-y-1">
+                    <div class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 premium-card mockup-tilt-left skew-y-2">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
                             <p class="text-xs font-mono text-zinc-500 uppercase">Input: Homework Problem #4</p>
@@ -649,7 +716,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                 <div class="order-2 md:order-1 relative">
                     <div
-                        class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 premium-card -skew-y-1 overflow-hidden">
+                        class="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 premium-card mockup-tilt-right -skew-y-2 overflow-hidden">
                         <div class="flex items-center justify-between mb-8">
                             <div class="flex gap-2">
                                 <div class="w-3 h-3 rounded-full bg-emerald-500/50"></div>
@@ -1792,6 +1859,33 @@
             document.querySelectorAll('.reveal').forEach(el => {
                 observer.observe(el);
             });
+
+            // Subtle desktop-only parallax tilt for problem/solution mockups
+            const canParallax = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 768px)').matches;
+            if (canParallax) {
+                const tiltCards = document.querySelectorAll('.mockup-tilt-left, .mockup-tilt-right');
+                tiltCards.forEach((card) => {
+                    const baseY = card.classList.contains('mockup-tilt-right') ? -8 : 8;
+                    const baseX = 2;
+                    const maxDeltaY = 2.2;
+                    const maxDeltaX = 1.6;
+
+                    card.addEventListener('mousemove', (event) => {
+                        const rect = card.getBoundingClientRect();
+                        const px = (event.clientX - rect.left) / rect.width - 0.5;
+                        const py = (event.clientY - rect.top) / rect.height - 0.5;
+                        const rotateY = baseY + px * (maxDeltaY * 2);
+                        const rotateX = baseX - py * (maxDeltaX * 2);
+                        card.style.transition = 'transform 120ms ease-out, box-shadow 220ms ease-out';
+                        card.style.transform = `perspective(1200px) rotateY(${rotateY.toFixed(2)}deg) rotateX(${rotateX.toFixed(2)}deg) translateY(-3px)`;
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transition = 'transform 280ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 280ms ease';
+                        card.style.transform = '';
+                    });
+                });
+            }
         });
 
         // Render KaTeX equations once the library loads
