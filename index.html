@@ -392,16 +392,41 @@
         /* ---- Interactive Highlights ---- */
         .mastery-highlight {
             position: relative;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: color 0.2s ease;
         }
 
         .mastery-highlight:hover {
-            text-shadow: none;
-            transform: scale(1.02);
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-            padding: 0 4px;
+            color: #ffffff;
+            text-decoration: underline;
+            text-decoration-color: rgba(71, 110, 227, 0.6);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+        }
+
+        #katex-main .katex-display {
+            margin: 0;
+            text-align: center;
+        }
+
+        #katex-main .katex {
+            font-size: 1.18em;
+            line-height: 1.4;
+        }
+
+        .engine-math-legend {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 0.6rem 1rem;
+            margin-top: 1.1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .engine-math-legend {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
         }
     </style>
 
@@ -664,7 +689,7 @@
                                     <div class="text-xs font-bold uppercase tracking-widest text-zinc-500">
                                         Sustainable Mastery Index (SMI)
                                     </div>
-                                    <div class="px-2 py-0.5 rounded border border-white/5 bg-white/5 text-[10px] font-bold text-zinc-500 uppercase tracking-tighter">
+                                    <div class="px-2 py-0.5 rounded border border-white/5 bg-white/5 text-xs font-bold text-zinc-500 uppercase tracking-tighter">
                                         Knowledge Retention & Prerequisite Stability
                                     </div>
                                 </div>
@@ -772,21 +797,21 @@
                             <span class="card-eyebrow">Proprietary Engine</span>
                         </div>
                         <h3 class="text-4xl font-bold mb-6 leading-tight">Mastery Tracking Engine</h3>
-                        <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mb-12">
-                            Altera uses <strong>Probabilistic Mastery Tracking</strong> to calculate the <strong>Sustainable Mastery Index (SMI)</strong>—a composite metric that represents the stability and retention probability of a student's knowledge. This ensures students achieve true mastery that lasts, rather than ephemeral memorization.
+                        <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mb-8">
+                            Altera uses <strong>Probabilistic Mastery Tracking</strong> to calculate the <strong>Sustainable Mastery Index (SMI)</strong> — a composite metric that represents the stability and retention probability of a student's knowledge. This ensures students achieve true mastery that lasts, rather than ephemeral memorization.
                         </p>
                     </div>
 
                     <!-- BKT Equation (refined container) -->
                     <div class="relative z-10 mt-auto">
                         <div
-                            class="p-6 rounded-2xl bg-black/40 border border-white/5 backdrop-blur-md group-hover:border-royal-blue/30 transition-colors shadow-inner">
-                            <div class="flex items-center justify-between mb-6">
+                            class="p-5 rounded-2xl bg-black/40 border border-white/5 backdrop-blur-md group-hover:border-royal-blue/30 transition-colors shadow-inner">
+                            <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest">Live Mastery
-                                        Formula</p>
-                                    <p class="text-xs text-zinc-600 mt-1 tracking-wider">Updated after every student
-                                        interaction</p>
+                                    <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest">Mastery
+                                        Computation Chain</p>
+                                    <p class="text-xs text-zinc-400 mt-1 tracking-wider">Per concept node, refreshed
+                                        after every relevant interaction</p>
                                 </div>
                                 <div class="flex gap-1.5">
                                     <div class="w-2 h-2 rounded-full bg-red-500/20"></div>
@@ -794,10 +819,9 @@
                                 </div>
                             </div>
                             <div id="katex-main"
-                                class="text-center py-4 overflow-x-auto [&_.katex]:text-white [&_.katex-display]:my-0">
+                                class="text-center py-3 overflow-x-auto [&_.katex]:text-white [&_.katex-display]:my-0">
                             </div>
-                            <div
-                                class="flex flex-wrap gap-x-8 gap-y-3 mt-6 justify-center border-t border-white/5 pt-6">
+                            <div class="engine-math-legend">
                                 <span id="katex-legend-1" class="text-xs font-medium"></span>
                                 <span id="katex-legend-2" class="text-xs font-medium"></span>
                                 <span id="katex-legend-3" class="text-xs font-medium"></span>
@@ -873,7 +897,7 @@
                         </div>
                         <h4 class="text-2xl font-bold mb-4 leading-tight">AI Tutor That Teaches</h4>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-                            Altera never just hands over the answer. It uses <strong>Socratic Scouting</strong> to find exactly where you're stuck and provides high-impact hints that bridge the gap—personalized to your specific learning path.
+                            Altera never just hands over the answer. It uses <strong>Socratic Scouting</strong> to find exactly where you're stuck and provides high-impact hints that bridge  — personalized to your specific learning path.
                         </p>
                         <!-- Mini chat mockup -->
                         <div class="rounded-xl bg-zinc-900 border border-white/5 overflow-hidden p-4 space-y-3 mb-6">
@@ -897,15 +921,15 @@
                         <ul class="space-y-4 text-xs text-zinc-500">
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot"></div>
-                                <span><strong>Socratic Scouting:</strong> Bridges conceptual gaps with targeted hints</span>
+                                <span><strong>Socratic Scouting:</strong> Diagnoses conceptual gaps and delivers targeted next-step hints</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot"></div>
-                                <span><strong>Pedagogical Physics:</strong> Preserves the integrity of the core curriculum</span>
+                                <span><strong>Misconception Remediation:</strong> Detects conflict patterns and reroutes instruction in real time</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot"></div>
-                                <span>Supports math, diagrams, and file uploads</span>
+                                <span><strong>Fully multimodal:</strong> works across text, equations, diagrams, and uploaded student work</span>
                             </li>
                         </ul>
                     </div>
@@ -936,11 +960,11 @@
                             <div
                                 class="px-3 py-1.5 rounded-lg bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-300 uppercase tracking-tighter">
                                 Canvas</div>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-zinc-600 flex-shrink-0"></i>
+                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-zinc-500 flex-shrink-0"></i>
                             <div
                                 class="px-3 py-1.5 rounded-lg bg-zinc-800 border border-white/5 text-xs font-bold text-zinc-300 uppercase tracking-tighter">
                                 Click Tool</div>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-zinc-600 flex-shrink-0"></i>
+                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-zinc-500 flex-shrink-0"></i>
                             <div
                                 class="px-3 py-1.5 rounded-lg bg-royal-blue/10 border border-royal-blue/20 text-xs font-bold text-royal-blue uppercase tracking-tighter">
                                 Altera Live</div>
@@ -949,17 +973,17 @@
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot">
                                 </div>
-                                <span>LTI 1.3 Advantage Deployment</span>
+                                <span>Deploy via LTI 1.3 Advantage in minutes</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot">
                                 </div>
-                                <span>Automatic grade passback</span>
+                                <span>Sync grades back to Canvas automatically</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot">
                                 </div>
-                                <span>Roster sync & Deep-linking</span>
+                                <span>Sync rosters and launch with deep links</span>
                             </li>
                         </ul>
                     </div>
@@ -1043,17 +1067,7 @@
                             <li class="flex items-center gap-3">
                                 <div class="glow-dot">
                                 </div>
-                                <span>Dynamic concept dependency tracking</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <div class="glow-dot">
-                                </div>
-                                <span>Spot where students fail across multiple courses</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <div class="glow-dot">
-                                </div>
-                                <span>Upload a syllabus — it maps itself automatically</span>
+                                <span>Surface cross-course failure patterns before they compound</span>
                             </li>
                         </ul>
                     </div>
@@ -1085,20 +1099,8 @@
                     <p class="text-zinc-400 text-lg leading-relaxed mb-6">
                         This is the graph that powers every Altera tutor. Each node is a concept from a
                         <strong>Physics I</strong> syllabus. Edges encode prerequisite, component, analogy, and
-                        conflict relationships. Student mastery is tracked per-node as a Beta distribution:
+                        conflict relationships. Student mastery is tracked per-node using the live engine score.
                     </p>
-                    <!-- Inline KaTeX formula -->
-                    <div class="bg-zinc-900/60 border border-zinc-800 rounded-xl px-5 py-5 mb-6 overflow-x-auto">
-                        <div id="katex-sidebar-main" class="mb-1"></div>
-                        <div id="katex-sidebar-l1" class="mb-0"></div>
-                        <hr class="border-zinc-700/50 my-3">
-                        <div class="space-y-1.5 text-zinc-500">
-                            <div id="katex-sidebar-l2"></div>
-                            <div id="katex-sidebar-l3"></div>
-                            <div id="katex-sidebar-l4"></div>
-                            <div id="katex-sidebar-l5"></div>
-                        </div>
-                    </div>
                     <div class="space-y-4">
                         <div class="flex items-start gap-4">
                             <div
@@ -1187,7 +1189,7 @@
                                         <div class="ml-auto flex items-center gap-1.5">
                                             <div class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
                                             <span class="text-xs font-mono text-red-400 uppercase tracking-wider">Misconception
-                                                Hijacking</span>
+                                                Detected</span>
                                         </div>
                                     </div>
                                     <p class="text-sm text-zinc-300 leading-relaxed italic">
@@ -1314,7 +1316,7 @@
                                 <h3 class="text-xl font-bold text-white">JHU Fuel Demo Day Win</h3>
                             </a>
                             <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-                                Won the <strong>$5,000 Audience Award</strong> at the 2025 Johns Hopkins Fuel Demo Day—an audience-voted victory proving significant interest from both students and faculty in the future of AI tutoring.
+                                Won the <strong>$5,000 Audience Award</strong> at the 2025 Johns Hopkins Fuel Demo Day—an audience-voted victory proving significant student and faculty interest in AI tutoring.
                             </p>
                             <a href="https://pavacenter.jhu.edu/news/catching-up-with-the-fall-2025-fuel-winners/"
                                 target="_blank" rel="noopener noreferrer" class="ext-link mb-6">
@@ -1480,7 +1482,7 @@
                     ventures from NIH, NSF I-Corps, JHU, and more.
                 </p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Peter -->
                 <div
                     class="rounded-3xl bg-zinc-900/50 border border-zinc-800/50 hover:bg-zinc-900 transition-all cursor-pointer group hover:border-royal-blue/30 h-full flex flex-col overflow-hidden reveal">
@@ -1501,8 +1503,7 @@
                         </div>
                         <p
                             class="text-zinc-500 text-xs leading-relaxed mt-auto font-medium border-t border-white/5 pt-4">
-                            AI researcher with experience at JHU Applied Physics Lab (APL) and NASA. Expert in
-                            multi-agent AI systems and B2B customer discovery.</p>
+                            Leads product direction and institutional strategy. Background in AI systems at JHU APL and NASA, with a focus on turning technical research into tools for real classrooms.</p>
                     </div>
                 </div>
 
@@ -1511,7 +1512,7 @@
                     class="rounded-3xl bg-zinc-900/50 border border-zinc-800/50 hover:bg-zinc-900 transition-all cursor-pointer group hover:border-royal-blue/30 h-full flex flex-col overflow-hidden reveal delay-100">
                     <div class="p-6 pb-0">
                         <h4 class="text-xl font-bold text-zinc-100 mb-1">Alex Kroumov</h4>
-                        <p class="text-royal-blue text-xs font-bold tracking-wider uppercase">CFO &amp; Lead R&amp;D</p>
+                        <p class="text-royal-blue text-xs font-bold tracking-wider uppercase">CFO, R&amp;D Lead</p>
                     </div>
                     <div class="aspect-[4/3] mt-4 overflow-hidden">
                         <img src="./public/images/headshots/Alex.jpeg" alt="Alex Kroumov"
@@ -1580,10 +1581,35 @@
                                 Analytics and Artificial Intelligence</p>
                         </div>
                         <p
-                            class="text-zinc-500 text-xs leading-relaxed mt-auto font-medium border-t border-white/5 pt-4">
+                            class="text-zinc-500 text-xs leading-relaxed font-medium border-t border-white/5 pt-4">
                             Strategic advisor specializing in business analytics, AI applications, and
                             commercialization
                             strategy.</p>
+                    </div>
+                </div>
+
+                <!-- Mercedes -->
+                <div
+                    class="rounded-3xl bg-zinc-900/50 border border-zinc-800/50 hover:bg-zinc-900 transition-all cursor-pointer group hover:border-royal-blue/30 h-full flex flex-col overflow-hidden reveal delay-400">
+                    <div class="p-6 pb-0">
+                        <h4 class="text-xl font-bold text-zinc-100 mb-1">Mercedes Rend</h4>
+                        <p class="text-royal-blue text-xs font-bold tracking-wider uppercase">Outreach &amp; Equity Lead</p>
+                    </div>
+                    <div class="aspect-[4/3] mt-4 overflow-hidden">
+                        <img src="./public/images/headshots/Mercedes.png" alt="Mercedes Rend"
+                            style="object-position:center 18%;"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 pt-5 flex flex-col flex-1">
+                        <div class="mb-4 space-y-1">
+                            <p class="text-zinc-300 text-xs font-bold">Johns Hopkins University</p>
+                            <p class="text-zinc-500 text-xs uppercase tracking-wide leading-tight">BS, Biomedical Engineering</p>
+                        </div>
+                        <p
+                            class="text-zinc-500 text-xs leading-relaxed mt-auto font-medium border-t border-white/5 pt-4">
+                            JHU BME researcher and outreach lead with experience in mentoring, stakeholder coordination, 
+                            and program execution. Brings an educational-equity lens that helps Altera design for access, 
+                            adoption, and real student outcomes.</p>
                     </div>
                 </div>
             </div>
@@ -1783,40 +1809,21 @@
                 var main = document.getElementById('katex-main');
                 if (main) {
                     main.innerHTML = katex.renderToString(
-                        `\\textcolor{${royalBlue}}{L_n} \\sim \\text{Beta}(\\alpha_{n}, \\beta_{n}) \\quad \\text{where} \\quad \\alpha_{n} = \\alpha_{n-1} + y_n`,
+                        `\\begin{gathered}
+                        \\textcolor{${royalBlue}}{\\alpha_n} = \\textcolor{${royalBlue}}{\\alpha_{n-1}} + y_n,\\quad
+                        \\textcolor{${emerald}}{\\beta_n} = \\textcolor{${emerald}}{\\beta_{n-1}} + (1-y_n) \\\\[0.6em]
+                        P(\\text{mastery}_n) = \\frac{\\textcolor{${royalBlue}}{\\alpha_n}}{\\textcolor{${royalBlue}}{\\alpha_n} + \\textcolor{${emerald}}{\\beta_n}}
+                        \\end{gathered}`,
                         { displayMode: true, throwOnError: false }
                     );
                 }
                 var l1 = document.getElementById('katex-legend-1');
                 var l2 = document.getElementById('katex-legend-2');
                 var l3 = document.getElementById('katex-legend-3');
-                if (l1) l1.innerHTML = katex.renderToString(`\\textcolor{${royalBlue}}{L_n} = \\text{Probabilistic Mastery}`, { throwOnError: false });
-                if (l2) l2.innerHTML = katex.renderToString(`\\textcolor{${emerald}}{y_n} = \\text{Evidence Activity}`, { throwOnError: false });
-                if (l3) l3.innerHTML = katex.renderToString('\\alpha, \\beta = \\text{Cognitive Parameters}', { throwOnError: false });
+                if (l1) l1.innerHTML = katex.renderToString(`\\text{SMI}_n = P(\\text{mastery}_n) \\cdot e^{-\\lambda \\Delta t} - k\\sigma_n`, { throwOnError: false });
+                if (l2) l2.innerHTML = katex.renderToString(`\\textcolor{${royalBlue}}{\\alpha}=\\text{correct evidence},\\;\\textcolor{${emerald}}{\\newline \\beta}=\\text{incorrect evidence}`, { throwOnError: false });
+                if (l3) l3.innerHTML = katex.renderToString(`\\lambda\\Delta t=\\text{retention decay},\\newline \\;k\\sigma_n=\\text{uncertainty penalty}`, { throwOnError: false });
 
-                // Sidebar formula (Cognitive Core section) — Option E: two-line combo
-                var sMain = document.getElementById('katex-sidebar-main');
-                if (sMain) {
-                    sMain.innerHTML = katex.renderToString(
-                        `P(\\text{mastery}_n) = \\frac{\\textcolor{${royalBlue}}{\\alpha_n}}{\\textcolor{${royalBlue}}{\\alpha_n} + \\textcolor{${emerald}}{\\beta_n}}`,
-                        { displayMode: true, throwOnError: false }
-                    );
-                }
-                var sl1 = document.getElementById('katex-sidebar-l1');
-                if (sl1) {
-                    sl1.innerHTML = katex.renderToString(
-                        `\\text{SMI} = P(\\text{mastery}) \\cdot e^{-\\lambda \\Delta t} - k \\cdot \\sigma`,
-                        { displayMode: true, throwOnError: false }
-                    );
-                }
-                var sl2 = document.getElementById('katex-sidebar-l2');
-                var sl3 = document.getElementById('katex-sidebar-l3');
-                var sl4 = document.getElementById('katex-sidebar-l4');
-                var sl5 = document.getElementById('katex-sidebar-l5');
-                if (sl2) sl2.innerHTML = katex.renderToString(`\\small \\textcolor{${royalBlue}}{\\alpha} = \\text{cumulative correct answers}`, { throwOnError: false });
-                if (sl3) sl3.innerHTML = katex.renderToString(`\\small \\textcolor{${emerald}}{\\beta} = \\text{cumulative incorrect answers}`, { throwOnError: false });
-                if (sl4) sl4.innerHTML = katex.renderToString('\\small \\lambda \\Delta t = \\text{time decay since last practice}', { throwOnError: false });
-                if (sl5) sl5.innerHTML = katex.renderToString('\\small k \\cdot \\sigma = \\text{penalty for uncertain estimates}', { throwOnError: false });
             }
             tryRenderKatex();
         });
@@ -1959,7 +1966,7 @@
                 .attr('width', 40000).attr('height', 40000)
                 .attr('fill', 'white');
             
-            var labelFontSize = d => 10 + (d.weight || 1) * 1.5 + 'px';
+            var labelFontSize = d => Math.max(12, 10 + (d.weight || 1) * 1.5) + 'px';
             var labelWrapWidth = d => 70 + (d.weight || 1) * 10;
             var maskStrokeWidth = d => 2.5 + (d.weight || 1) * 0.5 + 'px';
 
@@ -2198,7 +2205,7 @@
                 var importanceHtml = '<div style="font-size:12px;color:#a1a1aa;">Importance: <span style="font-weight:600;color:' + THEME.royalBlue + '">' + (d.weight || 1) + '</span></div>';
                 tooltip.innerHTML =
                     '<div style="font-size:14px;font-weight:600;color:#f4f4f5;margin-bottom:4px;">' + d.label + '</div>' +
-                    '<div style="font-size:11px;color:#71717a;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">' + (d.type || '') + '</div>' +
+                    '<div style="font-size:12px;color:#71717a;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;">' + (d.type || '') + '</div>' +
                     masteryHtml +
                     importanceHtml;
                 tooltip.style.left = (event.clientX - rect.left + 10) + 'px';
