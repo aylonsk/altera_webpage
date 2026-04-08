@@ -39,7 +39,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;600;700&display=optional"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;600;700&display=fallback"
         rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
@@ -329,6 +329,20 @@
             color: white;
         }
 
+        /* ---- Hero Animations (CSS-only, no JS dependency) ---- */
+        @keyframes heroFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-reveal {
+            opacity: 0;
+            animation: heroFadeIn 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        .hero-delay-100 { animation-delay: 100ms; }
+        .hero-delay-200 { animation-delay: 200ms; }
+
         /* ---- Entrance Animations ---- */
         .reveal {
             opacity: 0;
@@ -581,15 +595,15 @@
                 </div>
             </div>
             <div class="max-w-7xl mx-auto text-center">
-                <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-[0.95] text-white reveal">
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tight mb-6 leading-[0.95] text-white hero-reveal">
                     State-Aware AI <br>
                     <span class="text-zinc-100">Tutoring for STEM</span>
                 </h1>
                 <p
-                    class="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light reveal delay-100">
+                    class="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light hero-reveal hero-delay-100">
                     Helping educators and students utilize AI to create a smarter, more efficient world.
                 </p>
-                <div class="flex flex-col md:flex-row items-center justify-center gap-4 relative z-10 reveal delay-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 relative z-10 hero-reveal hero-delay-200">
                     <a href="https://altera-labs.web.app" target="_blank" rel="noopener noreferrer">
                         <button class="btn-primary btn-primary--lg flex items-center gap-2 group">
                             Try the Beta
